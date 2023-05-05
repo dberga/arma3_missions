@@ -1,0 +1,8 @@
+version=54;
+name="zone_trigger";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Signs_F"
+};

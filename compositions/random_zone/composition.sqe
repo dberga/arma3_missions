@@ -1,0 +1,14 @@
+version=54;
+center[]={4885.3638,30.725569,16971.076};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Logic";
+		name="rand_zone";
+		init="zones_cities=[""CityCenter"",""Name"",""NameCity"",""NameCityCapital"",""NameLocal"",""NameVillage""]; " \n "zones_team=[""Area"",""Flag"",""Airport"",""NameMarine"",""Strategic"",""StrongpointArea"",""SafetyZone""]; " \n "zones_field=[""FlatArea"",""FlatAreaCity"",""FlatAreaCitySmall"",""Hill"",""HistoricalSite"",""Mount"",""BorderCrossing"",""RockArea"",""VegetationBroadleaf"",""VegetationFir"",""VegetationPalm"",""VegetationVineyard""]; " \n "zones_others=[""CivilDefense"",""DangerousForces"",""Invisible"",""CulturalProperty""]; " \n "zones_all=zones_cities+zones_team+zones_field;" \n "_loc = nearestLocations [getPos this, zones_all, 25000];" \n "_random_loc= _loc call BIS_fnc_selectRandom;" \n "_pos = [getPos _random_loc, 1, 100] call BIS_fnc_findSafePos;" \n "this setPos _pos;";
+		id=136;
+		type="LocationArea_F";
+	};
+};

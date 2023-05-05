@@ -1,0 +1,102 @@
+version=54;
+center[]={14487.552,18.809856,16299.963};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Layer";
+		name="script_recruit_side";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Layer";
+				name="script_recruit_6";
+				class Entities
+				{
+					items=1;
+					class Item0
+					{
+						dataType="Logic";
+						class PositionInfo
+						{
+							angles[]={6.2581921,0,6.2631841};
+						};
+						name="script_recruit_ranks";
+						init="" \n "GOM_fnc_actionConditionRecruit = {  " \n "params [""_this"",""_target""];  " \n "_free = units side _this - units group _this;" \n "_unit = _target;" \n "(_unit in _free && rankid leader group _this > rankid leader group _unit)  " \n "};" \n "[] spawn {" \n "waitUntil {sleep 5; alive player};" \n "player addAction [""Recruit"",{  " \n "[cursorobject] join group player;  " \n "},[],0,true,true,"""",""[player,cursorobject] call GOM_fnc_actionConditionRecruit""];" \n "}";
+						id=4061;
+						type="ModuleChat_F";
+						atlOffset=-1.9073486e-006;
+						class CustomAttributes
+						{
+							class Attribute0
+							{
+								property="ModuleChat_F_Text";
+								expression="_this setVariable ['Text',_value,true];";
+								class Value
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"STRING"
+											};
+										};
+										value="Added Recruit functionality";
+									};
+								};
+							};
+							class Attribute1
+							{
+								property="ModuleChat_F_Units";
+								expression="_this setVariable ['Units',_value,true];";
+								class Value
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"STRING"
+											};
+										};
+										value="1";
+									};
+								};
+							};
+							class Attribute2
+							{
+								property="ModuleChat_F_Channel";
+								expression="_this setVariable ['Channel',_value,true];";
+								class Value
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"STRING"
+											};
+										};
+										value="4";
+									};
+								};
+							};
+							nAttributes=3;
+						};
+					};
+				};
+				id=4060;
+				atlOffset=-1.9073486e-006;
+			};
+		};
+		id=4062;
+		atlOffset=-1.9073486e-006;
+	};
+};

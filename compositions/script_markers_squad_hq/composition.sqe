@@ -1,0 +1,112 @@
+version=54;
+center[]={14471.812,18.619366,16286.549};
+class items
+{
+	items=2;
+	class Item0
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-4.3916016,0.12589455,7.2558594};
+			angles[]={6.2765183,0,0.0013439035};
+		};
+		name="script_markers_squad_hq";
+		init="{ " \n " if ( isPlayer _x ) then { " \n "   hcRemoveAllGroups _x; " \n "   setGroupIconsVisible [ true,  true]; " \n " }; " \n "}forEach allUnits;";
+		id=3102;
+		type="ModuleChat_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleChat_F_Text";
+				expression="_this setVariable ['Text',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Set Squad markers HQ";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleChat_F_Units";
+				expression="_this setVariable ['Units',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="1";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleChat_F_Channel";
+				expression="_this setVariable ['Channel',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="0";
+					};
+				};
+			};
+			nAttributes=3;
+		};
+	};
+	class Item1
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={4.3916016,0,-7.2568359};
+		};
+		id=3103;
+		type="HighCommand";
+		atlOffset=3.8146973e-006;
+	};
+};
+class connections
+{
+	class LinkIDProvider
+	{
+		nextID=1;
+	};
+	class Links
+	{
+		items=1;
+		class Item0
+		{
+			linkID=0;
+			item0=3103;
+			item1=3102;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+	};
+};

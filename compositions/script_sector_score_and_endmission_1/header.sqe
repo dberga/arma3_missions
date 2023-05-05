@@ -1,0 +1,8 @@
+version=54;
+name="script_sector_score_and_endmission";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Modules_F_Events"
+};

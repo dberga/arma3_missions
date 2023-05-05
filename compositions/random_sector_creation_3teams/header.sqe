@@ -1,0 +1,8 @@
+version=54;
+name="random_sector_creation_3teams";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Modules_F"
+};

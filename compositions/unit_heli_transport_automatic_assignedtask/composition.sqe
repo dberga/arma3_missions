@@ -1,0 +1,293 @@
+version=54;
+center[]={14486.873,17.898979,16194.303};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Layer";
+		name="unit_heli_transport_automatic_assignedtask";
+		class Entities
+		{
+			items=2;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.001953125,1.7791386,-0.00390625};
+					angles[]={6.2805324,0,6.2818413};
+				};
+				side="West";
+				flags=6;
+				class Attributes
+				{
+					init="_veh = this;  " \n "_initpos = getPos this;  " \n "[_veh, _initpos] spawn {  " \n "params [""_veh"",""_initpos""];  " \n "while {damage _veh < 0.8} do { " \n "waitUntil {" \n "sleep 1; " \n "_crew =(crew _veh);" \n "_fdcrew = fullCrew[ _veh, 'driver'];" \n "if (count _crew > 0 && count _fdcrew > 0) then {count (_crew) > count (units group ((fullCrew[ _veh, 'driver'] select 0) select 0))} else {false}" \n "}; " \n "_pilot = (fullCrew[_veh, 'driver'] select 0) select 0;  " \n "_group = group _pilot;   " \n "_drivers = units _group;  " \n "_cargo = (crew _veh) - _drivers;  " \n "_cargo_group = group (_cargo select 0); " \n "_cargo_task = currentTask (leader _cargo_group); " \n "_cargo_task_pos = taskDestination _cargo_task; " \n "leader _cargo_group groupChat format [""Transport to %1"",((taskName _cargo_task) call BIS_fnc_taskDescription) select 0];" \n "_wp_load = _group addwaypoint [getPos _veh,0];   " \n "_wp_load setWaypointType ""LOAD"";  " \n "_wp_load setWaypointTimeout [5,10,15]; " \n "_wp_unload = _group addwaypoint [_cargo_task_pos,300];   " \n "_wp_unload setWaypointType ""TR UNLOAD"";  " \n "_wp_loiter_land = _group addwaypoint [_initpos,0];   " \n "_wp_loiter_land setWaypointType ""TR UNLOAD"";  " \n "_wp_loiter_land setWaypointStatements [""true"",""vehicle this land 'LAND'; ""];  " \n "_wp_unload setWaypointTimeout [30,60,90]; " \n "waitUntil {" \n "sleep 1; " \n "_crew =(crew _veh);" \n "_fdcrew = fullCrew[ _veh, 'driver'];" \n "if (count _crew > 0 && count _fdcrew > 0) then {count (_crew) > count (units group ((fullCrew[ _veh, 'driver'] select 0) select 0))} else {false}" \n "};" \n "} " \n "}";
+				};
+				id=3422;
+				type="B_Heli_Light_01_F";
+			};
+			class Item1
+			{
+				dataType="Group";
+				side="West";
+				class Entities
+				{
+					items=2;
+					class Item0
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={-19.363281,0.62351608,92.862305};
+							angles[]={6.2805324,0,6.2818413};
+						};
+						side="West";
+						flags=6;
+						class Attributes
+						{
+						};
+						id=3424;
+						type="B_Helipilot_F";
+					};
+					class Item1
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={-16.428711,0.61912346,93.264648};
+							angles[]={6.2805324,0,6.2818413};
+						};
+						side="West";
+						flags=4;
+						class Attributes
+						{
+						};
+						id=3425;
+						type="B_Helipilot_F";
+					};
+				};
+				class Attributes
+				{
+				};
+				class CrewLinks
+				{
+					class LinkIDProvider
+					{
+						nextID=2;
+					};
+					class Links
+					{
+						items=2;
+						class Item0
+						{
+							linkID=0;
+							item0=3424;
+							item1=3422;
+							class CustomData
+							{
+								role=1;
+							};
+						};
+						class Item1
+						{
+							linkID=1;
+							item0=3425;
+							item1=3422;
+							class CustomData
+							{
+								role=2;
+								turretPath[]={0};
+							};
+						};
+					};
+				};
+				id=3423;
+			};
+		};
+		id=3413;
+		atlOffset=0.0010147095;
+	};
+};
+class VehicleInVehicleLinks
+{
+	class LinkIDProvider
+	{
+		nextID=16;
+	};
+	class Links
+	{
+		items=16;
+		class Item0
+		{
+			linkID=0;
+			item0=3424;
+			item1=3422;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=3425;
+			item1=3422;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item2
+		{
+			linkID=2;
+			item0=3520;
+			item1=3518;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item3
+		{
+			linkID=3;
+			item0=3521;
+			item1=3518;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item4
+		{
+			linkID=4;
+			item0=3531;
+			item1=3530;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item5
+		{
+			linkID=5;
+			item0=3532;
+			item1=3530;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item6
+		{
+			linkID=6;
+			item0=3533;
+			item1=3530;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item7
+		{
+			linkID=7;
+			item0=3534;
+			item1=3530;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item8
+		{
+			linkID=8;
+			item0=3536;
+			item1=3540;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item9
+		{
+			linkID=9;
+			item0=3537;
+			item1=3540;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item10
+		{
+			linkID=10;
+			item0=3538;
+			item1=3540;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item11
+		{
+			linkID=11;
+			item0=3539;
+			item1=3540;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item12
+		{
+			linkID=12;
+			item0=3566;
+			item1=3565;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item13
+		{
+			linkID=13;
+			item0=3567;
+			item1=3565;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item14
+		{
+			linkID=14;
+			item0=3568;
+			item1=3565;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item15
+		{
+			linkID=15;
+			item0=3569;
+			item1=3565;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+	};
+};

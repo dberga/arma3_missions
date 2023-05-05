@@ -1,0 +1,152 @@
+version=54;
+center[]={14453.565,18.655161,16277.297};
+class items
+{
+	items=3;
+	class Item0
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-0.53515625,0.010728836,0.94726563};
+			angles[]={6.2778587,0,6.2805333};
+		};
+		init="this setPos (getPos blubase);";
+		id=717;
+		type="LocationArea_F";
+	};
+	class Item1
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-0.63574219,0,-1.1152344};
+			angles[]={6.2778587,0,6.2805333};
+		};
+		init="this setPos (getPos blubase);";
+		id=722;
+		type="ModuleMPTypeGroundSupport_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleMPTypeGroundSupport_F_bis_groundSupport_needTransport";
+				expression="_this setVariable ['bis_groundSupport_needTransport',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=1;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleMPTypeGroundSupport_F_bis_groundSupport_needAmmo";
+				expression="_this setVariable ['bis_groundSupport_needAmmo',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=1;
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleMPTypeGroundSupport_F_bis_groundSupport_needEvac";
+				expression="_this setVariable ['bis_groundSupport_needEvac',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=1;
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="ModuleMPTypeGroundSupport_F_bis_groundSupport_needSupport";
+				expression="_this setVariable ['bis_groundSupport_needSupport',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=1;
+					};
+				};
+			};
+			nAttributes=4;
+		};
+	};
+	class Item2
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={1.1669922,0.0020389557,0.16796875};
+			angles[]={6.2778587,0,6.2805333};
+		};
+		id=723;
+		type="SideBLUFOR_F";
+	};
+};
+class connections
+{
+	class LinkIDProvider
+	{
+		nextID=2;
+	};
+	class Links
+	{
+		items=2;
+		class Item0
+		{
+			linkID=0;
+			item0=722;
+			item1=717;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=723;
+			item1=722;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+	};
+};

@@ -1,0 +1,222 @@
+version=54;
+center[]={14228.256,17.939882,15914.152};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Layer";
+		name="BLUBASE+aispawns+hqdefend+vehiclespawns";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					angles[]={6.2818484,0,0.0013372133};
+				};
+				init="this setPos (getPos blubase);";
+				id=3;
+				type="Site_BLUFOR";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="Site_BLUFOR_fastTravel";
+						expression="_this setVariable ['fastTravel',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Enabled";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="Site_BLUFOR_conditionOfPresence";
+						expression="_this setVariable ['conditionOfPresence',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="TRUE";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="Site_BLUFOR_faction";
+						expression="_this setVariable ['faction',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Blue";
+							};
+						};
+					};
+					class Attribute3
+					{
+						property="Site_BLUFOR_axisA";
+						expression="_this setVariable ['axisA',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="200";
+							};
+						};
+					};
+					class Attribute4
+					{
+						property="Site_BLUFOR_description";
+						expression="_this setVariable ['description',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					class Attribute5
+					{
+						property="Site_BLUFOR_shape";
+						expression="_this setVariable ['shape',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="ellipse";
+							};
+						};
+					};
+					class Attribute6
+					{
+						property="Site_BLUFOR_axisB";
+						expression="_this setVariable ['axisB',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="200";
+							};
+						};
+					};
+					class Attribute7
+					{
+						property="Site_BLUFOR_siteType";
+						expression="_this setVariable ['siteType',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Military_Base";
+							};
+						};
+					};
+					class Attribute8
+					{
+						property="Site_BLUFOR_interactive";
+						expression="_this setVariable ['interactive',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Yes_Feedback";
+							};
+						};
+					};
+					class Attribute9
+					{
+						property="Site_BLUFOR_buildingOccupationIndex";
+						expression="_this setVariable ['buildingOccupationIndex',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="1";
+							};
+						};
+					};
+					nAttributes=10;
+				};
+			};
+		};
+		id=29;
+		atlOffset=0.0080566406;
+	};
+};

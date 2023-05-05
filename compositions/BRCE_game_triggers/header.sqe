@@ -1,0 +1,8 @@
+version=54;
+name="BRCE_game_triggers";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Modules_F"
+};

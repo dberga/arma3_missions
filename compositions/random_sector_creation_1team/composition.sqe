@@ -1,0 +1,18 @@
+version=54;
+center[]={4884.811,31.221712,16982.172};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			angles[]={6.2458701,0,6.2272477};
+		};
+		name="random_sector_creation_1team";
+		init="sector_ratius = 125;" \n "_halfWorldSize = (worldSize / 2); " \n "_allLocations = nearestLocations [[ _halfWorldSize, _halfWorldSize,0], [""NameVillage"",""HistoricalSite"",""NameCityCapital"",""NameCity""], _halfWorldSize * 1.4142]; " \n "{ " \n " _pos = locationPosition _x; " \n " ""ModuleSector_F"" createUnit [ _pos, createGroup sideLogic, "" " \n "  this setVariable[ 'DefaultOwner', '-1' ]; " \n "  this setVariable[ 'OnOwnerChange', '' ]; " \n "  this setVariable[ 'OwnerLimit', '0' ]; " \n "  this setVariable[ 'position', _pos ]; " \n "  this setVariable[ 'ScoreReward', '0' ]; " \n "  this setVariable[ 'TaskOwner', '3' ]; " \n "  this setVariable[ 'sides', [ east] ]; " \n "  this setVariable[ 'BIS_fnc_initModules_disableAutoActivation', false, true ]; " \n "   _nul = [ this ] spawn { " \n "   params[ '_logic' ]; " \n "   waitUntil { " \n "    !isNil { _logic getVariable [ 'finalized', nil ] } && " \n "    { !( _logic getVariable [ 'finalized', true ] ) } " \n "   }; " \n "   _trgSize = sector_ratius;" \n "   _logic setVariable [ 'size', _trgSize ]; " \n "   [ _logic, [], true, 'area' ] call BIS_fnc_moduleSector; " \n "   _trg = ( _logic getVariable 'areas' ) select 0; " \n "   _mrk = ( _trg getVariable 'markers' ) select 0; " \n "   _mrk setMarkerSize [ _trgSize, _trgSize ]; " \n "  }; " \n " "" ]; " \n "} forEach _allLocations;";
+		id=130;
+		type="Logic";
+	};
+};

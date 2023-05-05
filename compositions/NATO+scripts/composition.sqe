@@ -1,0 +1,5976 @@
+version=54;
+center[]={14420.45,17.780005,16227.94};
+class items
+{
+	items=39;
+	class Item0
+	{
+		dataType="Layer";
+		name="random_sector_creation_1team";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={79.169922,1.0258541,80.416016};
+					angles[]={0,0,6.2765183};
+				};
+				init="sector_ratius = 125;  " \n "_halfWorldSize = (worldSize / 2);   " \n "_allLocations = nearestLocations [[ _halfWorldSize, _halfWorldSize,0], [""NameVillage"",""HistoricalSite"",""NameCityCapital"",""NameCity""], _halfWorldSize * 1.4142];   " \n "{   " \n " _pos = locationPosition _x;   " \n "  ""ModuleSector_F"" createUnit [ _pos, createGroup sideLogic, ""   " \n "  this setVariable[ 'DefaultOwner', '-1' ];  " \n "  this setVariable[ 'OnOwnerChange', 'true' ];  " \n "  this setVariable[ 'OwnerLimit', '0.9' ];   " \n "  this setVariable[ 'ScoreReward', '1' ];   " \n "  this setVariable[ 'position', _pos ];   " \n "  this setVariable[ 'TaskOwner', '3' ];   " \n "  this setVariable[ 'sides', [ west, east, independent] ];   " \n "  this setVariable[ 'BIS_fnc_initModules_disableAutoActivation', false, true ];   " \n "   _nul = [ this ] spawn {   " \n "   params[ '_logic' ];   " \n "   waitUntil {   " \n "    !isNil { _logic getVariable [ 'finalized', nil ] } &&   " \n "    { !( _logic getVariable [ 'finalized', true ] ) }   " \n "   };   " \n "   _trgSize = sector_ratius;  " \n "   _logic setVariable [ 'size', _trgSize ];   " \n "   [ _logic, [], true, 'area' ] call BIS_fnc_moduleSector;   " \n "   _trg = ( _logic getVariable 'areas' ) select 0;   " \n "   _mrk = ( _trg getVariable 'markers' ) select 0;   " \n "   _mrk setMarkerSize [ _trgSize, _trgSize ];   " \n "   _mrk setMarkerShape 'ELLIPSE';  " \n "  };   " \n " "" ];   " \n "} forEach _allLocations;  ";
+				id=0;
+				type="Logic";
+			};
+		};
+		id=1;
+	};
+	class Item1
+	{
+		dataType="Layer";
+		name="BLUBASE+aispawns+hqdefend+vehiclespawns";
+		class Entities
+		{
+			items=39;
+			class Item0
+			{
+				dataType="Layer";
+				name="spawn_ai+helipilot";
+				class Entities
+				{
+					items=1;
+					class Item0
+					{
+						dataType="Layer";
+						name="spawn_ai+helipilot_1";
+						class Entities
+						{
+							items=4;
+							class Item0
+							{
+								dataType="Logic";
+								class PositionInfo
+								{
+									position[]={35.952148,0.65656471,5.3945313};
+									angles[]={6.2778621,0,6.2751913};
+								};
+								init="_pos = [blubase, 20,35,15] call BIS_fnc_findSafePos;" \n "_pos = getPos this;" \n "_tent = createVehicle [""Land_DeconTent_01_white_F"", _pos];" \n "[_pos] spawn { " \n "params [""_pos""];" \n "_recruit_dummies=[""B_soldier_AT_F"", ""B_soldier_AA_F"", ""B_Pilot_F"", ""B_helicrew_F"", ""B_soldier_UAV_F"", ""B_G_medic_F"", ""B_ghillie_lsh_F""]; " \n "_spawned_recruits = []; " \n "_spawned_recruits_group = createGroup west;" \n "{ " \n "_recruit = _spawned_recruits_group createUnit [_x, _pos, [], 0, ""CAN_COLLIDE""]; " \n "}forEach _recruit_dummies; " \n "_spawned_recruits_group setFormation ""FILE"";" \n "while {sleep 20; true} do { " \n "{" \n "{ " \n "if (damage _x == 1) then {_x setDamage 0; _x = _spawned_recruits_group createUnit [typeOf _x, _pos, [], 0, ""CAN_COLLIDE""];}; " \n "}forEach units _spawned_recruits_group; " \n "};" \n "};" \n "};";
+								id=14;
+								type="ModuleSpawnAI_F";
+								class CustomAttributes
+								{
+									class Attribute0
+									{
+										property="ModuleSpawnAI_F_Motorized";
+										expression="_this setVariable ['Motorized',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=1;
+											};
+										};
+									};
+									class Attribute1
+									{
+										property="ModuleSpawnAI_F_Armored";
+										expression="_this setVariable ['Armored',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=1;
+											};
+										};
+									};
+									class Attribute2
+									{
+										property="ModuleSpawnAI_F_InfantryInGroup";
+										expression="_this setVariable ['InfantryInGroup',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=6;
+											};
+										};
+									};
+									class Attribute3
+									{
+										property="ModuleSpawnAI_F_ManpowerCap";
+										expression="_this setVariable ['ManpowerCap',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=150;
+											};
+										};
+									};
+									class Attribute4
+									{
+										property="ModuleSpawnAI_F_Expression";
+										expression="_this setVariable ['Expression',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"STRING"
+													};
+												};
+												value="";
+											};
+										};
+									};
+									class Attribute5
+									{
+										property="ModuleSpawnAI_F_Mechanized";
+										expression="_this setVariable ['Mechanized',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=1;
+											};
+										};
+									};
+									class Attribute6
+									{
+										property="ModuleSpawnAI_F_Infantry";
+										expression="_this setVariable ['Infantry',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=5;
+											};
+										};
+									};
+									class Attribute7
+									{
+										property="ModuleSpawnAI_F_Faction";
+										expression="_this setVariable ['Faction',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"STRING"
+													};
+												};
+												value="BLU_F";
+											};
+										};
+									};
+									class Attribute8
+									{
+										property="ModuleSpawnAI_F_SpawnRate";
+										expression="_this setVariable ['SpawnRate',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=8;
+											};
+										};
+									};
+									class Attribute9
+									{
+										property="ModuleSpawnAI_F_BlacklistedGroups";
+										expression="_this setVariable ['BlacklistedGroups',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"STRING"
+													};
+												};
+												value="";
+											};
+										};
+									};
+									class Attribute10
+									{
+										property="ModuleSpawnAI_F_VehiclesInGroup";
+										expression="_this setVariable ['VehiclesInGroup',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=0;
+											};
+										};
+									};
+									class Attribute11
+									{
+										property="ModuleSpawnAI_F_Side";
+										expression="_this setVariable ['Side',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"STRING"
+													};
+												};
+												value="West";
+											};
+										};
+									};
+									nAttributes=12;
+								};
+							};
+							class Item1
+							{
+								dataType="Logic";
+								class PositionInfo
+								{
+									position[]={-176.17871,2.3604374,3.2949219};
+									angles[]={0.012007865,0,6.2805324};
+								};
+								init="_pos = [blubase, 0,30,5] call BIS_fnc_findSafePos;" \n "_pos = getPos this;" \n "_pad = createVehicle [""Land_JumpTarget_F"", _pos];" \n "_tent = createVehicle [""Land_ConnectorTent_01_white_cross_F"", _pos];";
+								id=15;
+								type="ModuleSpawnAIPoint_F";
+								class CustomAttributes
+								{
+									class Attribute0
+									{
+										property="ModuleSpawnAIPoint_F_Motorized";
+										expression="_this setVariable ['Motorized',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=0;
+											};
+										};
+									};
+									class Attribute1
+									{
+										property="ModuleSpawnAIPoint_F_Mechanized";
+										expression="_this setVariable ['Mechanized',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=0;
+											};
+										};
+									};
+									class Attribute2
+									{
+										property="ModuleSpawnAIPoint_F_Infantry";
+										expression="_this setVariable ['Infantry',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=10;
+											};
+										};
+									};
+									class Attribute3
+									{
+										property="ModuleSpawnAIPoint_F_Faction";
+										expression="_this setVariable ['Faction',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"STRING"
+													};
+												};
+												value="BLU_F";
+											};
+										};
+									};
+									class Attribute4
+									{
+										property="ModuleSpawnAIPoint_F_Armored";
+										expression="_this setVariable ['Armored',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=0;
+											};
+										};
+									};
+									nAttributes=5;
+								};
+							};
+							class Item2
+							{
+								dataType="Logic";
+								class PositionInfo
+								{
+									position[]={-134.83984,1.1667404,115.75};
+									angles[]={0.046635196,0,0.0093375118};
+								};
+								init="_pos = [blubase, 0,30,5] call BIS_fnc_findSafePos;" \n "_pos = getPos this;" \n "_pad = createVehicle [""Land_JumpTarget_F"", _pos];" \n "_tent = createVehicle [""Land_ConnectorTent_01_white_cross_F"", _pos];";
+								id=16;
+								type="ModuleSpawnAIPoint_F";
+								class CustomAttributes
+								{
+									class Attribute0
+									{
+										property="ModuleSpawnAIPoint_F_Motorized";
+										expression="_this setVariable ['Motorized',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=0;
+											};
+										};
+									};
+									class Attribute1
+									{
+										property="ModuleSpawnAIPoint_F_Mechanized";
+										expression="_this setVariable ['Mechanized',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=0;
+											};
+										};
+									};
+									class Attribute2
+									{
+										property="ModuleSpawnAIPoint_F_Infantry";
+										expression="_this setVariable ['Infantry',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=10;
+											};
+										};
+									};
+									class Attribute3
+									{
+										property="ModuleSpawnAIPoint_F_Faction";
+										expression="_this setVariable ['Faction',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"STRING"
+													};
+												};
+												value="BLU_F";
+											};
+										};
+									};
+									class Attribute4
+									{
+										property="ModuleSpawnAIPoint_F_Armored";
+										expression="_this setVariable ['Armored',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"SCALAR"
+													};
+												};
+												value=0;
+											};
+										};
+									};
+									nAttributes=5;
+								};
+							};
+							class Item3
+							{
+								dataType="Logic";
+								class PositionInfo
+								{
+									position[]={139.24121,0.41457939,143.125};
+									angles[]={6.2698536,0,6.2711902};
+								};
+								id=18;
+								type="ModuleSpawnAISectorTactic_F";
+							};
+						};
+						id=13;
+						atlOffset=-0.36068344;
+					};
+				};
+				id=12;
+				atlOffset=-0.36068344;
+			};
+			class Item1
+			{
+				dataType="Layer";
+				name="object_script_with_spawn_and_missiontask_destroy";
+				class Entities
+				{
+					items=1;
+					class Item0
+					{
+						dataType="Layer";
+						name="object_script_with_spawn_and_missiontask";
+						class Entities
+						{
+							items=1;
+							class Item0
+							{
+								dataType="Layer";
+								name="object_script_with_spawn_and_missiontask_1";
+								class Entities
+								{
+									items=1;
+									class Item0
+									{
+										dataType="Object";
+										class PositionInfo
+										{
+											position[]={18.291016,4.8220634,45.182617};
+											angles[]={6.272521,0,6.2805333};
+										};
+										side="Empty";
+										flags=4;
+										class Attributes
+										{
+											init="_rt=this;    " \n "_spawntime=3600;      " \n "_rt_taskowners = [west];    " \n "_rt_oppside = west;    " \n "_rt_opppos = false;    " \n "_rt_randpos = false;    " \n "_initpos = getPos this;   " \n "_rt_rand_zones = [""Hill"",""Mount""];    " \n "_rt_killstate = ""FAILED"";    " \n "_rt_dname = [configFile >> ""CfgVehicles"" >> typeOf vehicle _rt] call BIS_fnc_displayName;    " \n "_rt_taskid = str (random 10) + _rt_dname;   " \n "_rt_type = typeOf _rt;    " \n "_rt_captive = false;  " \n "  " \n "_rt_taskowners_defend = _rt_taskowners;  " \n "_rt_taskowners_kill = [independent, west, east] - _rt_taskowners_defend;  " \n "_rt_taskid_defend = str (random 10) + _rt_dname;    " \n "_rt_taskid_kill = str (random 10) + _rt_dname;    " \n "_rt_tasktype_defend = ""Defend"";  " \n "_rt_tasktype_kill = ""Destroy"";  " \n "  " \n "[_rt_taskowners_defend, _rt_taskid_defend, [[_rt_tasktype_defend+"" ""+ _rt_dname+"" owned by ""+str _rt_oppside ], [_rt_tasktype_defend+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype_defend] call BIS_fnc_taskCreate;     " \n "[_rt_taskowners_kill, _rt_taskid_kill, [[_rt_tasktype_kill+"" ""+ _rt_dname+"" owned by ""+str _rt_oppside ], [_rt_tasktype_kill+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype_kill] call BIS_fnc_taskCreate;     " \n "    " \n "[_rt, _initpos, _spawntime, _rt_tasktype_defend,_rt_tasktype_kill, _rt_taskowners_defend, _rt_oppside, _rt_opppos, _rt_randpos, _rt_rand_zones, _rt_killstate,_rt_dname, _rt_taskid_defend, _rt_taskid_kill, _rt_type] spawn {    " \n " params [""_rt"", ""_initpos"", ""_spawntime"", ""_rt_tasktype_defend"",""_rt_tasktype_kill"", ""_rt_taskowners_defend"", ""_rt_oppside"", ""_rt_opppos"", ""_rt_randpos"", ""_rt_rand_zones"", ""_rt_killstate"", ""_rt_dname"", ""_rt_taskid_defend"" ,""_rt_taskid_kill"", ""_rt_type""];    " \n " while {true} do {    " \n "   waitUntil {sleep 5; damage _rt == 1};    " \n "   [_rt_taskid_defend,""FAILED""] call BIS_fnc_taskSetState;     " \n "   [_rt_taskid_kill,""SUCCEEDED""] call BIS_fnc_taskSetState;     " \n "   sleep _spawntime; " \n "   if (_spawntime>0) then {    " \n "     _rt setDamage 0;     " \n "     [_rt_taskowners_defend, _rt_taskid_defend, [[_rt_tasktype_defend+"" ""+_rt_dname+"" owned by ""+str _rt_oppside], [_rt_tasktype_defend+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype_defend] call BIS_fnc_taskCreate;    " \n "     [[independent, west, east] - _rt_taskowners_defend, _rt_taskid_kill, [[_rt_tasktype_kill+"" ""+_rt_dname+"" owned by ""+str _rt_oppside], [_rt_tasktype_kill+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype_kill] call BIS_fnc_taskCreate;    " \n "    };    " \n " };    " \n " };    " \n "   ";
+										};
+										id=11;
+										type="Land_Cargo_HQ_V1_F";
+									};
+								};
+								id=10;
+								atlOffset=112.5439;
+							};
+						};
+						id=9;
+						atlOffset=112.5439;
+					};
+				};
+				id=8;
+				atlOffset=112.5439;
+			};
+			class Item2
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-138.19434,2.1266537,20.507813};
+					angles[]={0.011990411,0,0.0079936078};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=1333;
+				type="LocationRespawnPoint_F";
+			};
+			class Item3
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={53.400391,0.016931534,-185.82715};
+					angles[]={-0,0,0.0026520467};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_tanks=[""B_MBT_01_cannon_F"", ""B_MBT_01_arty_F"", ""B_MBT_01_mlrs_F"", ""B_T_MBT_01_arty_F"", ""B_T_MBT_01_mlrs_F"", ""B_T_MBT_01_cannon_F"", ""B_T_MBT_01_TUSK_F"", ""B_MBT_01_TUSK_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_tanks call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=1335;
+				type="LocationRespawnPoint_F";
+			};
+			class Item4
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-113.72754,2.2015934,8.6669922};
+					angles[]={0.0080009829,0,0.019996032};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3332;
+				type="LocationRespawnPoint_F";
+				atlOffset=-1.9073486e-006;
+			};
+			class Item5
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-98.946289,2.3966122,-3.7246094};
+					angles[]={6.2805333,0,0.0080009829};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3338;
+				type="LocationRespawnPoint_F";
+			};
+			class Item6
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-80.257813,2.5179634,10.933594};
+					angles[]={0.0080009829,0,6.2778587};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3339;
+				type="LocationRespawnPoint_F";
+			};
+			class Item7
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-101.98242,1.8793354,25.030273};
+					angles[]={0.054611389,0,0.0053265258};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3340;
+				type="LocationRespawnPoint_F";
+			};
+			class Item8
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-117.51172,1.7706051,38.520508};
+					angles[]={0.04131107,0,6.2551923};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3341;
+				type="LocationRespawnPoint_F";
+			};
+			class Item9
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-86.308594,1.7824001,47.397461};
+					angles[]={6.2698536,0,0.041309625};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3342;
+				type="LocationRespawnPoint_F";
+			};
+			class Item10
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-79.62793,2.2795982,32.152344};
+					angles[]={0.015998369,0,0.0013372133};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3343;
+				type="LocationRespawnPoint_F";
+			};
+			class Item11
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-64.90625,2.4296112,17.625977};
+					angles[]={0.0093286335,0,6.2738566};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3344;
+				type="LocationRespawnPoint_F";
+			};
+			class Item12
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={131.52539,0.10208893,41.664063};
+					angles[]={-0,0.92381692,6.2791886};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_planes=[""B_Plane_CAS_01_F"", ""B_Plane_CAS_01_dynamicLoadout_F"", ""B_Plane_Fighter_01_F"", ""B_Plane_Fighter_01_Stealth_F"", ""B_Plane_CAS_01_Cluster_F"", ""B_Plane_Fighter_01_Cluster_F""];" \n "_pos = [blubase, 20, 300] call BIS_fnc_findSafePos;" \n "_vehType = blufor_planes call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,35,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3346;
+				type="LocationRespawnPoint_F";
+			};
+			class Item13
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={151.42285,0.06999588,21.699219};
+					angles[]={-0,0.7054041,0};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_planes=[""B_Plane_CAS_01_F"", ""B_Plane_CAS_01_dynamicLoadout_F"", ""B_Plane_Fighter_01_F"", ""B_Plane_Fighter_01_Stealth_F"", ""B_Plane_CAS_01_Cluster_F"", ""B_Plane_Fighter_01_Cluster_F""];" \n "_pos = [blubase, 20, 300] call BIS_fnc_findSafePos;" \n "_vehType = blufor_planes call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,35,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3347;
+				type="LocationRespawnPoint_F";
+			};
+			class Item14
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={231.04492,0.26905823,-66.143555};
+					angles[]={6.2818937,0.66973251,0};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_planes=[""B_Plane_CAS_01_F"", ""B_Plane_CAS_01_dynamicLoadout_F"", ""B_Plane_Fighter_01_F"", ""B_Plane_Fighter_01_Stealth_F"", ""B_Plane_CAS_01_Cluster_F"", ""B_Plane_Fighter_01_Cluster_F""];" \n "_pos = [blubase, 20, 300] call BIS_fnc_findSafePos;" \n "_vehType = blufor_planes call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,35,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3348;
+				type="LocationRespawnPoint_F";
+			};
+			class Item15
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-120.06055,0.20280838,-236.36523};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_helis = [""B_Heli_Light_01_F"", ""B_Heli_Light_01_armed_F"", ""B_Heli_Light_01_dynamicLoadout_F"", ""B_Heli_Light_01_stripped_F"", ""B_Heli_Attack_01_F"", ""B_Heli_Attack_01_dynamicLoadout_F"", ""B_Heli_Transport_01_F"", ""B_Heli_Transport_01_camo_F"", ""B_Heli_Transport_03_F"", ""B_Heli_Transport_03_unarmed_F"", ""B_Heli_Transport_03_black_F"", ""B_Heli_Transport_03_unarmed_green_F""];" \n "_pos = [blubase, 20, 200] call BIS_fnc_findSafePos;" \n "_vehType = blufor_helis call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,35,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadSquare_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3350;
+				type="LocationRespawnPoint_F";
+			};
+			class Item16
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-82.981445,0.15442276,-193.73047};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_helis = [""B_Heli_Light_01_F"", ""B_Heli_Light_01_armed_F"", ""B_Heli_Light_01_dynamicLoadout_F"", ""B_Heli_Light_01_stripped_F"", ""B_Heli_Attack_01_F"", ""B_Heli_Attack_01_dynamicLoadout_F"", ""B_Heli_Transport_01_F"", ""B_Heli_Transport_01_camo_F"", ""B_Heli_Transport_03_F"", ""B_Heli_Transport_03_unarmed_F"", ""B_Heli_Transport_03_black_F"", ""B_Heli_Transport_03_unarmed_green_F""];" \n "_pos = [blubase, 20, 200] call BIS_fnc_findSafePos;" \n "_vehType = blufor_helis call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,35,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadSquare_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3351;
+				type="LocationRespawnPoint_F";
+			};
+			class Item17
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-39.757813,0.099994659,-158.40039};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_helis = [""B_Heli_Light_01_F"", ""B_Heli_Light_01_armed_F"", ""B_Heli_Light_01_dynamicLoadout_F"", ""B_Heli_Light_01_stripped_F"", ""B_Heli_Attack_01_F"", ""B_Heli_Attack_01_dynamicLoadout_F"", ""B_Heli_Transport_01_F"", ""B_Heli_Transport_01_camo_F"", ""B_Heli_Transport_03_F"", ""B_Heli_Transport_03_unarmed_F"", ""B_Heli_Transport_03_black_F"", ""B_Heli_Transport_03_unarmed_green_F""];" \n "_pos = [blubase, 20, 200] call BIS_fnc_findSafePos;" \n "_vehType = blufor_helis call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,35,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadSquare_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3352;
+				type="LocationRespawnPoint_F";
+			};
+			class Item18
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-10.788086,0.079996109,-120.42383};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_helis = [""B_Heli_Light_01_F"", ""B_Heli_Light_01_armed_F"", ""B_Heli_Light_01_dynamicLoadout_F"", ""B_Heli_Light_01_stripped_F"", ""B_Heli_Attack_01_F"", ""B_Heli_Attack_01_dynamicLoadout_F"", ""B_Heli_Transport_01_F"", ""B_Heli_Transport_01_camo_F"", ""B_Heli_Transport_03_F"", ""B_Heli_Transport_03_unarmed_F"", ""B_Heli_Transport_03_black_F"", ""B_Heli_Transport_03_unarmed_green_F""];" \n "_pos = [blubase, 20, 200] call BIS_fnc_findSafePos;" \n "_vehType = blufor_helis call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,35,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadSquare_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3353;
+				type="LocationRespawnPoint_F";
+			};
+			class Item19
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={197.8291,0.26941299,-28.37793};
+					angles[]={6.2818937,0.89433873,0};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_planes=[""B_Plane_CAS_01_F"", ""B_Plane_CAS_01_dynamicLoadout_F"", ""B_Plane_Fighter_01_F"", ""B_Plane_Fighter_01_Stealth_F"", ""B_Plane_CAS_01_Cluster_F"", ""B_Plane_Fighter_01_Cluster_F""];" \n "_pos = [blubase, 20, 300] call BIS_fnc_findSafePos;" \n "_vehType = blufor_planes call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,35,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3354;
+				type="LocationRespawnPoint_F";
+			};
+			class Item20
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={210.08008,0.24266815,-46.467773};
+					angles[]={6.2818484,0.87371504,0.0013372133};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_planes=[""B_Plane_CAS_01_F"", ""B_Plane_CAS_01_dynamicLoadout_F"", ""B_Plane_Fighter_01_F"", ""B_Plane_Fighter_01_Stealth_F"", ""B_Plane_CAS_01_Cluster_F"", ""B_Plane_Fighter_01_Cluster_F""];" \n "_pos = [blubase, 20, 300] call BIS_fnc_findSafePos;" \n "_vehType = blufor_planes call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,35,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3355;
+				type="LocationRespawnPoint_F";
+			};
+			class Item21
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-127.40918,0.039997101,-392.90918};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_trucks = [""B_Truck_01_mover_F"", ""B_Truck_01_box_F"", ""B_Truck_01_Repair_F"", ""B_Truck_01_ammo_F"", ""B_Truck_01_fuel_F"", ""B_Truck_01_medical_F"", ""B_T_Truck_01_transport_F"", ""B_T_Truck_01_covered_F"", ""B_T_Truck_01_mover_F"", ""B_T_Truck_01_box_F"", ""B_T_Truck_01_Repair_F"", ""B_T_Truck_01_ammo_F"", ""B_T_Truck_01_fuel_F"", ""B_T_Truck_01_medical_F"", ""B_Truck_01_flatbed_F"", ""B_T_Truck_01_flatbed_F"", ""B_Truck_01_cargo_F"", ""B_T_Truck_01_cargo_F""];" \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_trucks call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3373;
+				type="LocationRespawnPoint_F";
+				atlOffset=1.9073486e-006;
+			};
+			class Item22
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-95.463867,0.0093688965,-364.9707};
+					angles[]={0.0012918708,0,0};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_trucks = [""B_Truck_01_mover_F"", ""B_Truck_01_box_F"", ""B_Truck_01_Repair_F"", ""B_Truck_01_ammo_F"", ""B_Truck_01_fuel_F"", ""B_Truck_01_medical_F"", ""B_T_Truck_01_transport_F"", ""B_T_Truck_01_covered_F"", ""B_T_Truck_01_mover_F"", ""B_T_Truck_01_box_F"", ""B_T_Truck_01_Repair_F"", ""B_T_Truck_01_ammo_F"", ""B_T_Truck_01_fuel_F"", ""B_T_Truck_01_medical_F"", ""B_Truck_01_flatbed_F"", ""B_T_Truck_01_flatbed_F"", ""B_Truck_01_cargo_F"", ""B_T_Truck_01_cargo_F""];" \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_trucks call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3374;
+				type="LocationRespawnPoint_F";
+			};
+			class Item23
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-65.864258,0,-336.95313};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_trucks = [""B_Truck_01_mover_F"", ""B_Truck_01_box_F"", ""B_Truck_01_Repair_F"", ""B_Truck_01_ammo_F"", ""B_Truck_01_fuel_F"", ""B_Truck_01_medical_F"", ""B_T_Truck_01_transport_F"", ""B_T_Truck_01_covered_F"", ""B_T_Truck_01_mover_F"", ""B_T_Truck_01_box_F"", ""B_T_Truck_01_Repair_F"", ""B_T_Truck_01_ammo_F"", ""B_T_Truck_01_fuel_F"", ""B_T_Truck_01_medical_F"", ""B_Truck_01_flatbed_F"", ""B_T_Truck_01_flatbed_F"", ""B_Truck_01_cargo_F"", ""B_T_Truck_01_cargo_F""];" \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_trucks call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3375;
+				type="LocationRespawnPoint_F";
+				atlOffset=3.8146973e-006;
+			};
+			class Item24
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-29.526367,0.04391098,-299.43555};
+					angles[]={6.2805333,0,0.0013372133};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_trucks = [""B_Truck_01_mover_F"", ""B_Truck_01_box_F"", ""B_Truck_01_Repair_F"", ""B_Truck_01_ammo_F"", ""B_Truck_01_fuel_F"", ""B_Truck_01_medical_F"", ""B_T_Truck_01_transport_F"", ""B_T_Truck_01_covered_F"", ""B_T_Truck_01_mover_F"", ""B_T_Truck_01_box_F"", ""B_T_Truck_01_Repair_F"", ""B_T_Truck_01_ammo_F"", ""B_T_Truck_01_fuel_F"", ""B_T_Truck_01_medical_F"", ""B_Truck_01_flatbed_F"", ""B_T_Truck_01_flatbed_F"", ""B_Truck_01_cargo_F"", ""B_T_Truck_01_cargo_F""];" \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_trucks call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3376;
+				type="LocationRespawnPoint_F";
+			};
+			class Item25
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-9.9228516,0.079996109,-252.58301};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_tanks=[""B_MBT_01_cannon_F"", ""B_MBT_01_arty_F"", ""B_MBT_01_mlrs_F"", ""B_T_MBT_01_arty_F"", ""B_T_MBT_01_mlrs_F"", ""B_T_MBT_01_cannon_F"", ""B_T_MBT_01_TUSK_F"", ""B_MBT_01_TUSK_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_tanks call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3379;
+				type="LocationRespawnPoint_F";
+			};
+			class Item26
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={13.103516,0.079996109,-270.70508};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_tanks=[""B_MBT_01_cannon_F"", ""B_MBT_01_arty_F"", ""B_MBT_01_mlrs_F"", ""B_T_MBT_01_arty_F"", ""B_T_MBT_01_mlrs_F"", ""B_T_MBT_01_cannon_F"", ""B_T_MBT_01_TUSK_F"", ""B_MBT_01_TUSK_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_tanks call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3380;
+				type="LocationRespawnPoint_F";
+			};
+			class Item27
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={15.328125,0.037771225,-219.55273};
+					angles[]={0.0013372133,0,6.2818484};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_tanks=[""B_MBT_01_cannon_F"", ""B_MBT_01_arty_F"", ""B_MBT_01_mlrs_F"", ""B_T_MBT_01_arty_F"", ""B_T_MBT_01_mlrs_F"", ""B_T_MBT_01_cannon_F"", ""B_T_MBT_01_TUSK_F"", ""B_MBT_01_TUSK_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_tanks call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3381;
+				type="LocationRespawnPoint_F";
+			};
+			class Item28
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={74.632813,0.023536682,-209.15527};
+					angles[]={6.2805333,0,0.0013372133};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_tanks=[""B_MBT_01_cannon_F"", ""B_MBT_01_arty_F"", ""B_MBT_01_mlrs_F"", ""B_T_MBT_01_arty_F"", ""B_T_MBT_01_mlrs_F"", ""B_T_MBT_01_cannon_F"", ""B_T_MBT_01_TUSK_F"", ""B_MBT_01_TUSK_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_tanks call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3382;
+				type="LocationRespawnPoint_F";
+			};
+			class Item29
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={41.643555,0.044370651,-245.41211};
+					angles[]={0.0013372133,0,6.2805333};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_tanks=[""B_MBT_01_cannon_F"", ""B_MBT_01_arty_F"", ""B_MBT_01_mlrs_F"", ""B_T_MBT_01_arty_F"", ""B_T_MBT_01_mlrs_F"", ""B_T_MBT_01_cannon_F"", ""B_T_MBT_01_TUSK_F"", ""B_MBT_01_TUSK_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_tanks call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3383;
+				type="LocationRespawnPoint_F";
+			};
+			class Item30
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-62.012695,1.8854218,50.328125};
+					angles[]={6.2698536,0,0.041309625};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3386;
+				type="LocationRespawnPoint_F";
+			};
+			class Item31
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-55.332031,2.1017876,35.083008};
+					angles[]={0.015998369,0,0.0013372133};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3387;
+				type="LocationRespawnPoint_F";
+			};
+			class Item32
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={24.398438,1.1164742,93.582031};
+					angles[]={6.2805333,0,6.2671871};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3388;
+				type="LocationRespawnPoint_F";
+			};
+			class Item33
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-9.6279297,1.0995407,103.92383};
+					angles[]={0.017332481,0,0.034652505};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3389;
+				type="LocationRespawnPoint_F";
+			};
+			class Item34
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-166.14648,1.5671024,86.728516};
+					angles[]={0.0012918708,0,0};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3390;
+				type="LocationRespawnPoint_F";
+			};
+			class Item35
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-75.629883,0.96018219,118.26465};
+					angles[]={6.2711854,0,0.0053265258};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3391;
+				type="LocationRespawnPoint_F";
+			};
+			class Item36
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-188.47656,1.6039848,71.813477};
+					angles[]={0.0026520467,0,0};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3392;
+				type="LocationRespawnPoint_F";
+			};
+			class Item37
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-46.121094,1.238451,-37.943359};
+					angles[]={-0,0,6.2805333};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3393;
+				type="LocationRespawnPoint_F";
+			};
+			class Item38
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-127.69238,1.4338474,90.722656};
+					angles[]={0.0066682254,0,6.2765174};
+				};
+				init="_this = this;" \n "[_this] spawn {" \n "params [""_this""];" \n "_spawntime = 20;" \n "blufor_cars = [""B_MRAP_01_F"", ""B_MRAP_01_gmg_F"", ""B_MRAP_01_hmg_F"", ""B_Quadbike_01_F"", ""B_T_LSV_01_armed_F"", ""B_T_LSV_01_AT_F"", ""B_T_LSV_01_armed_CTRG_F"", ""B_T_LSV_01_unarmed_F"", ""B_T_LSV_01_unarmed_CTRG_F"", ""B_LSV_01_armed_F"", ""B_LSV_01_AT_F"", ""B_LSV_01_unarmed_F"", ""B_CTRG_LSV_01_light_F"", ""B_LSV_01_armed_black_F"", ""B_LSV_01_armed_olive_F"", ""B_LSV_01_armed_sand_F"", ""B_LSV_01_unarmed_black_F"", ""B_LSV_01_unarmed_olive_F"", ""B_LSV_01_unarmed_sand_F"", ""B_T_LSV_01_armed_black_F"", ""B_T_LSV_01_armed_olive_F"", ""B_T_LSV_01_armed_sand_F"", ""B_T_LSV_01_unarmed_black_F"", ""B_T_LSV_01_unarmed_olive_F"", ""B_T_LSV_01_unarmed_sand_F"", ""B_T_MRAP_01_F"", ""B_T_MRAP_01_gmg_F"", ""B_T_MRAP_01_hmg_F""]; " \n "_pos = [blubase, 20, 100] call BIS_fnc_findSafePos;" \n "_vehType = blufor_cars call BIS_fnc_selectRandom;" \n "_apos = _pos findEmptyPosition [0,30,_vehType];" \n "_veh = createVehicle [_vehType, getPos _this];" \n "_pad = createVehicle [""Land_HelipadRescue_F"", getPos _veh];" \n "_mark = createMarker [(""marker_""+ str random 10), getPos _pad]; _mark setMarkerType ""respawn_air"";" \n "while {true} do {" \n "waitUntil {sleep _spawntime; damage _veh == 1};" \n "sleep 5;" \n "_pos = [getMarkerPos _mark, 0, 20] call BIS_fnc_findSafePos;" \n "_veh = createVehicle [_vehType,_pos, [_mark]];" \n "}" \n "}";
+				id=3394;
+				type="LocationRespawnPoint_F";
+			};
+		};
+		id=29;
+		atlOffset=0.50361061;
+	};
+	class Item2
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=4;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-132.37402,0.84299469,122.15137};
+					angles[]={0,2.7912352,0};
+				};
+				side="West";
+				flags=7;
+				class Attributes
+				{
+					rank="SERGEANT";
+					isPlayable=1;
+				};
+				id=31;
+				type="B_Soldier_TL_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male07ENG";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.94999999;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-138.78613,0.72107315,125.13184};
+					angles[]={0,2.7912428,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+					isPlayable=1;
+				};
+				id=32;
+				type="B_soldier_AR_F";
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-129.39355,0.63474846,128.56348};
+					angles[]={0,2.7912428,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=33;
+				type="B_Soldier_GL_F";
+				atlOffset=1.9073486e-006;
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-145.19922,0.64500809,128.11133};
+					angles[]={0,2.7912428,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=34;
+				type="B_soldier_LAT_F";
+				atlOffset=-1.9073486e-006;
+			};
+		};
+		class Attributes
+		{
+		};
+		id=30;
+	};
+	class Item3
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=4;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-4.7451172,1.5013084,84.602539};
+					angles[]={0,3.1134055,0};
+				};
+				side="West";
+				flags=7;
+				class Attributes
+				{
+					rank="LIEUTENANT";
+					isPlayable=1;
+				};
+				id=36;
+				type="B_Soldier_TL_F";
+				atlOffset=-1.9073486e-006;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male06ENG";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.98000002;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-9.8837891,1.5236397,89.460938};
+					angles[]={0,3.1134055,0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+					isPlayable=1;
+				};
+				id=37;
+				type="B_soldier_AA_F";
+				atlOffset=1.9073486e-006;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male08ENG";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.03;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.11230469,1.5732555,89.742188};
+					angles[]={0,3.1134055,0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=38;
+				type="B_soldier_AA_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male03ENG";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.97000003;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-15.023438,1.4363136,94.317383};
+					angles[]={0,3.1134055,0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=39;
+				type="B_soldier_AAA_F";
+				atlOffset=1.9073486e-006;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male09ENG";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.94999999;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+		};
+		class Attributes
+		{
+		};
+		id=35;
+		atlOffset=-1.9073486e-006;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="groupID";
+				expression="_this setGroupID [_value];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Alpha 1-3";
+					};
+				};
+			};
+			nAttributes=1;
+		};
+	};
+	class Item4
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=7;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-62.719727,0.91886711,101.78125};
+					angles[]={0,2.5894053,0};
+				};
+				side="West";
+				flags=7;
+				class Attributes
+				{
+					rank="CAPTAIN";
+					isPlayable=1;
+				};
+				id=42;
+				type="B_Soldier_SL_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male08ENG";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.98000002;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-69.599609,0.86256599,103.41504};
+					angles[]={0,2.5894115,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=43;
+				type="B_Soldier_F";
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-61.085938,0.95307541,108.66113};
+					angles[]={0,2.5894115,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+					isPlayable=1;
+				};
+				id=44;
+				type="B_soldier_LAT_F";
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-76.479492,0.91160583,105.0498};
+					angles[]={0,2.5894115,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=45;
+				type="B_soldier_M_F";
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-83.358398,1.0585442,106.68359};
+					angles[]={0,2.5894115,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+					isPlayable=1;
+				};
+				id=47;
+				type="B_soldier_AR_F";
+			};
+			class Item5
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-57.817383,1.0193005,122.41992};
+					angles[]={0,2.5894115,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=48;
+				type="B_Soldier_A_F";
+				atlOffset=1.9073486e-006;
+			};
+			class Item6
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-90.238281,1.0989208,108.31836};
+					angles[]={0,2.5894115,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=49;
+				type="B_medic_F";
+			};
+		};
+		class Attributes
+		{
+		};
+		id=41;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="groupID";
+				expression="_this setGroupID [_value];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Alpha 1-2";
+					};
+				};
+			};
+			nAttributes=1;
+		};
+	};
+	class Item5
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=2;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-154.71191,1.5807228,76.164063};
+					angles[]={0,1.9357448,0};
+				};
+				side="West";
+				flags=7;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="SERGEANT";
+					isPlayable=1;
+				};
+				id=51;
+				type="B_recon_M_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male03ENG";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.03;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-161.16797,1.5892715,73.27832};
+					angles[]={0,1.9357492,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=52;
+				type="B_recon_F";
+			};
+		};
+		class Attributes
+		{
+		};
+		id=50;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="groupID";
+				expression="_this setGroupID [_value];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Alpha 1-7";
+					};
+				};
+			};
+			nAttributes=1;
+		};
+	};
+	class Item6
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=4;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-176.77539,1.625164,61.176758};
+					angles[]={0,2.0660858,0};
+				};
+				side="West";
+				flags=7;
+				class Attributes
+				{
+					rank="SERGEANT";
+					isPlayable=1;
+				};
+				id=54;
+				type="B_Soldier_TL_F";
+				atlOffset=1.9073486e-006;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male08ENG";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.01;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-183.55078,1.6450615,59.154297};
+					angles[]={0,2.0660784,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+					isPlayable=1;
+				};
+				id=55;
+				type="B_soldier_AT_F";
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-178.79785,1.6069832,67.952148};
+					angles[]={0,2.0660784,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=56;
+				type="B_soldier_AT_F";
+				atlOffset=1.9073486e-006;
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-190.32617,1.6677475,57.130859};
+					angles[]={0,2.0660784,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=57;
+				type="B_soldier_AAT_F";
+			};
+		};
+		class Attributes
+		{
+		};
+		id=53;
+		atlOffset=1.9073486e-006;
+	};
+	class Item7
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=7;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-1.5351563,0.94143295,17.40918};
+					angles[]={0,0.70467669,0};
+				};
+				side="West";
+				flags=7;
+				class Attributes
+				{
+					rank="MAJOR";
+					isPlayable=1;
+				};
+				id=59;
+				type="B_Soldier_SL_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male03ENG";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.98000002;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-8.5830078,0.94596863,16.838867};
+					angles[]={0,0.7046836,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+					isPlayable=1;
+				};
+				id=61;
+				type="B_Soldier_GL_F";
+				atlOffset=1.9073486e-006;
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-0.39453125,0.9446907,3.3115234};
+					angles[]={0,0.7046836,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					rank="SERGEANT";
+					isPlayable=1;
+				};
+				id=62;
+				type="B_soldier_M_F";
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-15.630859,0.95500755,16.268555};
+					angles[]={0,0.7046836,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+					isPlayable=1;
+				};
+				id=63;
+				type="B_soldier_AT_F";
+				atlOffset=1.9073486e-006;
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.17480469,0.92893028,-3.7353516};
+					angles[]={0,0.7046836,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=64;
+				type="B_soldier_AAT_F";
+			};
+			class Item5
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-22.679688,1.0108566,15.698242};
+					angles[]={0,0.7046836,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=65;
+				type="B_Soldier_A_F";
+				atlOffset=3.8146973e-006;
+			};
+			class Item6
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.74511719,0.63886452,-10.786133};
+					angles[]={0,0.7046836,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=66;
+				type="B_medic_F";
+				atlOffset=-8.7738037e-005;
+			};
+		};
+		class Attributes
+		{
+		};
+		id=58;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="groupID";
+				expression="_this setGroupID [_value];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Alpha 1-1";
+					};
+				};
+			};
+			nAttributes=1;
+		};
+	};
+	class Item8
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=4;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={46.257813,1.0513496,82.086914};
+					angles[]={0,2.9502695,0};
+				};
+				side="West";
+				flags=7;
+				class Attributes
+				{
+					rank="SERGEANT";
+					isPlayable=1;
+				};
+				id=73;
+				type="B_Soldier_TL_F";
+				atlOffset=1.9073486e-006;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male09ENG";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.95999998;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={40.397461,1.0652618,86.044922};
+					angles[]={0,2.9502635,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+					isPlayable=1;
+				};
+				id=74;
+				type="B_engineer_F";
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={50.21582,1.0703354,87.947266};
+					angles[]={0,2.9502635,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=75;
+				type="B_engineer_F";
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={35.489258,1.06814,85.09375};
+					angles[]={0,2.9502635,-0};
+				};
+				side="West";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+					isPlayable=1;
+				};
+				id=76;
+				type="B_soldier_repair_F";
+			};
+		};
+		class Attributes
+		{
+		};
+		id=72;
+		atlOffset=1.9073486e-006;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="groupID";
+				expression="_this setGroupID [_value];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Alpha 1-4";
+					};
+				};
+			};
+			nAttributes=1;
+		};
+	};
+	class Item9
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={83.1875,0.13642883,-16.978516};
+			angles[]={6.2818484,0,6.2818484};
+		};
+		id=77;
+		type="SupportProvider_Virtual_Artillery";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="SupportProvider_Virtual_Artillery_BIS_SUPP_filter";
+				expression="_this setVariable ['BIS_SUPP_filter',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Side";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="SupportProvider_Virtual_Artillery_BIS_SUPP_vehicleInit";
+				expression="_this setVariable ['BIS_SUPP_vehicleInit',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="SupportProvider_Virtual_Artillery_BIS_SUPP_vehicles";
+				expression="_this setVariable ['BIS_SUPP_vehicles',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="[]";
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="SupportProvider_Virtual_Artillery_BIS_SUPP_cooldown";
+				expression="_this setVariable ['BIS_SUPP_cooldown',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=0;
+					};
+				};
+			};
+			nAttributes=4;
+		};
+	};
+	class Item10
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={91.19043,0.12786674,-17.490234};
+			angles[]={6.2805333,0,0};
+		};
+		id=78;
+		type="SupportProvider_Virtual_CAS_Bombing";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="SupportProvider_Virtual_CAS_Bombing_BIS_SUPP_cooldown";
+				expression="_this setVariable ['BIS_SUPP_cooldown',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=0;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="SupportProvider_Virtual_CAS_Bombing_BIS_SUPP_vehicleInit";
+				expression="_this setVariable ['BIS_SUPP_vehicleInit',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="SupportProvider_Virtual_CAS_Bombing_BIS_SUPP_vehicles";
+				expression="_this setVariable ['BIS_SUPP_vehicles',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="[]";
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="SupportProvider_Virtual_CAS_Bombing_BIS_SUPP_filter";
+				expression="_this setVariable ['BIS_SUPP_filter',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Side";
+					};
+				};
+			};
+			nAttributes=4;
+		};
+	};
+	class Item11
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={88.458984,0.12477875,-22.070313};
+			angles[]={-0,0,6.2818937};
+		};
+		id=79;
+		type="SupportProvider_Virtual_CAS_Heli";
+		atlOffset=-1.9073486e-006;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="SupportProvider_Virtual_CAS_Heli_BIS_SUPP_cooldown";
+				expression="_this setVariable ['BIS_SUPP_cooldown',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=0;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="SupportProvider_Virtual_CAS_Heli_BIS_SUPP_vehicleInit";
+				expression="_this setVariable ['BIS_SUPP_vehicleInit',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="SupportProvider_Virtual_CAS_Heli_BIS_SUPP_vehicles";
+				expression="_this setVariable ['BIS_SUPP_vehicles',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="[]";
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="SupportProvider_Virtual_CAS_Heli_BIS_SUPP_filter";
+				expression="_this setVariable ['BIS_SUPP_filter',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Side";
+					};
+				};
+			};
+			nAttributes=4;
+		};
+	};
+	class Item12
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={83.217773,0.12624359,-24.585938};
+			angles[]={6.2818484,0,6.2818484};
+		};
+		id=80;
+		type="SupportProvider_Virtual_Transport";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="SupportProvider_Virtual_Transport_BIS_SUPP_filter";
+				expression="_this setVariable ['BIS_SUPP_filter',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Side";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="SupportProvider_Virtual_Transport_BIS_SUPP_vehicles";
+				expression="_this setVariable ['BIS_SUPP_vehicles',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="[]";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="SupportProvider_Virtual_Transport_BIS_SUPP_vehicleInit";
+				expression="_this setVariable ['BIS_SUPP_vehicleInit',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="";
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="SupportProvider_Virtual_Transport_BIS_SUPP_cooldown";
+				expression="_this setVariable ['BIS_SUPP_cooldown',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=0;
+					};
+				};
+			};
+			nAttributes=4;
+		};
+	};
+	class Item13
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={94.114258,0.11818886,-21.800781};
+			angles[]={6.2818937,0,0};
+		};
+		id=81;
+		type="SupportProvider_Virtual_Drop";
+		atlOffset=5.7220459e-006;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="SupportProvider_Virtual_Drop_BIS_SUPP_cooldown";
+				expression="_this setVariable ['BIS_SUPP_cooldown',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=0;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="SupportProvider_Virtual_Drop_BIS_SUPP_vehicleInit";
+				expression="_this setVariable ['BIS_SUPP_vehicleInit',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="SupportProvider_Virtual_Drop_BIS_SUPP_vehicles";
+				expression="_this setVariable ['BIS_SUPP_vehicles',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="[]";
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="SupportProvider_Virtual_Drop_BIS_SUPP_filter";
+				expression="_this setVariable ['BIS_SUPP_filter',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Side";
+					};
+				};
+			};
+			class Attribute4
+			{
+				property="SupportProvider_Virtual_Drop_BIS_SUPP_crateInit";
+				expression="_this setVariable ['BIS_SUPP_crateInit',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="";
+					};
+				};
+			};
+			nAttributes=5;
+		};
+	};
+	class Item14
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={15.46582,1.7176685,16.186523};
+			angles[]={6.2805324,5.953824,6.2658539};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+			init="[""AmmoboxInit"", [this,true]] call BIS_fnc_arsenal;" \n "_pos = [blubase, 0, 30,4] call BIS_fnc_findSafePos;" \n "_pos = _pos findEmptyPosition [0,15,typeOf this];" \n "_pos = getPos this;" \n "this setPos _pos;" \n "_mark = createMarker [(""marker_""+ str random 10), getPos this]; _mark setMarkerType ""b_maint"";" \n "_net = createVehicle [""CamoNet_BLUFOR_F"",getPos this];" \n "this allowDamage false;" \n "_net allowdamage false;";
+		};
+		id=322;
+		type="B_supplyCrate_F";
+		atlOffset=-1.9073486e-006;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ammoBox";
+				expression="[_this,_value] call bis_fnc_initAmmoBox;";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""130Rnd_338_Mag""],[]],[[""acc_flashlight"",""bipod_01_F_blk""],[]],[[""B_Kitbag_mcamo""],[]]],true]";
+					};
+				};
+			};
+			nAttributes=1;
+		};
+	};
+	class Item15
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={45.47168,0.94213295,62.458984};
+			angles[]={6.2778587,0,0};
+		};
+		name="bis_hqWest";
+		id=714;
+		type="ModuleHQ_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleHQ_F_Identity";
+				expression="_this setVariable ['Identity',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=0;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleHQ_F_Callsign";
+				expression="_this setVariable ['Callsign',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="STR_A3_CfgHQIdentities_BLU_0";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleHQ_F_Side";
+				expression="_this setVariable ['Side',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="1";
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="ModuleHQ_F_CallsignCustom";
+				expression="_this setVariable ['CallsignCustom',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="";
+					};
+				};
+			};
+			nAttributes=4;
+		};
+	};
+	class Item16
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={14.553711,1.0859127,63.055664};
+			angles[]={6.2738566,0,6.272521};
+		};
+		init="this setPos (getPos blubase);";
+		id=718;
+		type="Site_BLUFOR";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="Site_BLUFOR_fastTravel";
+				expression="_this setVariable ['fastTravel',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Disabled";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="Site_BLUFOR_conditionOfPresence";
+				expression="_this setVariable ['conditionOfPresence',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="TRUE";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="Site_BLUFOR_faction";
+				expression="_this setVariable ['faction',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Blue";
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="Site_BLUFOR_axisA";
+				expression="_this setVariable ['axisA',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="400";
+					};
+				};
+			};
+			class Attribute4
+			{
+				property="Site_BLUFOR_description";
+				expression="_this setVariable ['description',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="";
+					};
+				};
+			};
+			class Attribute5
+			{
+				property="Site_BLUFOR_shape";
+				expression="_this setVariable ['shape',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="ellipse";
+					};
+				};
+			};
+			class Attribute6
+			{
+				property="Site_BLUFOR_axisB";
+				expression="_this setVariable ['axisB',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="400";
+					};
+				};
+			};
+			class Attribute7
+			{
+				property="Site_BLUFOR_siteType";
+				expression="_this setVariable ['siteType',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Military_Base";
+					};
+				};
+			};
+			class Attribute8
+			{
+				property="Site_BLUFOR_interactive";
+				expression="_this setVariable ['interactive',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="No";
+					};
+				};
+			};
+			class Attribute9
+			{
+				property="Site_BLUFOR_buildingOccupationIndex";
+				expression="_this setVariable ['buildingOccupationIndex',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="0.85";
+					};
+				};
+			};
+			nAttributes=10;
+		};
+	};
+	class Item17
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={18.671875,0.93371391,44.063477};
+			angles[]={6.2725215,0,6.2805324};
+		};
+		name="blubase";
+		init="_randompos=false;" \n "_randompos_bases=false;" \n "if (_randompos) then {" \n "_pos = [this, 0,worldSize,5] call BIS_fnc_findSafePos;" \n "this setPos _pos;" \n "};" \n "if (_randompos_bases) then {" \n "_basezones=[""NameVillage"",""NameCity"",""FlatAreaCitySmall"",""FlatAreaCity"",""HistoricalSite""];" \n "_allLocations = nearestLocations [[ worldSize, worldSize,0], _basezones, worldSize * 1.4142];" \n "_random_loc= _allLocations call BIS_fnc_selectRandom;" \n "_pos = [getPos _random_loc, 0, 50 ] call BIS_fnc_findSafePos;" \n "this setPos _pos;" \n "};" \n "_markname=(""marker_""+ str random 10); _mark = createMarker [""respawn_west""+_markname, getPos this, 0]; _mark setMarkerType ""flag_NATO""; _mark setMarkerSize [3,3];" \n "    {" \n "    if ((side _x) == West) then { " \n "         this synchronizeObjectsAdd [_x]; " \n "    }; " \n "    } forEach allUnits; " \n "" \n "_scoreboard = createVehicle [""Land_Billboard_F"",getPos this];" \n "_scoreboard setvariable [""action"",false];" \n "_scoreboard addAction [""Show Scoreboard"", {showScoretable 1}];" \n "_scoreboard addAction [""Hide Scoreboard"", {showScoretable 0}]; " \n "_scoreboard allowDamage false;";
+		id=719;
+		type="ModuleMPTypeGroundSupportBase_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleMPTypeGroundSupportBase_F_Size";
+				expression="_this setVariable ['Size',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=30000;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleMPTypeGroundSupportBase_F_Side";
+				expression="_this setVariable ['Side',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=1;
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+	class Item18
+	{
+		dataType="Layer";
+		name="script_sector_respawn_automatic";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={81.726563,1.0250492,94.433594};
+					angles[]={0,0,6.2778621};
+				};
+				name="script_sector_spawns";
+				init="[] spawn {   " \n "while {true} do {   " \n "sleep 5;   " \n "_sectors = entities ""ModuleSector_F"";   " \n "{   " \n "_secowner=(_x getvariable [""owner"",""-1""]);   " \n "switch (str _secowner) do { " \n "    case ""WEST"": {  " \n "        if (isNil (""respawn_west_""+str _x)) then { " \n "            createMarker [""respawn_west_""+str _x,getPos _x];   " \n "            deleteMarker ""respawn_east_""+str _x;   " \n "            deleteMarker ""respawn_guerrila_""+str _x;   " \n "            deleteMarker ""respawn_civilian_""+str _x;    " \n "        }; " \n "    }; " \n "    case ""EAST"": {  " \n "        if (isNil (""respawn_east_""+str _x)) then { " \n "            createMarker [""respawn_east_""+str _x,getPos _x];   " \n "            deleteMarker ""respawn_west_""+str _x;   " \n "            deleteMarker ""respawn_guerrila_""+str _x;   " \n "            deleteMarker ""respawn_civilian_""+str _x;   " \n "        }; " \n "    }; " \n "    case ""GUER"": {  " \n "        if (isNil (""respawn_guerrila_""+str _x)) then { " \n "            createMarker [""respawn_guerrila_""+str _x,getPos _x];   " \n "            deleteMarker ""respawn_west_""+str _x;   " \n "            deleteMarker ""respawn_east_""+str _x;   " \n "            deleteMarker ""respawn_civilian_""+str _x;   " \n "        }; " \n "    }; " \n "    case ""CIVILIAN"": {  " \n "        if (isNil (""respawn_civilian_""+str _x)) then { " \n "            createMarker [""respawn_civilian_""+str _x,getPos _x];   " \n "            deleteMarker ""respawn_west_""+str _x;   " \n "            deleteMarker ""respawn_guerrila_""+str _x;   " \n "            deleteMarker ""respawn_east_""+str _x;   " \n "        }; " \n "    }; " \n "}; " \n "}forEach _sectors}};";
+				id=1497;
+				type="ModuleChat_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="ModuleChat_F_Text";
+						expression="_this setVariable ['Text',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Sector Spawn handler";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="ModuleChat_F_Units";
+						expression="_this setVariable ['Units',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="1";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="ModuleChat_F_Channel";
+						expression="_this setVariable ['Channel',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="0";
+							};
+						};
+					};
+					nAttributes=3;
+				};
+			};
+		};
+		id=1498;
+	};
+	class Item19
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=2;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={55.094727,0.051935196,-50.558594};
+					angles[]={6.2818484,0,0.0013372133};
+				};
+				side="West";
+				flags=6;
+				class Attributes
+				{
+				};
+				id=2620;
+				type="B_Helipilot_F";
+				atlOffset=-3.8146973e-006;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={55.091797,1.9738693,-50.560547};
+					angles[]={6.2818484,0,0.0013372133};
+				};
+				side="West";
+				class Attributes
+				{
+				};
+				id=2621;
+				type="B_Helipilot_F";
+				atlOffset=1.921936;
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=2;
+			};
+			class Links
+			{
+				items=2;
+				class Item0
+				{
+					linkID=0;
+					item0=2620;
+					item1=2619;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+				class Item1
+				{
+					linkID=1;
+					item0=2621;
+					item1=2619;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={0};
+					};
+				};
+			};
+		};
+		id=2618;
+		atlOffset=-5.7220459e-006;
+	};
+	class Item20
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={115.04492,2.0345135,-154.00098};
+			angles[]={6.2818484,0,0.0013372133};
+		};
+		side="West";
+		flags=6;
+		class Attributes
+		{
+			init="_veh = this;  " \n "_initpos = getPos this;  " \n "[_veh, _initpos] spawn {  " \n "params [""_veh"",""_initpos""];  " \n "while {damage _veh < 0.8} do { " \n "waitUntil {sleep 1; count (crew _veh) > 0};" \n "_pilot = (fullCrew[_veh, 'driver'] select 0) select 0;  " \n "_group = group _pilot;   " \n "_wp_loiter = _group addwaypoint [getPos blubase,0];   " \n "_wp_loiter setWaypointType ""LOITER"";  " \n "waitUntil {sleep 1; count (crew _veh) > 0};" \n "} " \n "}";
+		};
+		id=2619;
+		type="B_Heli_Attack_01_dynamicLoadout_F";
+		atlOffset=-5.7220459e-006;
+	};
+	class Item21
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={78.988281,0.16164398,-7.6035156};
+			angles[]={6.2805324,0,6.2818413};
+		};
+		init="_this = this;" \n "[_this] spawn { " \n "params [""_this""]; " \n "while {true} do { " \n "    sleep 5; " \n "    {" \n "    if ((side _x) == West && leader group _x == _x) then { " \n "         _this synchronizeObjectsAdd [_x]; " \n "    }; " \n "    } forEach allUnits; " \n "  }; " \n "};";
+		id=2710;
+		type="SupportRequester";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="SupportRequester_BIS_SUPP_limit_UAV";
+				expression="_this setVariable ['BIS_SUPP_limit_UAV',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="-1";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="SupportRequester_BIS_SUPP_custom_HQ";
+				expression="_this setVariable ['BIS_SUPP_custom_HQ',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="SupportRequester_BIS_SUPP_limit_Transport";
+				expression="_this setVariable ['BIS_SUPP_limit_Transport',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="-1";
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="SupportRequester_BIS_SUPP_limit_Drop";
+				expression="_this setVariable ['BIS_SUPP_limit_Drop',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="-1";
+					};
+				};
+			};
+			class Attribute4
+			{
+				property="SupportRequester_BIS_SUPP_limit_CAS_Heli";
+				expression="_this setVariable ['BIS_SUPP_limit_CAS_Heli',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="-1";
+					};
+				};
+			};
+			class Attribute5
+			{
+				property="SupportRequester_BIS_SUPP_limit_Artillery";
+				expression="_this setVariable ['BIS_SUPP_limit_Artillery',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="-1";
+					};
+				};
+			};
+			class Attribute6
+			{
+				property="SupportRequester_BIS_SUPP_limit_CAS_Bombing";
+				expression="_this setVariable ['BIS_SUPP_limit_CAS_Bombing',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="-1";
+					};
+				};
+			};
+			nAttributes=7;
+		};
+	};
+	class Item22
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={97.077148,0.92024422,112.35547};
+			angles[]={6.2818484,0,6.2778587};
+		};
+		name="script_markers_squad_hq";
+		init="{" \n " if ( isPlayer _x ) then { " \n "   hcRemoveAllGroups _x; " \n "   setGroupIconsVisible [ true,  true];" \n " }" \n "}forEach allUnits;";
+		id=3102;
+		type="ModuleChat_F";
+		atlOffset=1.9073486e-006;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleChat_F_Text";
+				expression="_this setVariable ['Text',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Set Squad markers HQ";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleChat_F_Units";
+				expression="_this setVariable ['Units',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="1";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleChat_F_Channel";
+				expression="_this setVariable ['Channel',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="0";
+					};
+				};
+			};
+			nAttributes=3;
+		};
+	};
+	class Item23
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={111.04004,0.60910416,108.92188};
+			angles[]={6.2791886,0,6.2485328};
+		};
+		id=3103;
+		type="HighCommand";
+	};
+	class Item24
+	{
+		dataType="Layer";
+		name="script_medics_blufor";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Layer";
+				name="script_medics_blufor_1";
+				class Entities
+				{
+					items=1;
+					class Item0
+					{
+						dataType="Layer";
+						name="script_medics";
+						class Entities
+						{
+							items=1;
+							class Item0
+							{
+								dataType="Logic";
+								class PositionInfo
+								{
+									position[]={74.255859,1.0522766,88.18457};
+									angles[]={6.2818484,0,6.2805333};
+								};
+								name="script_blufor_medics";
+								init="[] spawn { " \n "while {sleep 5; true} do { " \n "_objects=[];  " \n "{_objects = _objects+[_x call BIS_fnc_objectType];}forEach units blufor; " \n "_categories=[];  " \n "_types=[];  " \n "{_categories=_categories + [_x select 0];_types=_types + [_x select 1];}forEach _objects;  " \n "_medics = []; " \n "{if (count (_types) > 0) then {hint format [""%x"",_forEachIndex]; if (_types select _forEachIndex == ""Medic"") then {_medics = _medics + [_x];}}forEach units blufor;" \n "{_medic = _x; {_unit = _x; if (damage _unit > 0) then {doStop _unit; _medic action [""HealSoldier"", _unit]}}forEach units group _medic}forEach _medics}}};";
+								id=3091;
+								type="ModuleChat_F";
+								class CustomAttributes
+								{
+									class Attribute0
+									{
+										property="ModuleChat_F_Text";
+										expression="_this setVariable ['Text',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"STRING"
+													};
+												};
+												value="All npc medics automatically heal group";
+											};
+										};
+									};
+									class Attribute1
+									{
+										property="ModuleChat_F_Units";
+										expression="_this setVariable ['Units',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"STRING"
+													};
+												};
+												value="1";
+											};
+										};
+									};
+									class Attribute2
+									{
+										property="ModuleChat_F_Channel";
+										expression="_this setVariable ['Channel',_value,true];";
+										class Value
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"STRING"
+													};
+												};
+												value="4";
+											};
+										};
+									};
+									nAttributes=3;
+								};
+							};
+						};
+						id=3090;
+						atlOffset=1.5731487;
+					};
+				};
+				id=3329;
+				atlOffset=1.5731487;
+			};
+		};
+		id=3331;
+		atlOffset=1.5731487;
+	};
+	class Item25
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=4;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={153.76074,0.18877411,-91.59668};
+					angles[]={6.2818413,0,0.0013439035};
+				};
+				side="West";
+				flags=6;
+				class Attributes
+				{
+				};
+				id=3579;
+				type="B_Helipilot_F";
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={153.75781,2.3280296,-91.599609};
+					angles[]={6.2818413,0,0.0013439035};
+				};
+				side="West";
+				class Attributes
+				{
+				};
+				id=3580;
+				type="B_Helipilot_F";
+				atlOffset=2.1392632;
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={153.75781,2.3280296,-91.599609};
+					angles[]={6.2818413,0,0.0013439035};
+				};
+				side="West";
+				class Attributes
+				{
+				};
+				id=3581;
+				type="B_helicrew_F";
+				atlOffset=2.1392632;
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={153.75781,2.3280296,-91.599609};
+					angles[]={6.2818413,0,0.0013439035};
+				};
+				side="West";
+				class Attributes
+				{
+				};
+				id=3582;
+				type="B_helicrew_F";
+				atlOffset=2.1392632;
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=4;
+			};
+			class Links
+			{
+				items=4;
+				class Item0
+				{
+					linkID=0;
+					item0=3579;
+					item1=3578;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+				class Item1
+				{
+					linkID=1;
+					item0=3580;
+					item1=3578;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={0};
+					};
+				};
+				class Item2
+				{
+					linkID=2;
+					item0=3581;
+					item1=3578;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={1};
+					};
+				};
+				class Item3
+				{
+					linkID=3;
+					item0=3582;
+					item1=3578;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={2};
+					};
+				};
+			};
+		};
+		id=3364;
+	};
+	class Item26
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={153.75781,2.3265915,-91.649414};
+			angles[]={6.2818413,0,0.0013439035};
+		};
+		side="West";
+		flags=6;
+		class Attributes
+		{
+			init="_veh = this; " \n "_initpos = getPos this; " \n "[_veh, _initpos] spawn { " \n "params [""_veh"",""_initpos""]; " \n "_pilot = (fullCrew[ _veh, 'driver'] select 0) select 0;" \n "_group = group _pilot;" \n "waitUntil {sleep 1; count (crew _veh) > 0 }; " \n "_allsectors = entities ""ModuleSector_F""; " \n "_allsectors = _allsectors call BIS_fnc_arrayShuffle;" \n "{ " \n "_wp_attack = _group addwaypoint [getPos _x,0];  " \n "_wp_attack setWaypointType ""DESTROY""; " \n "_wp_attack setWaypointTimeout [60,120,180]; " \n "_wp_land = _group addwaypoint [_initpos,0];  " \n "_wp_land setWaypointType ""TR UNLOAD""; " \n "_wp_land setWaypointStatements [""true"",""vehicle this land 'LAND'""];" \n "_wp_land setWaypointTimeout [60,120,180]; " \n "}forEach _allsectors; " \n "}";
+		};
+		id=3578;
+		type="B_Heli_Transport_01_F";
+	};
+	class Item27
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=2;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={106.66699,0.11112022,-152.39453};
+					angles[]={6.2818937,0,0};
+				};
+				side="West";
+				flags=6;
+				class Attributes
+				{
+				};
+				id=3398;
+				type="B_Helipilot_F";
+				atlOffset=-0.00031280518;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={106.66504,1.8902626,-152.39551};
+					angles[]={6.2818937,0,0};
+				};
+				side="West";
+				class Attributes
+				{
+				};
+				id=3399;
+				type="B_Helipilot_F";
+				atlOffset=1.7788296;
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=2;
+			};
+			class Links
+			{
+				items=2;
+				class Item0
+				{
+					linkID=0;
+					item0=3398;
+					item1=3400;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+				class Item1
+				{
+					linkID=1;
+					item0=3399;
+					item1=3400;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={0};
+					};
+				};
+			};
+		};
+		id=3397;
+	};
+	class Item28
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={171.06934,1.9808559,-71.655273};
+			angles[]={6.2818937,0,0};
+		};
+		side="West";
+		flags=6;
+		class Attributes
+		{
+			init="_veh = this; " \n "_initpos = getPos this; " \n "[_veh, _initpos] spawn { " \n "params [""_veh"",""_initpos""]; " \n "_pilot = (fullCrew[ _veh, 'driver'] select 0) select 0;" \n "_group = group _pilot;" \n "waitUntil {sleep 1; count (crew _veh) > 0 }; " \n "_allsectors = entities ""ModuleSector_F""; " \n "_allsectors = _allsectors call BIS_fnc_arrayShuffle;" \n "{ " \n "_wp_attack = _group addwaypoint [getPos _x,0];  " \n "_wp_attack setWaypointType ""DESTROY""; " \n "_wp_attack setWaypointTimeout [60,120,180]; " \n "_wp_land = _group addwaypoint [_initpos,0];  " \n "_wp_land setWaypointType ""TR UNLOAD""; " \n "_wp_land setWaypointStatements [""true"",""vehicle this land 'LAND'""];" \n "_wp_land setWaypointTimeout [60,120,180]; " \n "}forEach _allsectors; " \n "}";
+		};
+		id=3400;
+		type="B_Heli_Light_01_dynamicLoadout_F";
+	};
+	class Item29
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=2;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={125.63184,0.11112022,-166.74219};
+				};
+				side="West";
+				flags=6;
+				class Attributes
+				{
+				};
+				id=3402;
+				type="B_Helipilot_F";
+				atlOffset=-0.0050888062;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={125.62988,1.8902626,-166.74316};
+				};
+				side="West";
+				class Attributes
+				{
+				};
+				id=3403;
+				type="B_Helipilot_F";
+				atlOffset=1.7740555;
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=2;
+			};
+			class Links
+			{
+				items=2;
+				class Item0
+				{
+					linkID=0;
+					item0=3402;
+					item1=3404;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+				class Item1
+				{
+					linkID=1;
+					item0=3403;
+					item1=3404;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={0};
+					};
+				};
+			};
+		};
+		id=3401;
+	};
+	class Item30
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={183.78711,1.9791393,-87.572266};
+		};
+		side="West";
+		flags=6;
+		class Attributes
+		{
+			init="_veh = this; " \n "_initpos = getPos this; " \n "[_veh, _initpos] spawn { " \n "params [""_veh"",""_initpos""]; " \n "_pilot = (fullCrew[ _veh, 'driver'] select 0) select 0;" \n "_group = group _pilot;" \n "waitUntil {sleep 1; count (crew _veh) > 0 }; " \n "_allsectors = entities ""ModuleSector_F""; " \n "_allsectors = _allsectors call BIS_fnc_arrayShuffle;" \n "{ " \n "_wp_attack = _group addwaypoint [getPos _x,0];  " \n "_wp_attack setWaypointType ""DESTROY""; " \n "_wp_attack setWaypointTimeout [60,120,180]; " \n "_wp_land = _group addwaypoint [_initpos,0];  " \n "_wp_land setWaypointType ""TR UNLOAD""; " \n "_wp_land setWaypointStatements [""true"",""vehicle this land 'LAND'""];" \n "_wp_land setWaypointTimeout [60,120,180]; " \n "}forEach _allsectors; " \n "}";
+		};
+		id=3404;
+		type="B_Heli_Light_01_dynamicLoadout_F";
+	};
+	class Item31
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=2;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={171.48926,0.19143295,-101.84473};
+					angles[]={6.2805324,0,0.0013439035};
+				};
+				side="West";
+				flags=6;
+				class Attributes
+				{
+				};
+				id=3576;
+				type="B_Helipilot_F";
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={171.48926,2.113369,-101.84473};
+					angles[]={6.2805324,0,0.0013439035};
+				};
+				side="West";
+				class Attributes
+				{
+				};
+				id=3577;
+				type="B_Helipilot_F";
+				atlOffset=1.921936;
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=2;
+			};
+			class Links
+			{
+				items=2;
+				class Item0
+				{
+					linkID=0;
+					item0=3576;
+					item1=3575;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+				class Item1
+				{
+					linkID=1;
+					item0=3577;
+					item1=3575;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={0};
+					};
+				};
+			};
+		};
+		id=3405;
+	};
+	class Item32
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={169.12695,2.100338,-108.33203};
+			angles[]={6.2805324,0,0.0013439035};
+		};
+		side="West";
+		flags=6;
+		class Attributes
+		{
+			init="_veh = this; " \n "_initpos = getPos this; " \n "[_veh, _initpos] spawn { " \n "params [""_veh"",""_initpos""]; " \n "_pilot = (fullCrew[ _veh, 'driver'] select 0) select 0;" \n "_group = group _pilot;" \n "waitUntil {sleep 1; count (crew _veh) > 0 }; " \n "_allsectors = entities ""ModuleSector_F""; " \n "_allsectors = _allsectors call BIS_fnc_arrayShuffle;" \n "{ " \n "_wp_attack = _group addwaypoint [getPos _x,0];  " \n "_wp_attack setWaypointType ""DESTROY""; " \n "_wp_attack setWaypointTimeout [60,120,180]; " \n "_wp_land = _group addwaypoint [_initpos,0];  " \n "_wp_land setWaypointType ""TR UNLOAD""; " \n "_wp_land setWaypointStatements [""true"",""vehicle this land 'LAND'""];" \n "_wp_land setWaypointTimeout [60,120,180]; " \n "}forEach _allsectors; " \n "}";
+		};
+		id=3575;
+		type="B_Heli_Attack_01_dynamicLoadout_F";
+	};
+	class Item33
+	{
+		dataType="Layer";
+		name="unit_heli_transport_automatic_assignedtask";
+		class Entities
+		{
+			items=10;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={66.424805,1.8981133,-33.641602};
+					angles[]={6.2805324,0,6.2818413};
+				};
+				side="West";
+				flags=6;
+				class Attributes
+				{
+					init="_veh = this;  " \n "_initpos = getPos this;  " \n "[_veh, _initpos] spawn {  " \n "params [""_veh"",""_initpos""];  " \n "while {damage _veh < 0.8} do { " \n "waitUntil {" \n "sleep 1; " \n "_crew =(crew _veh);" \n "_fdcrew = fullCrew[ _veh, 'driver'];" \n "if (count _crew > 0 && count _fdcrew > 0) then {count (_crew) > count (units group ((fullCrew[ _veh, 'driver'] select 0) select 0))} else {false}" \n "}; " \n "_pilot = (fullCrew[_veh, 'driver'] select 0) select 0;  " \n "_group = group _pilot;   " \n "_drivers = units _group;  " \n "_cargo = (crew _veh) - _drivers;  " \n "_cargo_group = group (_cargo select 0); " \n "_cargo_task = currentTask (leader _cargo_group); " \n "_cargo_task_pos = taskDestination _cargo_task; " \n "leader _cargo_group groupChat format [""Transport to %1"",((taskName _cargo_task) call BIS_fnc_taskDescription) select 0];" \n "_wp_load = _group addwaypoint [getPos _veh,0];   " \n "_wp_load setWaypointType ""LOAD"";  " \n "_wp_load setWaypointTimeout [5,10,15]; " \n "_wp_unload = _group addwaypoint [_cargo_task_pos,300];   " \n "_wp_unload setWaypointType ""TR UNLOAD"";  " \n "_wp_loiter_land = _group addwaypoint [_initpos,0];   " \n "_wp_loiter_land setWaypointType ""TR UNLOAD"";  " \n "_wp_loiter_land setWaypointStatements [""true"",""vehicle this land 'LAND'; ""];  " \n "_wp_unload setWaypointTimeout [30,60,90]; " \n "waitUntil {" \n "sleep 1; " \n "_crew =(crew _veh);" \n "_fdcrew = fullCrew[ _veh, 'driver'];" \n "if (count _crew > 0 && count _fdcrew > 0) then {count (_crew) > count (units group ((fullCrew[ _veh, 'driver'] select 0) select 0))} else {false}" \n "};" \n "} " \n "}";
+				};
+				id=3422;
+				type="B_Heli_Light_01_F";
+			};
+			class Item1
+			{
+				dataType="Group";
+				side="West";
+				class Entities
+				{
+					items=2;
+					class Item0
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={47.05957,0.74249077,59.224609};
+							angles[]={6.2805324,0,6.2818413};
+						};
+						side="West";
+						flags=6;
+						class Attributes
+						{
+						};
+						id=3424;
+						type="B_Helipilot_F";
+						atlOffset=-0.17970276;
+					};
+					class Item1
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={49.994141,0.73809814,59.626953};
+							angles[]={6.2805324,0,6.2818413};
+						};
+						side="West";
+						flags=4;
+						class Attributes
+						{
+						};
+						id=3425;
+						type="B_Helipilot_F";
+						atlOffset=-0.18410492;
+					};
+				};
+				class Attributes
+				{
+				};
+				class CrewLinks
+				{
+					class LinkIDProvider
+					{
+						nextID=2;
+					};
+					class Links
+					{
+						items=2;
+						class Item0
+						{
+							linkID=0;
+							item0=3424;
+							item1=3422;
+							class CustomData
+							{
+								role=1;
+							};
+						};
+						class Item1
+						{
+							linkID=1;
+							item0=3425;
+							item1=3422;
+							class CustomData
+							{
+								role=2;
+								turretPath[]={0};
+							};
+						};
+					};
+				};
+				id=3423;
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={75.643555,1.8746014,-46.34668};
+					angles[]={6.2818937,0,0};
+				};
+				side="West";
+				flags=6;
+				class Attributes
+				{
+					init="_veh = this;  " \n "_initpos = getPos this;  " \n "[_veh, _initpos] spawn {  " \n "params [""_veh"",""_initpos""];  " \n "while {damage _veh < 0.8} do { " \n "waitUntil {" \n "sleep 1; " \n "_crew =(crew _veh);" \n "_fdcrew = fullCrew[ _veh, 'driver'];" \n "if (count _crew > 0 && count _fdcrew > 0) then {count (_crew) > count (units group ((fullCrew[ _veh, 'driver'] select 0) select 0))} else {false}" \n "}; " \n "_pilot = (fullCrew[_veh, 'driver'] select 0) select 0;  " \n "_group = group _pilot;   " \n "_drivers = units _group;  " \n "_cargo = (crew _veh) - _drivers;  " \n "_cargo_group = group (_cargo select 0); " \n "_cargo_task = currentTask (leader _cargo_group); " \n "_cargo_task_pos = taskDestination _cargo_task; " \n "leader _cargo_group groupChat format [""Transport to %1"",((taskName _cargo_task) call BIS_fnc_taskDescription) select 0];" \n "_wp_load = _group addwaypoint [getPos _veh,0];   " \n "_wp_load setWaypointType ""LOAD"";  " \n "_wp_load setWaypointTimeout [5,10,15]; " \n "_wp_unload = _group addwaypoint [_cargo_task_pos,300];   " \n "_wp_unload setWaypointType ""TR UNLOAD"";  " \n "_wp_loiter_land = _group addwaypoint [_initpos,0];   " \n "_wp_loiter_land setWaypointType ""TR UNLOAD"";  " \n "_wp_loiter_land setWaypointStatements [""true"",""vehicle this land 'LAND'; ""];  " \n "_wp_unload setWaypointTimeout [30,60,90]; " \n "waitUntil {" \n "sleep 1; " \n "_crew =(crew _veh);" \n "_fdcrew = fullCrew[ _veh, 'driver'];" \n "if (count _crew > 0 && count _fdcrew > 0) then {count (_crew) > count (units group ((fullCrew[ _veh, 'driver'] select 0) select 0))} else {false}" \n "};" \n "} " \n "}";
+				};
+				id=3518;
+				type="B_Heli_Light_01_F";
+			};
+			class Item3
+			{
+				dataType="Group";
+				side="West";
+				class Entities
+				{
+					items=2;
+					class Item0
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={55.274414,0.73178673,50.15625};
+							angles[]={6.2818937,0,0};
+						};
+						side="West";
+						flags=6;
+						class Attributes
+						{
+						};
+						id=3520;
+						type="B_Helipilot_F";
+						atlOffset=-0.098279953;
+					};
+					class Item1
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={58.208984,0.7273941,50.558594};
+							angles[]={6.2818937,0,0};
+						};
+						side="West";
+						flags=4;
+						class Attributes
+						{
+						};
+						id=3521;
+						type="B_Helipilot_F";
+						atlOffset=-0.091314316;
+					};
+				};
+				class Attributes
+				{
+				};
+				class CrewLinks
+				{
+					class LinkIDProvider
+					{
+						nextID=2;
+					};
+					class Links
+					{
+						items=2;
+						class Item0
+						{
+							linkID=0;
+							item0=3520;
+							item1=3518;
+							class CustomData
+							{
+								role=1;
+							};
+						};
+						class Item1
+						{
+							linkID=1;
+							item0=3521;
+							item1=3518;
+							class CustomData
+							{
+								role=2;
+								turretPath[]={0};
+							};
+						};
+					};
+				};
+				id=3519;
+			};
+			class Item4
+			{
+				dataType="Group";
+				side="West";
+				class Entities
+				{
+					items=4;
+					class Item0
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={43.75293,0.051433563,-52.107422};
+						};
+						side="West";
+						flags=6;
+						class Attributes
+						{
+						};
+						id=3531;
+						type="B_Helipilot_F";
+					};
+					class Item1
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={43.75293,3.4130211,-52.196289};
+						};
+						side="West";
+						class Attributes
+						{
+						};
+						id=3532;
+						type="B_Helipilot_F";
+						atlOffset=3.3615875;
+					};
+					class Item2
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={43.75293,3.4130211,-52.196289};
+						};
+						side="West";
+						class Attributes
+						{
+						};
+						id=3533;
+						type="B_helicrew_F";
+						atlOffset=3.3615875;
+					};
+					class Item3
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={43.75293,3.4130211,-52.196289};
+						};
+						side="West";
+						class Attributes
+						{
+						};
+						id=3534;
+						type="B_helicrew_F";
+						atlOffset=3.3615875;
+					};
+				};
+				class Attributes
+				{
+				};
+				class CrewLinks
+				{
+					class LinkIDProvider
+					{
+						nextID=4;
+					};
+					class Links
+					{
+						items=4;
+						class Item0
+						{
+							linkID=0;
+							item0=3531;
+							item1=3530;
+							class CustomData
+							{
+								role=1;
+							};
+						};
+						class Item1
+						{
+							linkID=1;
+							item0=3532;
+							item1=3530;
+							class CustomData
+							{
+								role=2;
+								turretPath[]={0};
+							};
+						};
+						class Item2
+						{
+							linkID=2;
+							item0=3533;
+							item1=3530;
+							class CustomData
+							{
+								role=2;
+								turretPath[]={1};
+							};
+						};
+						class Item3
+						{
+							linkID=3;
+							item0=3534;
+							item1=3530;
+							class CustomData
+							{
+								role=2;
+								turretPath[]={2};
+							};
+						};
+					};
+				};
+				id=3527;
+			};
+			class Item5
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={43.897461,3.4215832,-71.5625};
+				};
+				side="West";
+				flags=6;
+				class Attributes
+				{
+					init="_veh = this;  " \n "_initpos = getPos this;  " \n "[_veh, _initpos] spawn {  " \n "params [""_veh"",""_initpos""];  " \n "while {damage _veh < 0.8} do { " \n "waitUntil {" \n "sleep 1; " \n "_crew =(crew _veh);" \n "_fdcrew = fullCrew[ _veh, 'driver'];" \n "if (count _crew > 0 && count _fdcrew > 0) then {count (_crew) > count (units group ((fullCrew[ _veh, 'driver'] select 0) select 0))} else {false}" \n "}; " \n "_pilot = (fullCrew[_veh, 'driver'] select 0) select 0;  " \n "_group = group _pilot;   " \n "_drivers = units _group;  " \n "_cargo = (crew _veh) - _drivers;  " \n "_cargo_group = group (_cargo select 0); " \n "_cargo_task = currentTask (leader _cargo_group); " \n "_cargo_task_pos = taskDestination _cargo_task; " \n "leader _cargo_group groupChat format [""Transport to %1"",((taskName _cargo_task) call BIS_fnc_taskDescription) select 0];" \n "_wp_load = _group addwaypoint [getPos _veh,0];   " \n "_wp_load setWaypointType ""LOAD"";  " \n "_wp_load setWaypointTimeout [5,10,15]; " \n "_wp_unload = _group addwaypoint [_cargo_task_pos,300];   " \n "_wp_unload setWaypointType ""TR UNLOAD"";  " \n "_wp_loiter_land = _group addwaypoint [_initpos,0];   " \n "_wp_loiter_land setWaypointType ""TR UNLOAD"";  " \n "_wp_loiter_land setWaypointStatements [""true"",""vehicle this land 'LAND'; ""];  " \n "_wp_unload setWaypointTimeout [30,60,90]; " \n "waitUntil {" \n "sleep 1; " \n "_crew =(crew _veh);" \n "_fdcrew = fullCrew[ _veh, 'driver'];" \n "if (count _crew > 0 && count _fdcrew > 0) then {count (_crew) > count (units group ((fullCrew[ _veh, 'driver'] select 0) select 0))} else {false}" \n "};" \n "} " \n "}";
+				};
+				id=3530;
+				type="B_Heli_Transport_03_F";
+			};
+			class Item6
+			{
+				dataType="Group";
+				side="West";
+				class Entities
+				{
+					items=4;
+					class Item0
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={57.338867,0.051433563,-68.542969};
+							angles[]={6.2818413,0,0.0013439035};
+						};
+						side="West";
+						flags=6;
+						class Attributes
+						{
+						};
+						id=3536;
+						type="B_Helipilot_F";
+					};
+					class Item1
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={57.338867,3.4130211,-68.631836};
+							angles[]={6.2818413,0,0.0013439035};
+						};
+						side="West";
+						class Attributes
+						{
+						};
+						id=3537;
+						type="B_Helipilot_F";
+						atlOffset=3.3615875;
+					};
+					class Item2
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={57.338867,3.4130211,-68.631836};
+							angles[]={6.2818413,0,0.0013439035};
+						};
+						side="West";
+						class Attributes
+						{
+						};
+						id=3538;
+						type="B_helicrew_F";
+						atlOffset=3.3615875;
+					};
+					class Item3
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={57.338867,3.4130211,-68.631836};
+							angles[]={6.2818413,0,0.0013439035};
+						};
+						side="West";
+						class Attributes
+						{
+						};
+						id=3539;
+						type="B_helicrew_F";
+						atlOffset=3.3615875;
+					};
+				};
+				class Attributes
+				{
+				};
+				class CrewLinks
+				{
+					class LinkIDProvider
+					{
+						nextID=4;
+					};
+					class Links
+					{
+						items=4;
+						class Item0
+						{
+							linkID=0;
+							item0=3536;
+							item1=3540;
+							class CustomData
+							{
+								role=1;
+							};
+						};
+						class Item1
+						{
+							linkID=1;
+							item0=3537;
+							item1=3540;
+							class CustomData
+							{
+								role=2;
+								turretPath[]={0};
+							};
+						};
+						class Item2
+						{
+							linkID=2;
+							item0=3538;
+							item1=3540;
+							class CustomData
+							{
+								role=2;
+								turretPath[]={1};
+							};
+						};
+						class Item3
+						{
+							linkID=3;
+							item0=3539;
+							item1=3540;
+							class CustomData
+							{
+								role=2;
+								turretPath[]={2};
+							};
+						};
+					};
+				};
+				id=3535;
+			};
+			class Item7
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={59.301758,3.4121799,-54.750977};
+					angles[]={6.2818413,0,0.0013439035};
+				};
+				side="West";
+				flags=6;
+				class Attributes
+				{
+					init="_veh = this;  " \n "_initpos = getPos this;  " \n "[_veh, _initpos] spawn {  " \n "params [""_veh"",""_initpos""];  " \n "while {damage _veh < 0.8} do { " \n "waitUntil {" \n "sleep 1; " \n "_crew =(crew _veh);" \n "_fdcrew = fullCrew[ _veh, 'driver'];" \n "if (count _crew > 0 && count _fdcrew > 0) then {count (_crew) > count (units group ((fullCrew[ _veh, 'driver'] select 0) select 0))} else {false}" \n "}; " \n "_pilot = (fullCrew[_veh, 'driver'] select 0) select 0;  " \n "_group = group _pilot;   " \n "_drivers = units _group;  " \n "_cargo = (crew _veh) - _drivers;  " \n "_cargo_group = group (_cargo select 0); " \n "_cargo_task = currentTask (leader _cargo_group); " \n "_cargo_task_pos = taskDestination _cargo_task; " \n "leader _cargo_group groupChat format [""Transport to %1"",((taskName _cargo_task) call BIS_fnc_taskDescription) select 0];" \n "_wp_load = _group addwaypoint [getPos _veh,0];   " \n "_wp_load setWaypointType ""LOAD"";  " \n "_wp_load setWaypointTimeout [5,10,15]; " \n "_wp_unload = _group addwaypoint [_cargo_task_pos,300];   " \n "_wp_unload setWaypointType ""TR UNLOAD"";  " \n "_wp_loiter_land = _group addwaypoint [_initpos,0];   " \n "_wp_loiter_land setWaypointType ""TR UNLOAD"";  " \n "_wp_loiter_land setWaypointStatements [""true"",""vehicle this land 'LAND'; ""];  " \n "_wp_unload setWaypointTimeout [30,60,90]; " \n "waitUntil {" \n "sleep 1; " \n "_crew =(crew _veh);" \n "_fdcrew = fullCrew[ _veh, 'driver'];" \n "if (count _crew > 0 && count _fdcrew > 0) then {count (_crew) > count (units group ((fullCrew[ _veh, 'driver'] select 0) select 0))} else {false}" \n "};" \n "} " \n "}";
+				};
+				id=3540;
+				type="B_Heli_Transport_03_F";
+			};
+			class Item8
+			{
+				dataType="Group";
+				side="West";
+				class Entities
+				{
+					items=4;
+					class Item0
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={42.819336,0.066383362,-84.102539};
+						};
+						side="West";
+						flags=6;
+						class Attributes
+						{
+						};
+						id=3566;
+						type="B_Helipilot_F";
+					};
+					class Item1
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={42.819336,2.2056408,-84.099609};
+						};
+						side="West";
+						class Attributes
+						{
+						};
+						id=3567;
+						type="B_Helipilot_F";
+						atlOffset=2.1392632;
+					};
+					class Item2
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={42.819336,2.2056408,-84.099609};
+						};
+						side="West";
+						class Attributes
+						{
+						};
+						id=3568;
+						type="B_helicrew_F";
+						atlOffset=2.1392632;
+					};
+					class Item3
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={42.819336,2.2056408,-84.099609};
+						};
+						side="West";
+						class Attributes
+						{
+						};
+						id=3569;
+						type="B_helicrew_F";
+						atlOffset=2.1392632;
+					};
+				};
+				class Attributes
+				{
+				};
+				class CrewLinks
+				{
+					class LinkIDProvider
+					{
+						nextID=4;
+					};
+					class Links
+					{
+						items=4;
+						class Item0
+						{
+							linkID=0;
+							item0=3566;
+							item1=3565;
+							class CustomData
+							{
+								role=1;
+							};
+						};
+						class Item1
+						{
+							linkID=1;
+							item0=3567;
+							item1=3565;
+							class CustomData
+							{
+								role=2;
+								turretPath[]={0};
+							};
+						};
+						class Item2
+						{
+							linkID=2;
+							item0=3568;
+							item1=3565;
+							class CustomData
+							{
+								role=2;
+								turretPath[]={1};
+							};
+						};
+						class Item3
+						{
+							linkID=3;
+							item0=3569;
+							item1=3565;
+							class CustomData
+							{
+								role=2;
+								turretPath[]={2};
+							};
+						};
+					};
+				};
+				id=3559;
+			};
+			class Item9
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={26.634766,2.2092552,-86.616211};
+				};
+				side="West";
+				flags=6;
+				class Attributes
+				{
+					init="_veh = this;  " \n "_initpos = getPos this;  " \n "[_veh, _initpos] spawn {  " \n "params [""_veh"",""_initpos""];  " \n "while {damage _veh < 0.8} do { " \n "waitUntil {" \n "sleep 1; " \n "_crew =(crew _veh);" \n "_fdcrew = fullCrew[ _veh, 'driver'];" \n "if (count _crew > 0 && count _fdcrew > 0) then {count (_crew) > count (units group ((fullCrew[ _veh, 'driver'] select 0) select 0))} else {false}" \n "}; " \n "_pilot = (fullCrew[_veh, 'driver'] select 0) select 0;  " \n "_group = group _pilot;   " \n "_drivers = units _group;  " \n "_cargo = (crew _veh) - _drivers;  " \n "_cargo_group = group (_cargo select 0); " \n "_cargo_task = currentTask (leader _cargo_group); " \n "_cargo_task_pos = taskDestination _cargo_task; " \n "leader _cargo_group groupChat format [""Transport to %1"",((taskName _cargo_task) call BIS_fnc_taskDescription) select 0];" \n "_wp_load = _group addwaypoint [getPos _veh,0];   " \n "_wp_load setWaypointType ""LOAD"";  " \n "_wp_load setWaypointTimeout [5,10,15]; " \n "_wp_unload = _group addwaypoint [_cargo_task_pos,300];   " \n "_wp_unload setWaypointType ""TR UNLOAD"";  " \n "_wp_loiter_land = _group addwaypoint [_initpos,0];   " \n "_wp_loiter_land setWaypointType ""TR UNLOAD"";  " \n "_wp_loiter_land setWaypointStatements [""true"",""vehicle this land 'LAND'; ""];  " \n "_wp_unload setWaypointTimeout [30,60,90]; " \n "waitUntil {" \n "sleep 1; " \n "_crew =(crew _veh);" \n "_fdcrew = fullCrew[ _veh, 'driver'];" \n "if (count _crew > 0 && count _fdcrew > 0) then {count (_crew) > count (units group ((fullCrew[ _veh, 'driver'] select 0) select 0))} else {false}" \n "};" \n "} " \n "}";
+				};
+				id=3565;
+				type="B_Heli_Transport_01_F";
+			};
+		};
+		id=3413;
+		atlOffset=0.0010147095;
+	};
+	class Item34
+	{
+		dataType="Layer";
+		name="unit_script_with_spawn_and_missiontask_defend";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Group";
+				side="West";
+				class Entities
+				{
+					items=1;
+					class Item0
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={60.99707,13.966112,78.369141};
+						};
+						side="West";
+						flags=7;
+						class Attributes
+						{
+							rank="COLONEL";
+							init="_rt=this;   " \n "_spawntime=3600;   " \n "_rt_captive = false;   " \n "_rt_taskowners = [side _rt];   " \n "_rt_oppside = side _rt;   " \n "_rt_opppos = false;   " \n "_rt_randpos = false;   " \n "_initpos = getPos this;  " \n "_rt_rand_zones = [""Hill"",""Mount""];   " \n "_rt_killstate = ""FAILED"";   " \n "_rt_dname = [configFile >> ""CfgVehicles"" >> typeOf vehicle _rt] call BIS_fnc_displayName;   " \n "_rt_taskid = str (random 10) + _rt_dname;   " \n "_rt_group = group _rt;   " \n "_rt_type = typeOf _rt;   " \n "_rt_skill = skill _rt;   " \n "_rt setCaptive (_rt_captive);   " \n " " \n "_rt_taskowners_defend = _rt_taskowners; " \n "_rt_taskowners_kill = [independent, west, east] - _rt_taskowners_defend; " \n "_rt_taskid_defend = str (random 10) + _rt_dname;   " \n "_rt_taskid_kill = str (random 10) + _rt_dname;   " \n "_rt_tasktype_defend = ""Defend""; " \n "_rt_tasktype_kill = ""Kill""; " \n " " \n "[_rt_taskowners_defend, _rt_taskid_defend, [[_rt_tasktype_defend+"" ""+ _rt_dname+"" owned by ""+str _rt_oppside ], [_rt_tasktype_defend+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype_defend] call BIS_fnc_taskCreate;    " \n "[_rt_taskowners_kill, _rt_taskid_kill, [[_rt_tasktype_kill+"" ""+ _rt_dname+"" owned by ""+str _rt_oppside ], [_rt_tasktype_kill+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype_kill] call BIS_fnc_taskCreate;    " \n "   " \n "[_rt, _initpos, _spawntime, _rt_tasktype_defend,_rt_tasktype_kill, _rt_taskowners_defend, _rt_oppside, _rt_opppos, _rt_randpos, _rt_rand_zones, _rt_killstate,_rt_dname, _rt_taskid_defend, _rt_taskid_kill, _rt_captive, _rt_group, _rt_type, _rt_skill] spawn {   " \n " params [""_rt"", ""_initpos"", ""_spawntime"", ""_rt_tasktype_defend"",""_rt_tasktype_kill"", ""_rt_taskowners_defend"", ""_rt_oppside"", ""_rt_opppos"", ""_rt_randpos"", ""_rt_rand_zones"", ""_rt_killstate"", ""_rt_dname"", ""_rt_taskid_defend"" ,""_rt_taskid_kill"", ""_rt_captive"", ""_rt_group"", ""_rt_type"", ""_rt_skill""];   " \n " while {true} do {   " \n "   waitUntil {sleep 5; damage _rt == 1};   " \n "   [_rt_taskid_defend,""FAILED""] call BIS_fnc_taskSetState;    " \n "   [_rt_taskid_kill,""SUCCEEDED""] call BIS_fnc_taskSetState;    " \n "   sleep _spawntime;" \n "   if (_spawntime>0) then {   " \n "     _rt = _rt_group createUnit [_rt_type, _initpos, [], 1, ""CAN_COLLIDE""]; " \n "     _rt setDamage 0; " \n "     _rt setCaptive (_rt_captive);   " \n "     [_rt_taskowners_defend, _rt_taskid_defend, [[_rt_tasktype_defend+"" ""+_rt_dname+"" owned by ""+str _rt_oppside], [_rt_tasktype_defend+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype_defend] call BIS_fnc_taskCreate;   " \n "     [[independent, west, east] - _rt_taskowners_defend, _rt_taskid_kill, [[_rt_tasktype_kill+"" ""+_rt_dname+"" owned by ""+str _rt_oppside], [_rt_tasktype_kill+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype_kill] call BIS_fnc_taskCreate;   " \n "    };   " \n " };   " \n " };   " \n "   ";
+							name="officer_west";
+						};
+						id=3459;
+						type="B_officer_F";
+						atlOffset=4.3869019e-005;
+						class CustomAttributes
+						{
+							class Attribute0
+							{
+								property="speaker";
+								expression="_this setspeaker _value;";
+								class Value
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"STRING"
+											};
+										};
+										value="Male01ENG";
+									};
+								};
+							};
+							class Attribute1
+							{
+								property="pitch";
+								expression="_this setpitch _value;";
+								class Value
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"SCALAR"
+											};
+										};
+										value=0.95999998;
+									};
+								};
+							};
+							nAttributes=2;
+						};
+					};
+				};
+				class Attributes
+				{
+				};
+				id=3458;
+				atlOffset=4.3869019e-005;
+			};
+		};
+		id=3460;
+		atlOffset=4.3869019e-005;
+	};
+	class Item35
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={116.75391,0.59580612,149.34375};
+			angles[]={0.015998369,0,6.2751918};
+		};
+		id=4030;
+		type="ModuleSpawnAIOptions_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleSpawnAIOptions_F_CorpseDeleteTime";
+				expression="_this setVariable ['CorpseDeleteTime',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=15;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleSpawnAIOptions_F_WreckDeleteTime";
+				expression="_this setVariable ['WreckDeleteTime',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=45;
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+	class Item36
+	{
+		dataType="Layer";
+		name="script_recruit_side";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Layer";
+				name="script_recruit_6";
+				class Entities
+				{
+					items=1;
+					class Item0
+					{
+						dataType="Logic";
+						class PositionInfo
+						{
+							position[]={67.101563,1.0298519,72.022461};
+							angles[]={6.2581921,0,6.2631841};
+						};
+						name="script_recruit_ranks";
+						init="GOM_fnc_actionConditionRecruit = {  " \n "params [""_this"",""_target""];  " \n "_free = units side _this - units group _this;" \n "_unit = _target;" \n "(_unit in _free && rankid leader group _this > rankid leader group _unit)  " \n "};" \n "" \n "[] spawn {" \n "while {sleep 5; true} do {" \n "waitUntil {sleep 1; alive player};" \n "player addAction [""Recruit"",{  " \n "[cursorobject] join group player;  " \n "},[],0,true,true,"""",""[player,cursorobject] call GOM_fnc_actionConditionRecruit""];" \n "waitUntil {sleep 5; not alive player};" \n "}" \n "}";
+						id=4061;
+						type="ModuleChat_F";
+						atlOffset=-1.9073486e-006;
+						class CustomAttributes
+						{
+							class Attribute0
+							{
+								property="ModuleChat_F_Text";
+								expression="_this setVariable ['Text',_value,true];";
+								class Value
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"STRING"
+											};
+										};
+										value="Added Recruit functionality";
+									};
+								};
+							};
+							class Attribute1
+							{
+								property="ModuleChat_F_Units";
+								expression="_this setVariable ['Units',_value,true];";
+								class Value
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"STRING"
+											};
+										};
+										value="1";
+									};
+								};
+							};
+							class Attribute2
+							{
+								property="ModuleChat_F_Channel";
+								expression="_this setVariable ['Channel',_value,true];";
+								class Value
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"STRING"
+											};
+										};
+										value="4";
+									};
+								};
+							};
+							nAttributes=3;
+						};
+					};
+				};
+				id=4060;
+				atlOffset=-1.9073486e-006;
+			};
+		};
+		id=4062;
+		atlOffset=-1.9073486e-006;
+	};
+	class Item37
+	{
+		dataType="Layer";
+		name="script_map_markers_1side";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={71.064453,1.0411797,75.785156};
+					angles[]={6.2778621,0,6.2818413};
+				};
+				name="script_restablish_player_on_respawn";
+				init="[] spawn { " \n "[side player, 1] call BIS_fnc_respawnTickets;" \n "while {sleep 5; true} do { " \n "waitUntil {sleep 1; damage player == 1}; " \n "waitUntil {sleep 1; damage player == 0}; " \n "player groupchat ""Back to the game"";" \n "" \n "};" \n "};";
+				id=4075;
+				type="ModuleChat_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="ModuleChat_F_Text";
+						expression="_this setVariable ['Text',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Restablished player respawn";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="ModuleChat_F_Units";
+						expression="_this setVariable ['Units',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="1";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="ModuleChat_F_Channel";
+						expression="_this setVariable ['Channel',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="0";
+							};
+						};
+					};
+					nAttributes=3;
+				};
+			};
+		};
+		id=4076;
+	};
+	class Item38
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={87.953125,0.97822571,87.328125};
+		};
+		name="script_update_tickets_sidescore";
+		init="[] spawn {" \n "while {sleep 5; true} do {" \n "_scoreside = scoreside side player;" \n "_tickets=[player, nil, true] call BIS_fnc_respawnTickets;    " \n "_diff=_scoreside+(score player)-_tickets;" \n "if (_diff > 0) then {[side player, _diff] call BIS_fnc_respawnTickets};" \n "}" \n "}";
+		id=4140;
+		type="ModuleChat_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleChat_F_Text";
+				expression="_this setVariable ['Text',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Updating spawn tickets to captured sectors";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleChat_F_Units";
+				expression="_this setVariable ['Units',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="1";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleChat_F_Channel";
+				expression="_this setVariable ['Channel',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="0";
+					};
+				};
+			};
+			nAttributes=3;
+		};
+	};
+};
+class connections
+{
+	class LinkIDProvider
+	{
+		nextID=55;
+	};
+	class Links
+	{
+		items=55;
+		class Item0
+		{
+			linkID=0;
+			item0=15;
+			item1=14;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=14;
+			item1=16;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item2
+		{
+			linkID=2;
+			item0=719;
+			item1=14;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item3
+		{
+			linkID=3;
+			item0=718;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item4
+		{
+			linkID=4;
+			item0=714;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item5
+		{
+			linkID=5;
+			item0=1333;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item6
+		{
+			linkID=6;
+			item0=1335;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item7
+		{
+			linkID=7;
+			item0=2710;
+			item1=80;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item8
+		{
+			linkID=8;
+			item0=2710;
+			item1=79;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item9
+		{
+			linkID=9;
+			item0=2710;
+			item1=78;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item10
+		{
+			linkID=10;
+			item0=2710;
+			item1=81;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item11
+		{
+			linkID=11;
+			item0=2710;
+			item1=77;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item12
+		{
+			linkID=12;
+			item0=42;
+			item1=14;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item13
+		{
+			linkID=13;
+			item0=51;
+			item1=14;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item14
+		{
+			linkID=14;
+			item0=54;
+			item1=14;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item15
+		{
+			linkID=15;
+			item0=59;
+			item1=14;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item16
+		{
+			linkID=16;
+			item0=73;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item17
+		{
+			linkID=17;
+			item0=3103;
+			item1=3102;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item18
+		{
+			linkID=18;
+			item0=14;
+			item1=73;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item19
+		{
+			linkID=19;
+			item0=3346;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item20
+		{
+			linkID=20;
+			item0=3347;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item21
+		{
+			linkID=21;
+			item0=3348;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item22
+		{
+			linkID=22;
+			item0=3350;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item23
+		{
+			linkID=23;
+			item0=3351;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item24
+		{
+			linkID=24;
+			item0=3352;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item25
+		{
+			linkID=25;
+			item0=3353;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item26
+		{
+			linkID=26;
+			item0=3354;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item27
+		{
+			linkID=27;
+			item0=3355;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item28
+		{
+			linkID=28;
+			item0=36;
+			item1=14;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item29
+		{
+			linkID=29;
+			item0=3373;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item30
+		{
+			linkID=30;
+			item0=3374;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item31
+		{
+			linkID=31;
+			item0=3375;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item32
+		{
+			linkID=32;
+			item0=3376;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item33
+		{
+			linkID=33;
+			item0=3332;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item34
+		{
+			linkID=34;
+			item0=3338;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item35
+		{
+			linkID=35;
+			item0=3339;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item36
+		{
+			linkID=36;
+			item0=3340;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item37
+		{
+			linkID=37;
+			item0=3341;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item38
+		{
+			linkID=38;
+			item0=3342;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item39
+		{
+			linkID=39;
+			item0=3343;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item40
+		{
+			linkID=40;
+			item0=3344;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item41
+		{
+			linkID=41;
+			item0=3379;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item42
+		{
+			linkID=42;
+			item0=3380;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item43
+		{
+			linkID=43;
+			item0=3381;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item44
+		{
+			linkID=44;
+			item0=3382;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item45
+		{
+			linkID=45;
+			item0=3383;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item46
+		{
+			linkID=46;
+			item0=3386;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item47
+		{
+			linkID=47;
+			item0=3387;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item48
+		{
+			linkID=48;
+			item0=3388;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item49
+		{
+			linkID=49;
+			item0=3389;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item50
+		{
+			linkID=50;
+			item0=3390;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item51
+		{
+			linkID=51;
+			item0=3391;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item52
+		{
+			linkID=52;
+			item0=3392;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item53
+		{
+			linkID=53;
+			item0=3393;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item54
+		{
+			linkID=54;
+			item0=3394;
+			item1=719;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+	};
+};
+class VehicleInVehicleLinks
+{
+	class LinkIDProvider
+	{
+		nextID=28;
+	};
+	class Links
+	{
+		items=28;
+		class Item0
+		{
+			linkID=0;
+			item0=2620;
+			item1=2619;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=2621;
+			item1=2619;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item2
+		{
+			linkID=2;
+			item0=3579;
+			item1=3578;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item3
+		{
+			linkID=3;
+			item0=3580;
+			item1=3578;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item4
+		{
+			linkID=4;
+			item0=3581;
+			item1=3578;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item5
+		{
+			linkID=5;
+			item0=3582;
+			item1=3578;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item6
+		{
+			linkID=6;
+			item0=3398;
+			item1=3400;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item7
+		{
+			linkID=7;
+			item0=3399;
+			item1=3400;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item8
+		{
+			linkID=8;
+			item0=3402;
+			item1=3404;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item9
+		{
+			linkID=9;
+			item0=3403;
+			item1=3404;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item10
+		{
+			linkID=10;
+			item0=3576;
+			item1=3575;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item11
+		{
+			linkID=11;
+			item0=3577;
+			item1=3575;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item12
+		{
+			linkID=12;
+			item0=3424;
+			item1=3422;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item13
+		{
+			linkID=13;
+			item0=3425;
+			item1=3422;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item14
+		{
+			linkID=14;
+			item0=3520;
+			item1=3518;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item15
+		{
+			linkID=15;
+			item0=3521;
+			item1=3518;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item16
+		{
+			linkID=16;
+			item0=3531;
+			item1=3530;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item17
+		{
+			linkID=17;
+			item0=3532;
+			item1=3530;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item18
+		{
+			linkID=18;
+			item0=3533;
+			item1=3530;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item19
+		{
+			linkID=19;
+			item0=3534;
+			item1=3530;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item20
+		{
+			linkID=20;
+			item0=3536;
+			item1=3540;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item21
+		{
+			linkID=21;
+			item0=3537;
+			item1=3540;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item22
+		{
+			linkID=22;
+			item0=3538;
+			item1=3540;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item23
+		{
+			linkID=23;
+			item0=3539;
+			item1=3540;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item24
+		{
+			linkID=24;
+			item0=3566;
+			item1=3565;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item25
+		{
+			linkID=25;
+			item0=3567;
+			item1=3565;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item26
+		{
+			linkID=26;
+			item0=3568;
+			item1=3565;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item27
+		{
+			linkID=27;
+			item0=3569;
+			item1=3565;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+	};
+};

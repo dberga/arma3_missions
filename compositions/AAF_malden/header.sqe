@@ -1,0 +1,38 @@
+version=54;
+name="AAF_malden";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Modules_F_Heli_Misc",
+	"A3_Modules_F_Intel",
+	"A3_Missions_F_Heli",
+	"A3_Structures_F_Mil_Flags",
+	"A3_Props_F_Jets_Military_Trolley",
+	"A3_Weapons_F_Ammoboxes",
+	"A3_Modules_F_Multiplayer",
+	"A3_Modules_F_Supports",
+	"A3_Modules_F_Sites",
+	"A3_Structures_F_Exp_Infrastructure_Airports",
+	"A3_Characters_F",
+	"A3_Soft_F_Gamma_Truck_02",
+	"A3_Armor_F_EPB_APC_Tracked_03",
+	"A3_Armor_F_Gamma_APC_Wheeled_03",
+	"A3_Armor_F_Tank_LT_01",
+	"A3_Soft_F_Quadbike_01",
+	"A3_Soft_F_Beta_MRAP_03",
+	"A3_Armor_F_EPB_MBT_03",
+	"A3_Soft_F_Beta_Truck_02",
+	"A3_Static_F_AA_01",
+	"A3_Static_F_AT_01",
+	"A3_Static_F_Mortar_01",
+	"A3_Air_F_Beta_Heli_Transport_02",
+	"A3_Air_F_EPB_Heli_Light_03",
+	"A3_Characters_F_Jets",
+	"A3_Air_F_Jets_Plane_Fighter_04",
+	"A3_Air_F_Gamma_Plane_Fighter_03",
+	"A3_Characters_F_Common",
+	"A3_Drones_F_Air_F_Gamma_UAV_01",
+	"A3_Boat_F_Beta_Boat_Armed_01",
+	"A3_Boat_F_Beta_Boat_Transport_01"
+};

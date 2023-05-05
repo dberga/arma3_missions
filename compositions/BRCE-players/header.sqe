@@ -1,0 +1,10 @@
+version=54;
+name="BRCE-players";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Characters_F",
+	"A3_Weapons_F",
+	"A3_Characters_F_Orange_Facewear"
+};

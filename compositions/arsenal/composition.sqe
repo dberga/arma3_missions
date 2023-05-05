@@ -1,0 +1,45 @@
+version=54;
+center[]={14234.831,17.93,15898.395};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.0009765625,0.89242172,-0.0009765625};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+			init="[""AmmoboxInit"", [this,true]] call BIS_fnc_arsenal;" \n "_mark = createMarker [(""marker_""+ str random 10), getPos this]; _mark setMarkerType ""hd_warning"";" \n "";
+		};
+		id=324;
+		type="B_supplyCrate_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ammoBox";
+				expression="[_this,_value] call bis_fnc_initAmmoBox;";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""130Rnd_338_Mag""],[]],[[""acc_flashlight"",""bipod_01_F_blk""],[]],[[""B_Kitbag_mcamo""],[]]],true]";
+					};
+				};
+			};
+			nAttributes=1;
+		};
+	};
+};

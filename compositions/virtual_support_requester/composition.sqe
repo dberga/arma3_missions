@@ -1,0 +1,1235 @@
+version=54;
+center[]={2384.5042,-24.606709,8061.7905};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Layer";
+		name="NATO+scripts";
+		class Entities
+		{
+			items=6;
+			class Item0
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-11.937256,0.52552795,2.4570313};
+				};
+				id=91;
+				type="SupportProvider_Virtual_Artillery";
+				atlOffset=28.868561;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="SupportProvider_Virtual_Artillery_BIS_SUPP_filter";
+						expression="_this setVariable ['BIS_SUPP_filter',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Side";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="SupportProvider_Virtual_Artillery_BIS_SUPP_vehicleInit";
+						expression="_this setVariable ['BIS_SUPP_vehicleInit',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="SupportProvider_Virtual_Artillery_BIS_SUPP_vehicles";
+						expression="_this setVariable ['BIS_SUPP_vehicles',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="[]";
+							};
+						};
+					};
+					class Attribute3
+					{
+						property="SupportProvider_Virtual_Artillery_BIS_SUPP_cooldown";
+						expression="_this setVariable ['BIS_SUPP_cooldown',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+					};
+					nAttributes=4;
+				};
+			};
+			class Item1
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-3.9343262,1.2091599,1.9453125};
+				};
+				id=92;
+				type="SupportProvider_Virtual_CAS_Bombing";
+				atlOffset=28.868561;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="SupportProvider_Virtual_CAS_Bombing_BIS_SUPP_cooldown";
+						expression="_this setVariable ['BIS_SUPP_cooldown',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="SupportProvider_Virtual_CAS_Bombing_BIS_SUPP_vehicleInit";
+						expression="_this setVariable ['BIS_SUPP_vehicleInit',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="SupportProvider_Virtual_CAS_Bombing_BIS_SUPP_vehicles";
+						expression="_this setVariable ['BIS_SUPP_vehicles',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="[]";
+							};
+						};
+					};
+					class Attribute3
+					{
+						property="SupportProvider_Virtual_CAS_Bombing_BIS_SUPP_filter";
+						expression="_this setVariable ['BIS_SUPP_filter',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Side";
+							};
+						};
+					};
+					nAttributes=4;
+				};
+			};
+			class Item2
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-6.6657715,0.76937485,-2.6347656};
+				};
+				id=93;
+				type="SupportProvider_Virtual_CAS_Heli";
+				atlOffset=28.868557;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="SupportProvider_Virtual_CAS_Heli_BIS_SUPP_cooldown";
+						expression="_this setVariable ['BIS_SUPP_cooldown',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="SupportProvider_Virtual_CAS_Heli_BIS_SUPP_vehicleInit";
+						expression="_this setVariable ['BIS_SUPP_vehicleInit',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="SupportProvider_Virtual_CAS_Heli_BIS_SUPP_vehicles";
+						expression="_this setVariable ['BIS_SUPP_vehicles',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="[]";
+							};
+						};
+					};
+					class Attribute3
+					{
+						property="SupportProvider_Virtual_CAS_Heli_BIS_SUPP_filter";
+						expression="_this setVariable ['BIS_SUPP_filter',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Side";
+							};
+						};
+					};
+					nAttributes=4;
+				};
+			};
+			class Item3
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={-11.906982,0.31739807,-5.1503906};
+				};
+				id=94;
+				type="SupportProvider_Virtual_Transport";
+				atlOffset=28.868561;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="SupportProvider_Virtual_Transport_BIS_SUPP_filter";
+						expression="_this setVariable ['BIS_SUPP_filter',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Side";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="SupportProvider_Virtual_Transport_BIS_SUPP_vehicles";
+						expression="_this setVariable ['BIS_SUPP_vehicles',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="[]";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="SupportProvider_Virtual_Transport_BIS_SUPP_vehicleInit";
+						expression="_this setVariable ['BIS_SUPP_vehicleInit',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					class Attribute3
+					{
+						property="SupportProvider_Virtual_Transport_BIS_SUPP_cooldown";
+						expression="_this setVariable ['BIS_SUPP_cooldown',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+					};
+					nAttributes=4;
+				};
+			};
+			class Item4
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={2.5273438,2.8354588,-12.584961};
+				};
+				id=95;
+				type="SupportProvider_Virtual_Drop";
+				atlOffset=30.021608;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="SupportProvider_Virtual_Drop_BIS_SUPP_cooldown";
+						expression="_this setVariable ['BIS_SUPP_cooldown',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="SupportProvider_Virtual_Drop_BIS_SUPP_vehicleInit";
+						expression="_this setVariable ['BIS_SUPP_vehicleInit',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="SupportProvider_Virtual_Drop_BIS_SUPP_vehicles";
+						expression="_this setVariable ['BIS_SUPP_vehicles',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="[]";
+							};
+						};
+					};
+					class Attribute3
+					{
+						property="SupportProvider_Virtual_Drop_BIS_SUPP_filter";
+						expression="_this setVariable ['BIS_SUPP_filter',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Side";
+							};
+						};
+					};
+					class Attribute4
+					{
+						property="SupportProvider_Virtual_Drop_BIS_SUPP_crateInit";
+						expression="_this setVariable ['BIS_SUPP_crateInit',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=5;
+				};
+			};
+			class Item5
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					position[]={31.916748,0,15.969238};
+				};
+				init="_this = this;" \n "[_this] spawn { " \n "params [""_this""]; " \n "while {true} do { " \n "    sleep 5; " \n "    {" \n "    if ((side _x) == West && leader group _x == _x) then { " \n "         _this synchronizeObjectsAdd [_x]; " \n "    }; " \n "    } forEach allUnits; " \n "  }; " \n "};";
+				id=106;
+				type="SupportRequester";
+				atlOffset=22.48;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="SupportRequester_BIS_SUPP_limit_UAV";
+						expression="_this setVariable ['BIS_SUPP_limit_UAV',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="-1";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="SupportRequester_BIS_SUPP_custom_HQ";
+						expression="_this setVariable ['BIS_SUPP_custom_HQ',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="SupportRequester_BIS_SUPP_limit_Transport";
+						expression="_this setVariable ['BIS_SUPP_limit_Transport',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="-1";
+							};
+						};
+					};
+					class Attribute3
+					{
+						property="SupportRequester_BIS_SUPP_limit_Drop";
+						expression="_this setVariable ['BIS_SUPP_limit_Drop',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="-1";
+							};
+						};
+					};
+					class Attribute4
+					{
+						property="SupportRequester_BIS_SUPP_limit_CAS_Heli";
+						expression="_this setVariable ['BIS_SUPP_limit_CAS_Heli',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="-1";
+							};
+						};
+					};
+					class Attribute5
+					{
+						property="SupportRequester_BIS_SUPP_limit_Artillery";
+						expression="_this setVariable ['BIS_SUPP_limit_Artillery',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="-1";
+							};
+						};
+					};
+					class Attribute6
+					{
+						property="SupportRequester_BIS_SUPP_limit_CAS_Bombing";
+						expression="_this setVariable ['BIS_SUPP_limit_CAS_Bombing',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="-1";
+							};
+						};
+					};
+					nAttributes=7;
+				};
+			};
+		};
+		id=168;
+		atlOffset=50.544388;
+	};
+};
+class connections
+{
+	class LinkIDProvider
+	{
+		nextID=5;
+	};
+	class Links
+	{
+		items=5;
+		class Item0
+		{
+			linkID=0;
+			item0=106;
+			item1=94;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=106;
+			item1=93;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item2
+		{
+			linkID=2;
+			item0=106;
+			item1=92;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item3
+		{
+			linkID=3;
+			item0=106;
+			item1=95;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item4
+		{
+			linkID=4;
+			item0=106;
+			item1=91;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+	};
+};
+class VehicleInVehicleLinks
+{
+	class LinkIDProvider
+	{
+		nextID=49;
+	};
+	class Links
+	{
+		items=49;
+		class Item0
+		{
+			linkID=0;
+			item0=103;
+			item1=105;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=104;
+			item1=105;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item2
+		{
+			linkID=2;
+			item0=114;
+			item1=118;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item3
+		{
+			linkID=3;
+			item0=115;
+			item1=118;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item4
+		{
+			linkID=4;
+			item0=116;
+			item1=118;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item5
+		{
+			linkID=5;
+			item0=117;
+			item1=118;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item6
+		{
+			linkID=6;
+			item0=120;
+			item1=122;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item7
+		{
+			linkID=7;
+			item0=121;
+			item1=122;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item8
+		{
+			linkID=8;
+			item0=124;
+			item1=126;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item9
+		{
+			linkID=9;
+			item0=125;
+			item1=126;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item10
+		{
+			linkID=10;
+			item0=175;
+			item1=174;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item11
+		{
+			linkID=11;
+			item0=176;
+			item1=174;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item12
+		{
+			linkID=12;
+			item0=134;
+			item1=132;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item13
+		{
+			linkID=13;
+			item0=135;
+			item1=132;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item14
+		{
+			linkID=14;
+			item0=138;
+			item1=136;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item15
+		{
+			linkID=15;
+			item0=139;
+			item1=136;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item16
+		{
+			linkID=16;
+			item0=141;
+			item1=145;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item17
+		{
+			linkID=17;
+			item0=142;
+			item1=145;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item18
+		{
+			linkID=18;
+			item0=143;
+			item1=145;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item19
+		{
+			linkID=19;
+			item0=144;
+			item1=145;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item20
+		{
+			linkID=20;
+			item0=147;
+			item1=151;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item21
+		{
+			linkID=21;
+			item0=148;
+			item1=151;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item22
+		{
+			linkID=22;
+			item0=149;
+			item1=151;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item23
+		{
+			linkID=23;
+			item0=150;
+			item1=151;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item24
+		{
+			linkID=24;
+			item0=153;
+			item1=157;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item25
+		{
+			linkID=25;
+			item0=154;
+			item1=157;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item26
+		{
+			linkID=26;
+			item0=155;
+			item1=157;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item27
+		{
+			linkID=27;
+			item0=156;
+			item1=157;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item28
+		{
+			linkID=28;
+			item0=211;
+			item1=215;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item29
+		{
+			linkID=29;
+			item0=212;
+			item1=215;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item30
+		{
+			linkID=30;
+			item0=213;
+			item1=215;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item31
+		{
+			linkID=31;
+			item0=214;
+			item1=215;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item32
+		{
+			linkID=32;
+			item0=217;
+			item1=221;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item33
+		{
+			linkID=33;
+			item0=218;
+			item1=221;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item34
+		{
+			linkID=34;
+			item0=219;
+			item1=221;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item35
+		{
+			linkID=35;
+			item0=220;
+			item1=221;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item36
+		{
+			linkID=36;
+			item0=223;
+			item1=227;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item37
+		{
+			linkID=37;
+			item0=224;
+			item1=227;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item38
+		{
+			linkID=38;
+			item0=225;
+			item1=227;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item39
+		{
+			linkID=39;
+			item0=226;
+			item1=227;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item40
+		{
+			linkID=40;
+			item0=229;
+			item1=233;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item41
+		{
+			linkID=41;
+			item0=230;
+			item1=233;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item42
+		{
+			linkID=42;
+			item0=231;
+			item1=233;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item43
+		{
+			linkID=43;
+			item0=232;
+			item1=233;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item44
+		{
+			linkID=44;
+			item0=255;
+			item1=254;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item45
+		{
+			linkID=45;
+			item0=256;
+			item1=254;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item46
+		{
+			linkID=46;
+			item0=257;
+			item1=254;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item47
+		{
+			linkID=47;
+			item0=258;
+			item1=254;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item48
+		{
+			linkID=48;
+			item0=272;
+			item1=271;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+	};
+};

@@ -1,0 +1,81 @@
+version=54;
+center[]={14456.35,52.978699,16271.43};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Group";
+		side="Independent";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0,0.0014381409,0.049804688};
+					angles[]={0,0.8769058,0};
+				};
+				side="Independent";
+				flags=3;
+				class Attributes
+				{
+					init="_rt=this;   " \n "_spawntime=30;   " \n "_rt_captive = false;   " \n "_rt_tasktype=""Defend"";   " \n "_rt_taskowners = [side _rt];   " \n "_rt_oppside = side _rt;   " \n "_rt_opppos = false;   " \n "_rt_randpos = false;   " \n "_initpos = getPos this;  " \n "_rt_rand_zones = [""Hill"",""Mount""];   " \n "_rt_killstate = ""FAILED"";   " \n "_rt_dname = [configFile >> ""CfgVehicles"" >> typeOf vehicle _rt] call BIS_fnc_displayName;   " \n "_rt_taskid = str (random 10) + _rt_dname;   " \n "_rt_group = group _rt;   " \n "_rt_type = typeOf _rt;   " \n "_rt_skill = skill _rt;   " \n "_rt setCaptive (_rt_captive);   " \n " " \n "_rt_taskowners_defend = _rt_taskowners; " \n "_rt_taskowners_kill = [independent, west, east] - _rt_taskowners_defend; " \n "_rt_taskid_defend = str (random 10) + _rt_dname;   " \n "_rt_taskid_kill = str (random 10) + _rt_dname;   " \n "_rt_tasktype_defend = ""Defend""; " \n "_rt_tasktype_kill = ""Kill""; " \n " " \n "[_rt_taskowners_defend, _rt_taskid_defend, [[_rt_tasktype_defend+"" ""+ _rt_dname+"" owned by ""+str _rt_oppside ], [_rt_tasktype_defend+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype_defend] call BIS_fnc_taskCreate;    " \n "[_rt_taskowners_kill, _rt_taskid_kill, [[_rt_tasktype_kill+"" ""+ _rt_dname+"" owned by ""+str _rt_oppside ], [_rt_tasktype_kill+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype_kill] call BIS_fnc_taskCreate;    " \n "   " \n "[_rt, _initpos, _spawntime, _rt_tasktype_defend,_rt_tasktype_kill, _rt_taskowners_defend, _rt_oppside, _rt_opppos, _rt_randpos, _rt_rand_zones, _rt_killstate,_rt_dname, _rt_taskid_defend, _rt_taskid_kill, _rt_captive, _rt_group, _rt_type, _rt_skill] spawn {   " \n " params [""_rt"", ""_initpos"", ""_spawntime"", ""_rt_tasktype_defend"",""_rt_tasktype_kill"", ""_rt_taskowners_defend"", ""_rt_oppside"", ""_rt_opppos"", ""_rt_randpos"", ""_rt_rand_zones"", ""_rt_killstate"", ""_rt_dname"", ""_rt_taskid_defend"" ,""_rt_taskid_kill"", ""_rt_captive"", ""_rt_group"", ""_rt_type"", ""_rt_skill""];   " \n " while {true} do {   " \n "   waitUntil {sleep 5; damage _rt == 1};   " \n "   [_rt_taskid_defend,""FAILED""] call BIS_fnc_taskSetState;    " \n "   [_rt_taskid_kill,""SUCCEEDED""] call BIS_fnc_taskSetState;    " \n "   sleep _spawntime;" \n "   if (_spawntime>0) then {   " \n "     _rt = _rt_group createUnit [_rt_type, _initpos, [], 1, ""CAN_COLLIDE""]; " \n "     _rt setDamage 0; " \n "     _rt setCaptive (_rt_captive);   " \n "     [_rt_taskowners_defend, _rt_taskid_defend, [[_rt_tasktype_defend+"" ""+_rt_dname+"" owned by ""+str _rt_oppside], [_rt_tasktype_defend+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype_defend] call BIS_fnc_taskCreate;   " \n "     [[independent, west, east] - _rt_taskowners_defend, _rt_taskid_kill, [[_rt_tasktype_kill+"" ""+_rt_dname+"" owned by ""+str _rt_oppside], [_rt_tasktype_kill+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype_kill] call BIS_fnc_taskCreate;   " \n "    };   " \n " };   " \n " };   " \n "   ";
+					name="officer_res";
+				};
+				id=3462;
+				type="I_officer_F";
+				atlOffset=34.358002;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male04GRE";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+		};
+		class Attributes
+		{
+		};
+		id=3461;
+		atlOffset=34.358002;
+	};
+};

@@ -1,0 +1,8 @@
+version=54;
+name="virtual_support_requester_autosync";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Modules_F_Supports"
+};

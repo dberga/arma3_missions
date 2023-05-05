@@ -1,0 +1,9 @@
+version=54;
+name="script_markers_squad_hq";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Modules_F_Events",
+	"A3_Modules_F_Hc"
+};

@@ -1,0 +1,627 @@
+version=54;
+center[]={2455.271,23.539871,7618.7349};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Layer";
+		name="NATO+scripts";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Group";
+				side="West";
+				class Entities
+				{
+					items=1;
+					class Item0
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={0,0.0014381409,0.049804688};
+							angles[]={0,5.1649528,0};
+						};
+						side="West";
+						flags=2;
+						class Attributes
+						{
+							rank="SERGEANT";
+							init="_this = leader group this;       " \n "[_this] spawn { params [""_this""];       " \n "_basesize = blubase getVariable [""size"",200];   " \n "waitUntil {sleep 5; alive _this};   " \n "_grp = group _this;       " \n "_tasks = simpleTasks _this;       " \n "_task = _tasks call BIS_fnc_selectRandom;      " \n "_this setCurrentTask _task;    " \n "while {true} do {   " \n "if (not isPlayer _this) then {    " \n "waitUntil {sleep 5; alive _this && _this inArea [getPos blubase, _basesize, _basesize, 0, false]};    " \n "_vehs = nearestObjects [_this, [""Helicopter"", ""Plane""], _basesize];   " \n "_veh = _vehs select 0;       " \n "while {sleep 1; (_veh isKindOf ""Helicopter"" || _veh isKindOf ""Plane"") && count fullCrew[ _veh, 'driver'] == 0} do {_vehs = _vehs - _veh};" \n "{if (not isPlayer _x) then {_x moveTo getPos _veh; sleep 1}}forEach units _grp; " \n "sleep 10; " \n "{if (not isPlayer _x) then {_x moveInAny _veh; sleep 1}}forEach units _grp; " \n "};  " \n "}; " \n "};  ";
+							isPlayable=1;
+						};
+						id=320;
+						type="B_diver_TL_F";
+						atlOffset=57.540001;
+						class CustomAttributes
+						{
+							class Attribute0
+							{
+								property="speaker";
+								expression="_this setspeaker _value;";
+								class Value
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"STRING"
+											};
+										};
+										value="Male07ENG";
+									};
+								};
+							};
+							class Attribute1
+							{
+								property="pitch";
+								expression="_this setpitch _value;";
+								class Value
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"SCALAR"
+											};
+										};
+										value=0.94999999;
+									};
+								};
+							};
+							nAttributes=2;
+						};
+					};
+				};
+				class Attributes
+				{
+				};
+				id=52;
+				atlOffset=57.540001;
+			};
+		};
+		id=168;
+		atlOffset=50.544395;
+	};
+};
+class VehicleInVehicleLinks
+{
+	class LinkIDProvider
+	{
+		nextID=49;
+	};
+	class Links
+	{
+		items=49;
+		class Item0
+		{
+			linkID=0;
+			item0=103;
+			item1=105;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=104;
+			item1=105;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item2
+		{
+			linkID=2;
+			item0=114;
+			item1=118;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item3
+		{
+			linkID=3;
+			item0=115;
+			item1=118;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item4
+		{
+			linkID=4;
+			item0=116;
+			item1=118;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item5
+		{
+			linkID=5;
+			item0=117;
+			item1=118;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item6
+		{
+			linkID=6;
+			item0=120;
+			item1=122;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item7
+		{
+			linkID=7;
+			item0=121;
+			item1=122;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item8
+		{
+			linkID=8;
+			item0=124;
+			item1=126;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item9
+		{
+			linkID=9;
+			item0=125;
+			item1=126;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item10
+		{
+			linkID=10;
+			item0=175;
+			item1=174;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item11
+		{
+			linkID=11;
+			item0=176;
+			item1=174;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item12
+		{
+			linkID=12;
+			item0=134;
+			item1=132;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item13
+		{
+			linkID=13;
+			item0=135;
+			item1=132;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item14
+		{
+			linkID=14;
+			item0=138;
+			item1=136;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item15
+		{
+			linkID=15;
+			item0=139;
+			item1=136;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item16
+		{
+			linkID=16;
+			item0=141;
+			item1=145;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item17
+		{
+			linkID=17;
+			item0=142;
+			item1=145;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item18
+		{
+			linkID=18;
+			item0=143;
+			item1=145;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item19
+		{
+			linkID=19;
+			item0=144;
+			item1=145;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item20
+		{
+			linkID=20;
+			item0=147;
+			item1=151;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item21
+		{
+			linkID=21;
+			item0=148;
+			item1=151;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item22
+		{
+			linkID=22;
+			item0=149;
+			item1=151;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item23
+		{
+			linkID=23;
+			item0=150;
+			item1=151;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item24
+		{
+			linkID=24;
+			item0=153;
+			item1=157;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item25
+		{
+			linkID=25;
+			item0=154;
+			item1=157;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item26
+		{
+			linkID=26;
+			item0=155;
+			item1=157;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item27
+		{
+			linkID=27;
+			item0=156;
+			item1=157;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item28
+		{
+			linkID=28;
+			item0=211;
+			item1=215;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item29
+		{
+			linkID=29;
+			item0=212;
+			item1=215;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item30
+		{
+			linkID=30;
+			item0=213;
+			item1=215;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item31
+		{
+			linkID=31;
+			item0=214;
+			item1=215;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item32
+		{
+			linkID=32;
+			item0=217;
+			item1=221;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item33
+		{
+			linkID=33;
+			item0=218;
+			item1=221;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item34
+		{
+			linkID=34;
+			item0=219;
+			item1=221;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item35
+		{
+			linkID=35;
+			item0=220;
+			item1=221;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item36
+		{
+			linkID=36;
+			item0=223;
+			item1=227;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item37
+		{
+			linkID=37;
+			item0=224;
+			item1=227;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item38
+		{
+			linkID=38;
+			item0=225;
+			item1=227;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item39
+		{
+			linkID=39;
+			item0=226;
+			item1=227;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item40
+		{
+			linkID=40;
+			item0=229;
+			item1=233;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item41
+		{
+			linkID=41;
+			item0=230;
+			item1=233;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item42
+		{
+			linkID=42;
+			item0=231;
+			item1=233;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item43
+		{
+			linkID=43;
+			item0=232;
+			item1=233;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item44
+		{
+			linkID=44;
+			item0=255;
+			item1=254;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item45
+		{
+			linkID=45;
+			item0=256;
+			item1=254;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item46
+		{
+			linkID=46;
+			item0=257;
+			item1=254;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item47
+		{
+			linkID=47;
+			item0=258;
+			item1=254;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={2};
+			};
+		};
+		class Item48
+		{
+			linkID=48;
+			item0=272;
+			item1=271;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+	};
+};

@@ -1,0 +1,8 @@
+version=54;
+name="object_scoreboard_aaf";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Structures_F_Orange_Signs_Special"
+};

@@ -1,0 +1,8 @@
+version=54;
+name="spawn_ai+helipilot";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Modules_F_Heli_Misc"
+};

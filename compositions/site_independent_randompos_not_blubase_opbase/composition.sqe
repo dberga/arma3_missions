@@ -1,0 +1,222 @@
+version=54;
+center[]={2623.3237,35.974773,1082.9435};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Layer";
+		name="AAF random sites";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					angles[]={0.45963955,0,0.15865593};
+				};
+				init="private _site = this;" \n "[_site] spawn { params [""_site""];" \n "_sectors = entities ""ModuleSector_F""; " \n "_sector = _sectors call BIS_fnc_selectRandom; " \n "while {(getPos _sector) distance (getPos blubase) < 300 || (getPos _sector) distance (getPos opbase) < 300} do {_sector = _sectors call BIS_fnc_selectRandom};" \n "_site setPos (getPos _sector); " \n "}";
+				id=524;
+				type="Site_Independent";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="Site_Independent_interactive";
+						expression="_this setVariable ['interactive',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="No";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="Site_Independent_buildingOccupationIndex";
+						expression="_this setVariable ['buildingOccupationIndex',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="0.5";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="Site_Independent_faction";
+						expression="_this setVariable ['faction',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Green_army";
+							};
+						};
+					};
+					class Attribute3
+					{
+						property="Site_Independent_siteType";
+						expression="_this setVariable ['siteType',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Military_OP";
+							};
+						};
+					};
+					class Attribute4
+					{
+						property="Site_Independent_fastTravel";
+						expression="_this setVariable ['fastTravel',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Disabled";
+							};
+						};
+					};
+					class Attribute5
+					{
+						property="Site_Independent_axisA";
+						expression="_this setVariable ['axisA',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="200";
+							};
+						};
+					};
+					class Attribute6
+					{
+						property="Site_Independent_axisB";
+						expression="_this setVariable ['axisB',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="200";
+							};
+						};
+					};
+					class Attribute7
+					{
+						property="Site_Independent_shape";
+						expression="_this setVariable ['shape',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="ellipse";
+							};
+						};
+					};
+					class Attribute8
+					{
+						property="Site_Independent_conditionOfPresence";
+						expression="_this setVariable ['conditionOfPresence',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="TRUE";
+							};
+						};
+					};
+					class Attribute9
+					{
+						property="Site_Independent_description";
+						expression="_this setVariable ['description',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=10;
+				};
+			};
+		};
+		id=172;
+		atlOffset=-0.3890686;
+	};
+};

@@ -1,0 +1,8 @@
+version=54;
+name="unit_script_with_spawn_and_missiontask_officer_kill+defend";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Characters_F"
+};

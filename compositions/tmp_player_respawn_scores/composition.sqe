@@ -1,0 +1,89 @@
+version=54;
+center[]={14491.515,18.821184,16303.726};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Layer";
+		name="script_map_markers_1side";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Logic";
+				class PositionInfo
+				{
+					angles[]={6.2778621,0,6.2818413};
+				};
+				name="script_restablish_player_on_respawn";
+				init="[] spawn { " \n "while {sleep 5; true} do { " \n "player groupchat ""Died""; " \n "waitUntil {sleep 1; damage player == 1}; " \n "_oldplayer = player; " \n "_oldplayerscores = getPlayerScores _oldplayer; " \n "player groupchat format [""_oldplayerscores %1"",_oldplayerscores]; " \n "player groupchat format [""_oldplayer %1"",_oldplayer]; " \n "waitUntil {sleep 1; damage player == 0}; " \n "player groupchat ""Respawned""; " \n "player groupchat format [""_oldplayerscores %1"",_oldplayerscores]; " \n "player groupchat format [""_oldplayer %1"",_oldplayer]; " \n "player addPlayerScores [_oldplayerscores select 0, _oldplayerscores select 1, _oldplayerscores select 2, _oldplayerscores select 3, _oldplayerscores select 4];  " \n "[player, count ScoreSide side player] call BIS_fnc_addScore; " \n "} " \n "}";
+				id=4075;
+				type="ModuleChat_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="ModuleChat_F_Text";
+						expression="_this setVariable ['Text',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Restablished player respawn";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="ModuleChat_F_Units";
+						expression="_this setVariable ['Units',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="1";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="ModuleChat_F_Channel";
+						expression="_this setVariable ['Channel',_value,true];";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="0";
+							};
+						};
+					};
+					nAttributes=3;
+				};
+			};
+		};
+		id=4076;
+	};
+};

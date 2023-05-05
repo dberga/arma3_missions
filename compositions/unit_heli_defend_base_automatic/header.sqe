@@ -1,0 +1,9 @@
+version=54;
+name="unit_heli_defend_base_automatic";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Characters_F",
+	"A3_Air_F_Beta_Heli_Attack_01"
+};

@@ -1,0 +1,8 @@
+version=54;
+name="script_recruit_rankleaders";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Modules_F_Events"
+};

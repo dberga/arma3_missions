@@ -1,0 +1,133 @@
+version=54;
+center[]={14455.143,18.672083,16280.462};
+class items
+{
+	items=2;
+	class Item0
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=2;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-1.2216797,-0.14465141,-0.66308594};
+					angles[]={6.2778621,0,6.2805324};
+				};
+				side="West";
+				flags=6;
+				class Attributes
+				{
+				};
+				id=2642;
+				type="B_Helipilot_F";
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={1.7128906,-0.14904404,-0.26074219};
+					angles[]={6.2778621,0,6.2805324};
+				};
+				side="West";
+				flags=4;
+				class Attributes
+				{
+				};
+				id=2643;
+				type="B_Helipilot_F";
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=2;
+			};
+			class Links
+			{
+				items=2;
+				class Item0
+				{
+					linkID=0;
+					item0=2642;
+					item1=2641;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+				class Item1
+				{
+					linkID=1;
+					item0=2643;
+					item1=2641;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={0};
+					};
+				};
+			};
+		};
+		id=2614;
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={0.0048828125,1.7791176,-0.0087890625};
+			angles[]={6.2778621,0,6.2805324};
+		};
+		side="West";
+		flags=6;
+		class Attributes
+		{
+			init="_veh = this; " \n "_initpos = getPos this; " \n "[_veh, _initpos] spawn { " \n "params [""_veh"",""_initpos""]; " \n "_pilot = (fullCrew[ _veh, 'driver'] select 0) select 0;" \n "_group = group _pilot;" \n "waitUntil {sleep 1; count (crew _veh) > count (units group ((fullCrew[ _veh, 'driver'] select 0) select 0)) }; " \n "_wp_load = _group addwaypoint [getPos _veh,0];  " \n "_wp_load setWaypointType ""LOAD""; " \n "_wp_load setWaypointTimeout [5,10,15]; " \n "_allsectors = entities ""ModuleSector_F""; " \n "{ " \n "_wp_unload = _group addwaypoint [getPos _x,300];  " \n "_wp_unload setWaypointType ""TR UNLOAD""; " \n "_wp_unload setWaypointTimeout [5,10,15]; " \n "_wp_loiter_land = _group addwaypoint [_initpos,0];  " \n "_wp_loiter_land setWaypointType ""TR UNLOAD""; " \n "_wp_loiter_load setWaypointStatements [""true"",""vehicle this land 'LAND'""];" \n "_wp_loiter_load = _group addwaypoint [_initpos,0];  " \n "_wp_loiter_load setWaypointType ""LOAD""; " \n "_wp_loiter_load setWaypointStatements [""count (crew vehicle this) > count (units group ((fullCrew[ vehicle this, 'driver'] select 0) select 0))"", """"]; " \n "}forEach _allsectors; " \n "}";
+			name="hell";
+		};
+		id=2641;
+		type="B_Heli_Light_01_F";
+	};
+};
+class VehicleInVehicleLinks
+{
+	class LinkIDProvider
+	{
+		nextID=2;
+	};
+	class Links
+	{
+		items=2;
+		class Item0
+		{
+			linkID=0;
+			item0=2642;
+			item1=2641;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=2643;
+			item1=2641;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+	};
+};

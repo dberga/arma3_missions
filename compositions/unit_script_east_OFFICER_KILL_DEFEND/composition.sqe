@@ -1,0 +1,80 @@
+version=54;
+center[]={14480.172,28.048042,16303.714};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0,0.0014381409,0.049804688};
+					angles[]={0,5.4758654,0};
+				};
+				side="East";
+				flags=3;
+				class Attributes
+				{
+					init="_rt=this;  " \n "_spawntime=40;  " \n "_rt_captive = true;  " \n "_rt_tasktype=""Defend"";  " \n "_rt_taskowners = [east];  " \n "_rt_oppside = side _rt;  " \n "_rt_opppos = false;  " \n "_rt_randpos = false;  " \n "_rt_rand_zones = [""Hill"",""Mount""];  " \n "_rt_killstate = ""FAILED"";  " \n "_rt_dname = [configFile >> ""CfgVehicles"" >> typeOf vehicle _rt] call BIS_fnc_displayName;  " \n "_rt_taskid = str (random 10) + _rt_dname;  " \n "_rt_group = group _rt;  " \n "_rt_type = typeOf _rt;  " \n "_rt_skill = skill _rt;  " \n "_rt setCaptive (_rt_captive);  " \n "if (_rt_opppos) then {   " \n "_opp_pos = getPos ((units _rt_oppside) call BIS_fnc_selectRandom);  " \n "_new_pos = [_opp_pos,1,100] call BIS_fnc_findSafePos;  " \n "_rt setPos _new_pos;  " \n "};  " \n "if (_rt_randpos) then {  " \n "_rand_loc = nearestLocations [getPos _rt, _rt_rand_zones, worldSize];  " \n "_random_loc= _rand_loc call BIS_fnc_selectRandom;  " \n "_new_pos = [getPos _random_loc, 1, 100] call BIS_fnc_findSafePos;  " \n "_rt setPos _new_pos;  " \n "};  " \n "[_rt_taskowners, _rt_taskid, [[_rt_tasktype+"" ""+ _rt_dname+"" owned by ""+str _rt_oppside ], [_rt_tasktype+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype] call BIS_fnc_taskCreate;   " \n "  " \n "[_rt, _spawntime, _rt_tasktype, _rt_taskowners, _rt_oppside, _rt_opppos, _rt_randpos, _rt_rand_zones, _rt_killstate,_rt_dname, _rt_taskid, _rt_captive, _rt_group, _rt_type, _rt_skill] spawn {  " \n " params [""_rt"", ""_spawntime"", ""_rt_tasktype"", ""_rt_taskowners"", ""_rt_oppside"", ""_rt_opppos"", ""_rt_randpos"", ""_rt_rand_zones"", ""_rt_killstate"", ""_rt_dname"", ""_rt_taskid"", ""_rt_captive"", ""_rt_group"", ""_rt_type"", ""_rt_skill""];  " \n " while {true} do {  " \n "   waitUntil {sleep 5; not alive _rt};  " \n "   [_rt_taskid,_rt_killstate] call BIS_fnc_taskSetState;   " \n "   sleep (_spawntime);  " \n "   if (_rt_opppos) then {   " \n "    _opp_pos = getPos ((units _rt_oppside) call BIS_fnc_selectRandom);  " \n "    _new_pos = [_opp_pos,1,100] call BIS_fnc_findSafePos;  " \n "    _rt setPos _new_pos;  " \n "   };  " \n "   if (_rt_randpos) then {  " \n "    _rand_loc = nearestLocations [getPos _rt, _rt_zones, worldSize];  " \n "    _random_loc= _rand_loc call BIS_fnc_selectRandom;  " \n "    _new_pos = [getPos _random_loc, 1, 100] call BIS_fnc_findSafePos;  " \n "    _rt setPos _new_pos;  " \n "   };  " \n "   if (_spawntime>0) then {  " \n "     _rt = _rt_group createUnit [_rt_type, position _rt, [], _rt_skill, ""FORM""];  " \n "     _rt setCaptive (_rt_captive);  " \n "     _rt setDamage 0; " \n "     [_rt_taskowners, _rt_taskid, [[_rt_tasktype+"" ""+_rt_dname+"" owned by ""+str _rt_oppside], [_rt_tasktype+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype] call BIS_fnc_taskCreate;  " \n "    };    " \n " };  " \n " };  " \n "   " \n "_rt_taskowners = [west, resistance];  " \n "_rt_tasktype=""Kill"";  " \n "_rt_killstate = ""SUCCEEDED"";  " \n "_rt_taskid = str (random 10) + _rt_dname;  " \n "[_rt_taskowners, _rt_taskid, [[_rt_tasktype+"" ""+ _rt_dname+"" owned by ""+str _rt_oppside ], [_rt_tasktype+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype] call BIS_fnc_taskCreate;   " \n "  " \n " [_rt, _spawntime, _rt_tasktype, _rt_taskowners, _rt_oppside, _rt_opppos, _rt_randpos, _rt_rand_zones, _rt_killstate,_rt_dname, _rt_taskid, _rt_captive, _rt_group, _rt_type, _rt_skill] spawn {  " \n " params [""_rt"", ""_spawntime"", ""_rt_tasktype"", ""_rt_taskowners"", ""_rt_oppside"", ""_rt_opppos"", ""_rt_randpos"", ""_rt_rand_zones"", ""_rt_killstate"", ""_rt_dname"", ""_rt_taskid"", ""_rt_captive"", ""_rt_group"", ""_rt_type"", ""_rt_skill""];  " \n " while {true} do {  " \n "   waitUntil {sleep 5; not alive _rt};  " \n "   [_rt_taskid,_rt_killstate] call BIS_fnc_taskSetState;   " \n "   sleep (_spawntime);  " \n "   if (_rt_opppos) then {   " \n "    _opp_pos = getPos ((units _rt_oppside) call BIS_fnc_selectRandom);  " \n "    _new_pos = [_opp_pos,1,100] call BIS_fnc_findSafePos;  " \n "    _rt setPos _new_pos;  " \n "   };  " \n "   if (_rt_randpos) then {  " \n "    _rand_loc = nearestLocations [getPos _rt, _rt_zones, worldSize];  " \n "    _random_loc= _rand_loc call BIS_fnc_selectRandom;  " \n "    _new_pos = [getPos _random_loc, 1, 100] call BIS_fnc_findSafePos;  " \n "    _rt setPos _new_pos;  " \n "   };  " \n "   if (_spawntime>0) then {  " \n "     _rt = _rt_group createUnit [_rt_type, position _rt, [], _rt_skill, ""FORM""];  " \n "     _rt setCaptive (_rt_captive);  " \n "     _rt setDamage 0; " \n "     [_rt_taskowners, _rt_taskid, [[_rt_tasktype+"" ""+_rt_dname+"" owned by ""+str _rt_oppside], [_rt_tasktype+"" ""+_rt_dname]], _rt ,""AUTOASSIGNED"", 1, true, _rt_tasktype] call BIS_fnc_taskCreate;  " \n "    };    " \n " };  " \n " };";
+				};
+				id=3466;
+				type="O_officer_F";
+				atlOffset=9.2280006;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male03PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.04;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+		};
+		class Attributes
+		{
+		};
+		id=3465;
+		atlOffset=9.2280006;
+	};
+};

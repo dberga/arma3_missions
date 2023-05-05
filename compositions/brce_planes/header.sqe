@@ -1,0 +1,10 @@
+version=54;
+name="brce_planes";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Air_F_Exp_VTOL_01",
+	"A3_Characters_F",
+	"A3_Air_F_EPB_Heli_Light_03"
+};

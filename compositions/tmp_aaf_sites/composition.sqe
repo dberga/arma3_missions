@@ -1,0 +1,79 @@
+version=54;
+center[]={14528.293,18.383797,16385.229};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			angles[]={6.2818484,0,6.2791886};
+		};
+		name="script_AAF_sites";
+		init="_sitemodule = createGroup sideLogic; " \n """Site_Independent"" createUnit [ getPos this, _sitemodule, ""this setvariable ['BIS_fnc_initModules_disableAutoActivation',false,true];""];";
+		id=3455;
+		type="ModuleChat_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleChat_F_Text";
+				expression="_this setVariable ['Text',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleChat_F_Units";
+				expression="_this setVariable ['Units',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="1";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleChat_F_Channel";
+				expression="_this setVariable ['Channel',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="0";
+					};
+				};
+			};
+			nAttributes=3;
+		};
+	};
+};

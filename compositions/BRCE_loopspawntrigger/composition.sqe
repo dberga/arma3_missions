@@ -1,0 +1,1360 @@
+version=54;
+center[]={5676.0532,10.704929,6341.0879};
+class items
+{
+	items=89;
+	class Item0
+	{
+		dataType="Trigger";
+		position[]={-160.50293,35.813263,-3482.9072};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=869;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item1
+	{
+		dataType="Trigger";
+		position[]={-446.67725,54.284832,-3854.7197};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_1";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=870;
+		type="EmptyDetectorAreaR250";
+		atlOffset=-7.6293945e-006;
+	};
+	class Item2
+	{
+		dataType="Trigger";
+		position[]={-24.688477,67.655762,-2339.8643};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_10";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=879;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item3
+	{
+		dataType="Trigger";
+		position[]={567.78174,63.918888,-2698.7822};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_11";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=880;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item4
+	{
+		dataType="Trigger";
+		position[]={1687.1392,18.444586,-2455.6777};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_12";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=881;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item5
+	{
+		dataType="Trigger";
+		position[]={2033.2217,5.835619,-2811.1245};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_13";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=882;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item6
+	{
+		dataType="Trigger";
+		position[]={2322.7026,22.577976,-3173.2646};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_14";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=883;
+		type="EmptyDetectorAreaR250";
+		atlOffset=3.8146973e-006;
+	};
+	class Item7
+	{
+		dataType="Trigger";
+		position[]={2698.6831,19.758982,-3027.9468};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_15";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=884;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item8
+	{
+		dataType="Trigger";
+		position[]={2479.9863,37.327526,-2495.1758};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_16";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=885;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item9
+	{
+		dataType="Trigger";
+		position[]={2049.8013,25.00507,-2191.855};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_17";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=886;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item10
+	{
+		dataType="Trigger";
+		position[]={1850.1987,26.978653,-1593.8296};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_18";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=887;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item11
+	{
+		dataType="Trigger";
+		position[]={2525.478,0,-596.30957};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_19";
+			condition="(LSgr == 2) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=888;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item12
+	{
+		dataType="Trigger";
+		position[]={168.38818,5.7080898,-3830.2666};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_2";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=871;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item13
+	{
+		dataType="Trigger";
+		position[]={866.89502,103.31467,-992};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_20";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=889;
+		type="EmptyDetectorAreaR250";
+		atlOffset=7.6293945e-006;
+	};
+	class Item14
+	{
+		dataType="Trigger";
+		position[]={1392.9023,62.530598,-288.28662};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_21";
+			condition="(LSgr == 2) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=890;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item15
+	{
+		dataType="Trigger";
+		position[]={928.49951,147.10045,-375.95361};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_22";
+			condition="(LSgr == 2) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=891;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item16
+	{
+		dataType="Trigger";
+		position[]={1703.2954,24.771656,-484.94775};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_23";
+			condition="(LSgr == 2) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=892;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item17
+	{
+		dataType="Trigger";
+		position[]={1850.1982,16.661945,81.341309};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_24";
+			condition="(LSgr == 2) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=893;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item18
+	{
+		dataType="Trigger";
+		position[]={1346.7622,81.354446,588.30029};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_25";
+			condition="(LSgr == 2) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=894;
+		type="EmptyDetectorAreaR250";
+		atlOffset=7.6293945e-006;
+	};
+	class Item19
+	{
+		dataType="Trigger";
+		position[]={2197.8135,179.78951,1108.0503};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_26";
+			condition="(LSgr == 2) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=895;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item20
+	{
+		dataType="Trigger";
+		position[]={2460.6523,191.89153,1400.6455};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_27";
+			condition="(LSgr == 2) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=896;
+		type="EmptyDetectorAreaR250";
+		atlOffset=-1.5258789e-005;
+	};
+	class Item21
+	{
+		dataType="Trigger";
+		position[]={1511.7852,156.44075,1570.9111};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_28";
+			condition="(LSgr == 2) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=897;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item22
+	{
+		dataType="Trigger";
+		position[]={1063.8013,105.61876,1109.7021};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_29";
+			condition="(LSgr == 2) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=898;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item23
+	{
+		dataType="Trigger";
+		position[]={-934.21533,75.387741,-3668.2646};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_3";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=872;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item24
+	{
+		dataType="Trigger";
+		position[]={432.69238,180.38506,1032.4932};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_30";
+			condition="(LSgr == 2) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=899;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item25
+	{
+		dataType="Trigger";
+		position[]={1082.0874,154.49191,1887.8096};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_31";
+			condition="(LSgr == 2) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=900;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item26
+	{
+		dataType="Trigger";
+		position[]={682.5293,349.38943,-1527.8848};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_32";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=901;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item27
+	{
+		dataType="Trigger";
+		position[]={-1121.3994,26.070465,-2327.4678};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_33";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=902;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item28
+	{
+		dataType="Trigger";
+		position[]={-609.70459,76.380295,-1709.5039};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_34";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=903;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item29
+	{
+		dataType="Trigger";
+		position[]={1883.0352,176.95721,1330.2231};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_35";
+			condition="(LSgr == 2) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=905;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item30
+	{
+		dataType="Trigger";
+		position[]={-1153.6836,51.229137,-2919.9678};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_36";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=906;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item31
+	{
+		dataType="Trigger";
+		position[]={-647.13281,30.735107,-3249.1055};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_37";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=907;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item32
+	{
+		dataType="Trigger";
+		position[]={1105.9692,129.02785,247.92627};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_38";
+			condition="(LSgr == 2) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=908;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item33
+	{
+		dataType="Trigger";
+		position[]={1169.7573,64.632797,-2636.394};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_39";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=909;
+		type="EmptyDetectorAreaR250";
+		atlOffset=-7.6293945e-006;
+	};
+	class Item34
+	{
+		dataType="Trigger";
+		position[]={-1385.5063,96.21344,-3779.0225};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_4";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=873;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item35
+	{
+		dataType="Trigger";
+		position[]={-1970.3521,1.3934221,-3236.8853};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_40";
+			condition="LSgr == 1";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=951;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item36
+	{
+		dataType="Trigger";
+		position[]={-2162.3276,44.979446,-2720.6011};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_41";
+			condition="LSgr == 1";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=952;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item37
+	{
+		dataType="Trigger";
+		position[]={-1841.635,59.349842,-1602.9229};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_42";
+			condition="LSgr == 1";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=953;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item38
+	{
+		dataType="Trigger";
+		position[]={-2503.4419,169.16264,-1049.1299};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_43";
+			condition="LSgr == 1";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=954;
+		type="EmptyDetectorAreaR250";
+		atlOffset=1.5258789e-005;
+	};
+	class Item39
+	{
+		dataType="Trigger";
+		position[]={-3937.2712,15.835814,-1715.1157};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_44";
+			condition="LSgr == 1";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=955;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item40
+	{
+		dataType="Trigger";
+		position[]={-3191.4509,156.4718,-1208.5659};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_45";
+			condition="(LSgr == 1) || (LSgr == 2)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=956;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item41
+	{
+		dataType="Trigger";
+		position[]={-2658.7749,219.97993,-683.07373};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_46";
+			condition="(LSgr == 1) || (LSgr == 2)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=957;
+		type="EmptyDetectorAreaR250";
+		atlOffset=1.5258789e-005;
+	};
+	class Item42
+	{
+		dataType="Trigger";
+		position[]={-3106.5,165.60834,-782.60107};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_47";
+			condition="(LSgr == 1) || (LSgr == 2)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=958;
+		type="EmptyDetectorAreaR250";
+		atlOffset=1.5258789e-005;
+	};
+	class Item43
+	{
+		dataType="Trigger";
+		position[]={-2643.2778,209.45795,-95.560059};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_48";
+			condition="(LSgr == 1) || (LSgr == 2)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=959;
+		type="EmptyDetectorAreaR250";
+		atlOffset=1.5258789e-005;
+	};
+	class Item44
+	{
+		dataType="Trigger";
+		position[]={-2499.8098,213.4913,50.953125};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_49";
+			condition="(LSgr == 1) || (LSgr == 2)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=960;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item45
+	{
+		dataType="Trigger";
+		position[]={851.1084,39.282791,-3691.4111};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_5";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=874;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item46
+	{
+		dataType="Trigger";
+		position[]={-2112.9109,259.35693,-92.784668};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_50";
+			condition="(LSgr == 1) || (LSgr == 2)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=961;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item47
+	{
+		dataType="Trigger";
+		position[]={-1479.4487,372.61465,97.30127};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_51";
+			condition="(LSgr == 1) || (LSgr == 2)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=962;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item48
+	{
+		dataType="Trigger";
+		position[]={-890.38672,398.02856,271.54932};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_52";
+			condition="(LSgr == 1) || (LSgr == 2)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=963;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item49
+	{
+		dataType="Trigger";
+		position[]={-1560.1528,389.29437,513.88525};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_53";
+			condition="(LSgr == 1) || (LSgr == 2)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=964;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item50
+	{
+		dataType="Trigger";
+		position[]={-2578.5708,220.24815,465.79102};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_54";
+			condition="(LSgr == 1) || (LSgr == 2)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=965;
+		type="EmptyDetectorAreaR250";
+		atlOffset=0.57899475;
+	};
+	class Item51
+	{
+		dataType="Trigger";
+		position[]={-2448.6235,184.25566,888.23145};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_55";
+			condition="(LSgr == 1) || (LSgr == 2)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=966;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item52
+	{
+		dataType="Trigger";
+		position[]={-2322.1011,121.65938,-1497.8701};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_56";
+			condition="LSgr == 1";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=968;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item53
+	{
+		dataType="Trigger";
+		position[]={-1023.0142,393.62616,947.96045};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_57";
+			condition="(LSgr == 1) || (LSgr == 2)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=969;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item54
+	{
+		dataType="Trigger";
+		position[]={-2211.8701,113.66719,2068.0459};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_58";
+			condition="(LSgr == 1) || (LSgr == 2)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=970;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item55
+	{
+		dataType="Trigger";
+		position[]={-1169.9868,368.71008,1873.0264};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_59";
+			condition="(LSgr == 1) || (LSgr == 2)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=971;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item56
+	{
+		dataType="Trigger";
+		position[]={163.42725,43.2379,-2886.3623};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_6";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=875;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item57
+	{
+		dataType="Trigger";
+		position[]={-1578.7256,302.19595,1576.4897};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_60";
+			condition="(LSgr == 1) || (LSgr == 2)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=972;
+		type="EmptyDetectorAreaR250";
+		atlOffset=-3.0517578e-005;
+	};
+	class Item58
+	{
+		dataType="Trigger";
+		position[]={2400.085,19.280401,4002.2021};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_61";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=997;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item59
+	{
+		dataType="Trigger";
+		position[]={2470.437,19.138361,3471.6777};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_62";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=998;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item60
+	{
+		dataType="Trigger";
+		position[]={1770.1729,18.145071,4248.9385};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_63";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=999;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item61
+	{
+		dataType="Trigger";
+		position[]={192.4917,143.01233,4212.5742};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_64";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1000;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item62
+	{
+		dataType="Trigger";
+		position[]={701.31982,107.18573,4231.2129};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_65";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1001;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item63
+	{
+		dataType="Trigger";
+		position[]={1490.7495,95.008408,2652.8594};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_66";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1002;
+		type="EmptyDetectorAreaR250";
+		atlOffset=0.43334198;
+	};
+	class Item64
+	{
+		dataType="Trigger";
+		position[]={1006.6416,97.467941,2512.416};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_67";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1003;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item65
+	{
+		dataType="Trigger";
+		position[]={319.29639,114.57666,2254.0664};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_68";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1004;
+		type="EmptyDetectorAreaR250";
+		atlOffset=0.16159058;
+	};
+	class Item66
+	{
+		dataType="Trigger";
+		position[]={719.55518,101.73569,2559.0244};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_69";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1005;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item67
+	{
+		dataType="Trigger";
+		position[]={-568.88623,48.047356,-2760.7275};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_7";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=876;
+		type="EmptyDetectorAreaR250";
+		atlOffset=3.8146973e-006;
+	};
+	class Item68
+	{
+		dataType="Trigger";
+		position[]={-485.93311,333.43945,2596.2432};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_70";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1006;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item69
+	{
+		dataType="Trigger";
+		position[]={-715.68115,365.73358,2190.1748};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_71";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1007;
+		type="EmptyDetectorAreaR250";
+		atlOffset=3.0517578e-005;
+	};
+	class Item70
+	{
+		dataType="Trigger";
+		position[]={-109.33447,325.4295,630.61719};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_72";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1008;
+		type="EmptyDetectorAreaR250";
+		atlOffset=0.16900635;
+	};
+	class Item71
+	{
+		dataType="Trigger";
+		position[]={-777.06201,395.00162,353.20313};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_73";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1009;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item72
+	{
+		dataType="Trigger";
+		position[]={-201.00635,355.60779,1481.3887};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_74";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1010;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item73
+	{
+		dataType="Trigger";
+		position[]={263.72607,163.95586,3700.9941};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_75";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1011;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item74
+	{
+		dataType="Trigger";
+		position[]={2018.0967,45.073826,2714.1514};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_76";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1013;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item75
+	{
+		dataType="Trigger";
+		position[]={1710.563,75.011307,2328.4922};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_77";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1014;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item76
+	{
+		dataType="Trigger";
+		position[]={-236.45166,257.45621,2189.6104};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_78";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1015;
+		type="EmptyDetectorAreaR250";
+		atlOffset=0.41485596;
+	};
+	class Item77
+	{
+		dataType="Trigger";
+		position[]={654.89404,146.85841,2022.4092};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_79";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1016;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item78
+	{
+		dataType="Trigger";
+		position[]={408.08301,30.156334,-3183.917};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_8";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=877;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item79
+	{
+		dataType="Trigger";
+		position[]={831.96533,171.3593,2907.8242};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_80";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1017;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item80
+	{
+		dataType="Trigger";
+		position[]={-1770.8489,357.79135,1273.7559};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_81";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1018;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item81
+	{
+		dataType="Trigger";
+		position[]={-1039.6846,371.55981,1439.1299};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_82";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1019;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item82
+	{
+		dataType="Trigger";
+		position[]={1403.5718,114.91594,3626.5439};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_83";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1020;
+		type="EmptyDetectorAreaR250";
+		atlOffset=0.059570313;
+	};
+	class Item83
+	{
+		dataType="Trigger";
+		position[]={-1665.0474,24.263569,-2262.2839};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_84";
+			condition="LSgr == 1";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1021;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item84
+	{
+		dataType="Trigger";
+		position[]={258.77246,169.13699,2841.5391};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_85";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1022;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item85
+	{
+		dataType="Trigger";
+		position[]={408.61816,157.01186,3316.0254};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_86";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1023;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item86
+	{
+		dataType="Trigger";
+		position[]={-235.4707,156.45757,3946.6523};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_87";
+			condition="LSgr == 2";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1024;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item87
+	{
+		dataType="Trigger";
+		position[]={757.01416,182.86586,1515.0391};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_88";
+			condition="(LSgr == 2) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=1025;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item88
+	{
+		dataType="Trigger";
+		position[]={-682.94922,61.985073,-2349.1128};
+		class Attributes
+		{
+			name="MyLootSpawnTrigger_9";
+			condition="(LSgr == 1) || (LSgr == 3)";
+			onActivation="0=[thisTrigger] call LootSpawnRandomizer;";
+			sizeA=300;
+			sizeB=300;
+		};
+		id=878;
+		type="EmptyDetectorAreaR250";
+	};
+};

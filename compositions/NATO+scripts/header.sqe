@@ -1,0 +1,22 @@
+version=54;
+name="NATO+scripts";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Modules_F",
+	"A3_Modules_F_Heli_Misc",
+	"A3_Structures_F_Mil_Cargo",
+	"A3_Characters_F",
+	"A3_Modules_F_Supports",
+	"A3_Weapons_F_Ammoboxes",
+	"A3_Modules_F_Intel",
+	"A3_Modules_F_Sites",
+	"A3_Missions_F_Heli",
+	"A3_Modules_F_Events",
+	"A3_Air_F_Beta_Heli_Attack_01",
+	"A3_Modules_F_Hc",
+	"A3_Air_F_Beta_Heli_Transport_01",
+	"A3_Air_F_Heli_Light_01",
+	"A3_Air_F_Heli_Heli_Transport_03"
+};

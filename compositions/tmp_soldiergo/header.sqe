@@ -1,0 +1,8 @@
+version=54;
+name="tmp_soldiergo";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Characters_F"
+};

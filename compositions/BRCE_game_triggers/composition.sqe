@@ -1,0 +1,333 @@
+version=54;
+center[]={3053.1943,5.5,4082.3303};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Layer";
+		name="BRCE_game_triggers";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Layer";
+				name="BRCE_game_triggers";
+				class Entities
+				{
+					items=19;
+					class Item0
+					{
+						dataType="Logic";
+						class PositionInfo
+						{
+							position[]={-1133.5353,0.0037870407,1720.4958};
+							angles[]={0.0024958209,0,6.2806892};
+						};
+						init="call{[] spawn {   " \n "sleep 1;   " \n "BRSEAICount = 0;   " \n "execVM ""gameStarter.sqf"";  " \n "};  " \n "};  ";
+						id=878;
+						type="Logic";
+					};
+					class Item1
+					{
+						dataType="Trigger";
+						position[]={2897.4497,79.11908,907.79761};
+						class Attributes
+						{
+							name="gameplay_trig_4";
+							condition="IsSpawnLoaded";
+							onActivation="0=[]spawn {      " \n "myplayers = allUnits;    " \n "myfuncWT = compile preprocessFileLineNumbers ""WeaponTake.sqf"";   " \n "while {firstTimerRun} do {     " \n "sleep 2;                        " \n "{               " \n "sleep 0.13;                        " \n "if ((side _x) == sideEnemy) then {        " \n "_pkr = currentWeapon _x;         " \n "sleep 0.1;         " \n "_pkrC = count (toArray _pkr);    " \n "if (((_pkrC < 1) or (_pkr == ""throw""))  && (isTouchingGround _x)) then {           " \n "_grp = group _x;                           " \n "_cargoAr =  nearestObjects [getPosWorld _x, [""BOX_NATO_AmmoOrd_F""],150];                      " \n "_ccar = count _cargoAr;                   " \n "_range = 150;                " \n "while {_ccar < 1} do {              " \n "_range = _range + 100;              " \n "_cargoAr =  nearestObjects [getPosWorld _x, [""BOX_NATO_AmmoOrd_F""],_range];    " \n "sleep 0.2;                      " \n "_ccar = count _cargoAr;               " \n "};                " \n "if(_ccar >0) then{                        " \n " _carpoint = floor random (_ccar);                       " \n " _cargo = _cargoAr select _carpoint;                    " \n "  if(((count (waypoints _grp)) == 1) && (!isPlayer _x))  then {                         " \n "  _wp = _grp addWaypoint [getPosWorld _cargo, 3];                         " \n "  _wp setWaypointType ""MOVE"";                         " \n "  _wp setWaypointStatements [""true"", ""[this] call myfuncWT;_grp = group this; _grp setBehaviour 'COMBAT';""];};};                " \n " };};}forEach myplayers;                        " \n "};  " \n "};  " \n "";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={30,30,30};
+						};
+						id=879;
+						type="EmptyDetector";
+						atlOffset=7.6293945e-006;
+					};
+					class Item2
+					{
+						dataType="Trigger";
+						position[]={-1236.0658,0,1898.927};
+						class Attributes
+						{
+							name="WinCondition";
+							condition="allPlayersmy = [];  " \n "if (EnableSquad < 1) then { " \n "{   " \n " if (isPlayer _x) then   " \n " {   " \n "  allPlayersmy pushBack _x;   " \n " };   " \n "} forEach playableUnits;  " \n "} " \n "else { " \n "allPlayersmy = units MyTeamSquad; " \n "}; " \n "plalive == count allPlayersmy; " \n "";
+							onActivation="""End1"" call BIS_fnc_endMissionServer;";
+							sizeA=0;
+							sizeB=0;
+							sizeC=0;
+							activationType="NOT PRESENT";
+							activationBy="LOGIC";
+						};
+						id=880;
+						type="EmptyDetector";
+					};
+					class Item3
+					{
+						dataType="Trigger";
+						position[]={-849.09033,1.3200002,1387.2898};
+						class Attributes
+						{
+							name="gameplay_trig_1";
+							condition="IsSpawnLoaded";
+							onActivation="_SmallCircleS = missionNameSpace getVariable [""SmallCircleSGlobal"",worldSize / 3];" \n "0 = createMarker [""EndTrMarker"", EndTr];   " \n """EndTrMarker"" setMarkerSize [_SmallCircleS, _SmallCircleS];   " \n """EndTrMarker"" setMarkerShape ""ELLIPSE"";   " \n """EndTrMarker"" setMarkerColor ""ColorGreen"";   " \n "if (ExtendedTimeMode == 1) then {  " \n "TimeToC = ExtendedTimeArray select 0;  " \n "} else {  " \n "TimeToC = TimeArray select 0;  " \n "};" \n "[TimeToC] execVM ""timer.sqf"";" \n "[TimeToC] call notifyGenerator; " \n "EndTr setPos LastPosition;";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={70,70,70};
+						};
+						id=881;
+						type="EmptyDetector";
+					};
+					class Item4
+					{
+						dataType="Trigger";
+						position[]={-1290.4133,0,1498.7336};
+						class Attributes
+						{
+							name="EndTr";
+							condition="true";
+							onActivation="call{     " \n "0 = [thislist] spawn {while {true} do {PIL = _this select 0;PIL = PIL + mymortarrs; PIL = PIL + mortarsCrew; PIL = PIL + safeArr; sleep 0.1;};};}";
+							sizeA=150;
+							sizeB=150;
+							repeatable=1;
+							activationBy="ANY";
+						};
+						id=882;
+						type="EmptyDetector";
+					};
+					class Item5
+					{
+						dataType="Trigger";
+						position[]={1028.2427,93.923668,2354.4006};
+						class Attributes
+						{
+							name="gameplay_trig_3";
+							condition="IsSpawnLoaded";
+							onActivation="[1,[""THE SAFE ZONE WILL BE CREATED IN 1 MIN"", ""PLAIN DOWN"", 0.7]] remoteExec [""cutText""];" \n "[60] execVM ""timer.sqf"";";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={10,10,10};
+						};
+						id=883;
+						type="EmptyDetector";
+					};
+					class Item6
+					{
+						dataType="Trigger";
+						position[]={-1092.9004,0.38000011,1509.1936};
+						class Attributes
+						{
+							name="round_tigger_1";
+							condition="IsSpawnLoaded";
+							onActivation="0 = []spawn {     " \n "deleteVehicle dropPlane1;                                         " \n "deleteVehicle dropPlane2;                                         " \n "deleteVehicle dropPlane3;                                         " \n "deleteVehicle dropPlane4;            " \n "dropPilot1 setDamage 1;         " \n "dropPilot2 setDamage 1;           " \n "dropPilot3 setDamage 1;           " \n "dropPilot4 setDamage 1;       " \n "call ChangeWeatherOrTime;                      " \n "_unitAr = allUnits;                                                                                            " \n "{   " \n "if(!isPlayer _x) then {       " \n "if ((side _x) == sideEnemy ) then {                                         " \n "firstTimerRun = false;                                          " \n "sleep 0.1;                            " \n "probtg = floor random (100);                                                                                      " \n "_carWP = floor(random 3);                                                  " \n "_cargAr =  nearestObjects [position _x,[""car""],300];                                            " \n "_myCar = _cargAr select 0;                                             " \n "_grp = group _x;                                      " \n "_wp = 1;                                              " \n "_groupPos = [[[LastPosition, 2500]],[""water""]] call BIS_fnc_randomPos;                    " \n "if (_x != player) then {              " \n "while {(count (waypoints _grp)) > 0} do{ deleteWaypoint ((waypoints _grp) select 0);};                                         " \n "if ((currentWeapon _x)=="""" or (currentWeapon _x)==""throw"") then {[_x] execVm 'noobGift.sqf'};           " \n "sleep 0.2;                                  " \n "if ((_carWP > 1) && (count _cargAr > 0)) then {_wp = _grp addWaypoint [position _myCar, 0]; _grp setBehaviour 'CARELESS'; _wp setWaypointType ""GETIN NEAREST""; _wp setWaypointStatements [""true"", ""_grpt = group this; _carGroupPos = [[[LastPosition, 900]],['water']] call BIS_fnc_randomPos;_a1 = _grpt addWaypoint [_carGroupPos, 0];_a1 setWaypointType 'GETOUT';_a1 setWaypointStatements['true','unassignVehicle this; moveOut this; _gr = group this; _gr setBehaviour combatBehav;'];""];} else {_grp setBehaviour 'AWARE'; _wp = _grp addWaypoint [_groupPos, 0]; _wp setWaypointType ""MOVE"";};                                                                                          " \n "_wp setWaypointSpeed ""FULL"";                              " \n "};                                                       " \n "};      " \n "};                         " \n "} forEach _unitAr;                             " \n "sleep 0.2;                                 " \n "};" \n "_remainingTime = floor(TimeArray select (roundCounter-1)); [_remainingTime] execVM ""timer.sqf""; ";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={300,300,300};
+						};
+						id=884;
+						type="EmptyDetector";
+					};
+					class Item7
+					{
+						dataType="Trigger";
+						position[]={-515.88428,67.09655,712.75024};
+						class Attributes
+						{
+							name="round_tigger_10";
+							condition="IsSpawnLoaded";
+							onActivation="call triggerLogicCreator; ";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={1565,1565,1565};
+						};
+						id=885;
+						type="EmptyDetector";
+					};
+					class Item8
+					{
+						dataType="Trigger";
+						position[]={-515.88428,94.321037,168.24194};
+						class Attributes
+						{
+							name="round_tigger_11";
+							condition="IsSpawnLoaded";
+							onActivation="call triggerLogicCreator; ";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={1595,1595,1595};
+						};
+						id=886;
+						type="EmptyDetector";
+					};
+					class Item9
+					{
+						dataType="Trigger";
+						position[]={-458.99536,30.539532,-408.77441};
+						class Attributes
+						{
+							name="round_tigger_2";
+							condition="IsSpawnLoaded";
+							onActivation="call triggerLogicCreator; 0 = [] spawn { while {true} do {sleep 7;{ if(vehicle _x in PIL) then { if(isPlayer _x) then {hint """";} } else {_actDamage = getDammage _x; _x setDamage _actDamage + 0.01; sleep 0.025; if (isPlayer _x) then {[YouAreGettingDamage] remoteExec ['hint',_x] ;};};}foreach AllUnits}; };";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={570,570,570};
+						};
+						id=887;
+						type="EmptyDetector";
+					};
+					class Item10
+					{
+						dataType="Trigger";
+						position[]={-507.75732,66.975311,-1132.0754};
+						class Attributes
+						{
+							name="round_tigger_2_helper_1";
+							condition="IsSpawnLoaded";
+							onActivation="0 = createMarker [""EndTrMarker2"", position EndTr];" \n "_SmallCircleS = missionNameSpace getVariable [""SmallCircleSGlobal"",worldSize / 4];" \n """EndTrMarker2"" setMarkerSize [_SmallCircleS, _SmallCircleS]; " \n """EndTrMarker2"" setMarkerShape ""ELLIPSE"";" \n """EndTrMarker2"" setMarkerColor ""ColorGrey"";";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={570,570,570};
+						};
+						id=888;
+						type="EmptyDetector";
+					};
+					class Item11
+					{
+						dataType="Trigger";
+						position[]={-345.21729,66.213211,-1725.3452};
+						class Attributes
+						{
+							name="round_tigger_2_helper_2";
+							condition="IsSpawnLoaded";
+							onActivation="_SmallCircleS = missionNameSpace getVariable [""SmallCircleSGlobal"",worldSize / 4];" \n "myemitter = ""#particlesource"" createVehicle (position EndTr);        " \n "myemitter setParticleClass ""SmokeTrailEffect2"";        " \n "myemitter setParticleCircle [_SmallCircleS,[0,0,5]];        " \n "myemitter setParticleRandom [0, [0.0, 0.0, 0.0], [0, 0, 0.0], 0, 0.5, [0.5, 0.5, 0, 0.9], 0, 0];        " \n "myemitter setObjectScale 20;" \n "       " \n "myemitter1 = ""#particlesource"" createVehicle (position EndTr);        " \n "myemitter1 setParticleClass ""SmokeTrailEffect2"";        " \n "myemitter1 setParticleCircle [_SmallCircleS,[0,0,5]];        " \n "myemitter1 setParticleRandom [0, [0.0, 0.0, 0.0], [0, 0, 0.0], 0, 0.0, [0.5, 0.5, 0, 0.9], 0, 0];        " \n "myemitter1 setObjectScale 20;" \n "" \n "myemitter2 = ""#particlesource"" createVehicle (position EndTr);        " \n "myemitter2 setParticleClass ""SmokeTrailEffect2"";        " \n "myemitter2 setParticleCircle [_SmallCircleS,[0,0,5]];        " \n "myemitter2 setParticleRandom [0, [0.0, 0.0, 0.0], [0, 0, 0.0], 0, 0.0, [0.5, 0.5, 0, 0.9], 0, 0];        " \n "myemitter2 setObjectScale 20;" \n "       " \n "myemitter3 = ""#particlesource"" createVehicle (position EndTr);        " \n "myemitter3 setParticleClass ""SmokeTrailEffect2"";        " \n "myemitter3 setParticleCircle [_SmallCircleS,[0,0,5]];        " \n "myemitter3 setParticleRandom [0, [0.0, 0.0, 0.0], [0, 0, 0.0], 0, 0.0, [0.5, 0.5, 0, 0.9], 0, 0];       " \n "myemitter3 setObjectScale 20;" \n "      " \n "myemitter4 = ""#particlesource"" createVehicle (position EndTr);        " \n "myemitter4 setParticleClass ""SmokeTrailEffect2"";        " \n "myemitter4 setParticleCircle [_SmallCircleS,[0,0,5]];        " \n "myemitter4 setParticleRandom [0, [0.0, 0.0, 0.0], [0, 0, 0.0], 0, 0.0, [0.5, 0.5, 0, 0.9], 0, 0];       " \n "myemitter4 setObjectScale 20;" \n "      " \n "myemitter5 = ""#particlesource"" createVehicle (position EndTr);        " \n "myemitter5 setParticleClass ""SmokeTrailEffect2"";        " \n "myemitter5 setParticleCircle [_SmallCircleS,[0,0,5]];        " \n "myemitter5 setParticleRandom [0, [0.0, 0.0, 0.0], [0, 0, 0.0], 0, 0.0, [0.5, 0.5, 0, 0.9], 0, 0];       " \n "myemitter5 setObjectScale 20;" \n "      " \n "myemitter6 = ""#particlesource"" createVehicle (position EndTr);        " \n "myemitter6 setParticleClass ""SmokeTrailEffect2"";        " \n "myemitter6 setParticleCircle [_SmallCircleS,[0,0,5]];        " \n "myemitter6 setParticleRandom [0, [0.0, 0.0, 0.0], [0, 0, 0.0], 0, 0.0, [0.5, 0.5, 0, 0.9], 0, 0];  " \n "myemitter6 setObjectScale 20;";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={570,570,570};
+						};
+						id=889;
+						type="EmptyDetector";
+						atlOffset=7.6293945e-006;
+					};
+					class Item12
+					{
+						dataType="Trigger";
+						position[]={-710.93237,46.81332,-1936.6462};
+						class Attributes
+						{
+							name="round_tigger_3";
+							condition="IsSpawnLoaded";
+							onActivation="call triggerLogicCreator; ";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={780,780,780};
+						};
+						id=890;
+						type="EmptyDetector";
+					};
+					class Item13
+					{
+						dataType="Trigger";
+						position[]={-572.77319,101.4829,-2497.4089};
+						class Attributes
+						{
+							name="round_tigger_4";
+							condition="IsSpawnLoaded";
+							onActivation="call triggerLogicCreator; ";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={960,960,960};
+						};
+						id=891;
+						type="EmptyDetector";
+					};
+					class Item14
+					{
+						dataType="Trigger";
+						position[]={4.2426758,151.89751,-2147.9482};
+						class Attributes
+						{
+							name="round_tigger_5";
+							condition="IsSpawnLoaded";
+							onActivation="call triggerLogicCreator; ";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={1130,1130,1130};
+						};
+						id=892;
+						type="EmptyDetector";
+					};
+					class Item15
+					{
+						dataType="Trigger";
+						position[]={402.46509,141.55913,-1660.3289};
+						class Attributes
+						{
+							name="round_tigger_6";
+							condition="IsSpawnLoaded";
+							onActivation="call triggerLogicCreator; ";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={1250,1250,1250};
+						};
+						id=893;
+						type="EmptyDetector";
+					};
+					class Item16
+					{
+						dataType="Trigger";
+						position[]={565.00415,136.83089,-1270.2336};
+						class Attributes
+						{
+							name="round_tigger_7";
+							condition="IsSpawnLoaded";
+							onActivation="call triggerLogicCreator; ";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={1360,1360,1360};
+						};
+						id=894;
+						type="EmptyDetector";
+					};
+					class Item17
+					{
+						dataType="Trigger";
+						position[]={1548.3687,140.33299,-530.67822};
+						class Attributes
+						{
+							name="round_tigger_8";
+							condition="IsSpawnLoaded";
+							onActivation="call triggerLogicCreator; ";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={1450,1450,1450};
+						};
+						id=895;
+						type="EmptyDetector";
+					};
+					class Item18
+					{
+						dataType="Trigger";
+						position[]={2783.6719,72.009956,1151.6072};
+						class Attributes
+						{
+							name="round_tigger_9";
+							condition="IsSpawnLoaded";
+							onActivation="call triggerLogicCreator; ";
+							sizeA=0;
+							sizeB=0;
+							timeout[]={1510,1510,1510};
+						};
+						id=896;
+						type="EmptyDetector";
+					};
+				};
+				id=877;
+				atlOffset=19.863014;
+			};
+		};
+		id=897;
+		atlOffset=19.863014;
+	};
+};

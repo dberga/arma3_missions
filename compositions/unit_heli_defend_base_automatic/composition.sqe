@@ -1,0 +1,130 @@
+version=54;
+center[]={14526.633,17.889999,16056.954};
+class items
+{
+	items=2;
+	class Item0
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=2;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-51.087891,-0.058059692,120.42773};
+				};
+				side="West";
+				flags=6;
+				class Attributes
+				{
+				};
+				id=2620;
+				type="B_Helipilot_F";
+				atlOffset=-3.8146973e-006;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-51.09082,1.8638744,120.42578};
+				};
+				side="West";
+				class Attributes
+				{
+				};
+				id=2621;
+				type="B_Helipilot_F";
+				atlOffset=1.921936;
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=2;
+			};
+			class Links
+			{
+				items=2;
+				class Item0
+				{
+					linkID=0;
+					item0=2620;
+					item1=2619;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+				class Item1
+				{
+					linkID=1;
+					item0=2621;
+					item1=2619;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={0};
+					};
+				};
+			};
+		};
+		id=2618;
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={0,1.921936,0};
+		};
+		side="West";
+		flags=6;
+		class Attributes
+		{
+			init="_veh = this;  " \n "_initpos = getPos this;  " \n "[_veh, _initpos] spawn {  " \n "params [""_veh"",""_initpos""];  " \n "while {damage _veh < 0.8} do { " \n "waitUntil {sleep 1; count (crew _veh) > 0};" \n "_pilot = (fullCrew[_veh, 'driver'] select 0) select 0;  " \n "_group = group _pilot;   " \n "_wp_loiter = _group addwaypoint [getPos blubase,0];   " \n "_wp_loiter setWaypointType ""LOITER"";  " \n "waitUntil {sleep 1; count (crew _veh) > 0};" \n "} " \n "}";
+		};
+		id=2619;
+		type="B_Heli_Attack_01_dynamicLoadout_F";
+	};
+};
+class VehicleInVehicleLinks
+{
+	class LinkIDProvider
+	{
+		nextID=2;
+	};
+	class Links
+	{
+		items=2;
+		class Item0
+		{
+			linkID=0;
+			item0=2620;
+			item1=2619;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=2621;
+			item1=2619;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+	};
+};

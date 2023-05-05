@@ -1,0 +1,338 @@
+version=54;
+center[]={3000.5698,165.61075,1985.4424};
+class items
+{
+	items=2;
+	class Item0
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={1.0900879,0.40730286,1.84375};
+		};
+		areaSize[]={50,-1,50};
+		flags=1;
+		id=524;
+		type="ModuleSector_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleSector_F_DefaultOwner";
+				expression="_this setVariable ['DefaultOwner',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="-1";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleSector_F_CostInfantry";
+				expression="_this setVariable ['CostInfantry',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="1";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleSector_F_OnOwnerChange";
+				expression="_this setVariable ['OnOwnerChange',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="";
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="ModuleSector_F_ScoreReward";
+				expression="_this setVariable ['ScoreReward',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="0";
+					};
+				};
+			};
+			class Attribute4
+			{
+				property="ModuleSector_F_CostWheeled";
+				expression="_this setVariable ['CostWheeled',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="2";
+					};
+				};
+			};
+			class Attribute5
+			{
+				property="ModuleSector_F_OwnerLimit";
+				expression="_this setVariable ['OwnerLimit',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="0";
+					};
+				};
+			};
+			class Attribute6
+			{
+				property="ModuleSector_F_TaskTitle";
+				expression="_this setVariable ['TaskTitle',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="";
+					};
+				};
+			};
+			class Attribute7
+			{
+				property="ModuleSector_F_Designation";
+				expression="_this setVariable ['Designation',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="";
+					};
+				};
+			};
+			class Attribute8
+			{
+				property="ModuleSector_F_TaskOwner";
+				expression="_this setVariable ['TaskOwner',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="0";
+					};
+				};
+			};
+			class Attribute9
+			{
+				property="ModuleSector_F_CostAir";
+				expression="_this setVariable ['CostAir',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="2";
+					};
+				};
+			};
+			class Attribute10
+			{
+				property="ModuleSector_F_CostPlayers";
+				expression="_this setVariable ['CostPlayers',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="2";
+					};
+				};
+			};
+			class Attribute11
+			{
+				property="ModuleSector_F_CostTracked";
+				expression="_this setVariable ['CostTracked',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="4";
+					};
+				};
+			};
+			class Attribute12
+			{
+				property="ModuleSector_F_TaskDescription";
+				expression="_this setVariable ['TaskDescription',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="";
+					};
+				};
+			};
+			class Attribute13
+			{
+				property="ModuleSector_F_CostWater";
+				expression="_this setVariable ['CostWater',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="0";
+					};
+				};
+			};
+			class Attribute14
+			{
+				property="ModuleSector_F_Name";
+				expression="_this setVariable ['Name',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="";
+					};
+				};
+			};
+			nAttributes=15;
+		};
+	};
+	class Item1
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-1.0898438,0,-1.84375};
+		};
+		id=525;
+		type="SideBLUFOR_F";
+	};
+};
+class connections
+{
+	class LinkIDProvider
+	{
+		nextID=1;
+	};
+	class Links
+	{
+		items=1;
+		class Item0
+		{
+			linkID=0;
+			item0=525;
+			item1=524;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+	};
+};

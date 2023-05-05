@@ -1,0 +1,131 @@
+version=54;
+center[]={9882.707,74.359489,17463.703};
+class items
+{
+	items=2;
+	class Item0
+	{
+		dataType="Group";
+		side="Independent";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.009765625,0.0014419556,0.05078125};
+					angles[]={0,0.040823251,0};
+				};
+				side="Independent";
+				flags=3;
+				class Attributes
+				{
+					name="lootPlanePilot_1";
+				};
+				id=866;
+				type="I_Survivor_F";
+				atlOffset=150.908;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male02GRE";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1.05;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=1;
+			};
+			class Links
+			{
+				items=1;
+				class Item0
+				{
+					linkID=0;
+					item0=866;
+					item1=867;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+			};
+		};
+		id=865;
+		atlOffset=1050.908;
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={0.009765625,906.68958,0};
+			angles[]={0,0.040823251,0};
+		};
+		side="Independent";
+		flags=2;
+		class Attributes
+		{
+			name="lootPlane";
+			reportRemoteTargets=1;
+			receiveRemoteTargets=1;
+			reportOwnPosition=1;
+		};
+		id=867;
+		type="B_T_VTOL_01_infantry_F";
+		atlOffset=1050.908;
+	};
+};
+class VehicleInVehicleLinks
+{
+	class LinkIDProvider
+	{
+		nextID=1;
+	};
+	class Links
+	{
+		items=1;
+		class Item0
+		{
+			linkID=0;
+			item0=866;
+			item1=867;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+	};
+};

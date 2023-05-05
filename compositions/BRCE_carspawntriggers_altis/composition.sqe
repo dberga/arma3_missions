@@ -1,0 +1,1432 @@
+version=54;
+center[]={15390.687,-23.362864,16318.77};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Layer";
+		name="BRCE_carspawntriggers";
+		class Entities
+		{
+			items=90;
+			class Item0
+			{
+				dataType="Trigger";
+				position[]={-784.17871,41.272865,313.78906};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_43";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=294;
+				type="EmptyDetector";
+			};
+			class Item1
+			{
+				dataType="Trigger";
+				position[]={-1297.3867,96.095795,5168.1387};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_47";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=298;
+				type="EmptyDetector";
+			};
+			class Item2
+			{
+				dataType="Trigger";
+				position[]={-1275.5537,48.603382,2983.9648};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_53";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=305;
+				type="EmptyDetector";
+			};
+			class Item3
+			{
+				dataType="Trigger";
+				position[]={6378.8857,37.29409,-7900.6563};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_55";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=307;
+				type="EmptyDetector";
+			};
+			class Item4
+			{
+				dataType="Trigger";
+				position[]={5729.2607,40.498177,-8712.5879};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_57";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=309;
+				type="EmptyDetector";
+				atlOffset=-1.9073486e-006;
+			};
+			class Item5
+			{
+				dataType="Trigger";
+				position[]={4253.4756,40.735138,-1980.2617};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_59";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=311;
+				type="EmptyDetector";
+				atlOffset=0.0024108887;
+			};
+			class Item6
+			{
+				dataType="Trigger";
+				position[]={1531.3154,38.865726,-3306.1689};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_62";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=315;
+				type="EmptyDetector";
+				atlOffset=0.01348877;
+			};
+			class Item7
+			{
+				dataType="Trigger";
+				position[]={2881.2412,69.384865,-3622.8271};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_64";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=317;
+				type="EmptyDetector";
+				atlOffset=-3.8146973e-006;
+			};
+			class Item8
+			{
+				dataType="Trigger";
+				position[]={-1237.4248,36.90065,427.39258};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_66";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=319;
+				type="EmptyDetector";
+			};
+			class Item9
+			{
+				dataType="Trigger";
+				position[]={-1684.0732,44.878658,3002.3672};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_68";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=321;
+				type="EmptyDetector";
+			};
+			class Item10
+			{
+				dataType="Trigger";
+				position[]={2573.1982,79.89238,-3849.6475};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_71";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=325;
+				type="EmptyDetector";
+			};
+			class Item11
+			{
+				dataType="Trigger";
+				position[]={5693.5928,46.222748,-9096.5254};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_60";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=313;
+				type="EmptyDetector";
+				atlOffset=1.9073486e-006;
+			};
+			class Item12
+			{
+				dataType="Trigger";
+				position[]={1875.5361,35.856308,-2993.4873};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_73";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=327;
+				type="EmptyDetector";
+			};
+			class Item13
+			{
+				dataType="Trigger";
+				position[]={-879.2002,69.579437,2738.7148};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_75";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=329;
+				type="EmptyDetector";
+			};
+			class Item14
+			{
+				dataType="Trigger";
+				position[]={-582.82324,38.548317,879.1582};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_77";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=331;
+				type="EmptyDetector";
+			};
+			class Item15
+			{
+				dataType="Trigger";
+				position[]={-831.78418,41.025452,10.833984};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_79";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=333;
+				type="EmptyDetector";
+			};
+			class Item16
+			{
+				dataType="Trigger";
+				position[]={-690.39355,41.192047,118.93359};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_80";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=335;
+				type="EmptyDetector";
+			};
+			class Item17
+			{
+				dataType="Trigger";
+				position[]={4928.8955,76.513153,-4990.5449};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_82";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=337;
+				type="EmptyDetector";
+			};
+			class Item18
+			{
+				dataType="Trigger";
+				position[]={6517.8232,36.532692,-8667.1035};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_84";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=339;
+				type="EmptyDetector";
+			};
+			class Item19
+			{
+				dataType="Trigger";
+				position[]={10344.196,37.267914,4726.1016};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger";
+					condition="(LSgr == 1) || (LSgr == 3)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=223;
+				type="EmptyDetector";
+			};
+			class Item20
+			{
+				dataType="Trigger";
+				position[]={10097.349,42.337791,4972.9473};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_1";
+					condition="(LSgr == 1) || (LSgr == 3)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=224;
+				type="EmptyDetector";
+			};
+			class Item21
+			{
+				dataType="Trigger";
+				position[]={10329.083,41.613022,4957.834};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_3";
+					condition="(LSgr == 1) || (LSgr == 3)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=279;
+				type="EmptyDetector";
+			};
+			class Item22
+			{
+				dataType="Trigger";
+				position[]={4373.1455,67.519073,-3033.9844};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_86";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=341;
+				type="EmptyDetector";
+			};
+			class Item23
+			{
+				dataType="Trigger";
+				position[]={10231.185,46.723465,5099.3926};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_5";
+					condition="(LSgr == 1) || (LSgr == 3)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=301;
+				type="EmptyDetector";
+			};
+			class Item24
+			{
+				dataType="Trigger";
+				position[]={10177.954,60.503036,5567.3926};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_7";
+					condition="(LSgr == 1) || (LSgr == 3)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=323;
+				type="EmptyDetector";
+			};
+			class Item25
+			{
+				dataType="Trigger";
+				position[]={10336.202,44.059319,5069.5625};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_9";
+					condition="(LSgr == 1) || (LSgr == 3)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=345;
+				type="EmptyDetector";
+				atlOffset=1.9073486e-006;
+			};
+			class Item26
+			{
+				dataType="Trigger";
+				position[]={11927.577,44.9576,6900.9863};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_15";
+					condition="(LSgr == 1) || (LSgr == 3)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=263;
+				type="EmptyDetector";
+			};
+			class Item27
+			{
+				dataType="Trigger";
+				position[]={11914.769,35.704639,7174.7754};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_16";
+					condition="(LSgr == 1) || (LSgr == 3)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=264;
+				type="EmptyDetector";
+			};
+			class Item28
+			{
+				dataType="Trigger";
+				position[]={5748.4404,53.026684,-6837.9453};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_17";
+					condition="(LSgr == 1) || (LSgr == 3)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=265;
+				type="EmptyDetector";
+			};
+			class Item29
+			{
+				dataType="Trigger";
+				position[]={5016.2842,71.185364,-5306.8633};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_19";
+					condition="(LSgr == 1) || (LSgr == 3)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=267;
+				type="EmptyDetector";
+				atlOffset=-3.8146973e-006;
+			};
+			class Item30
+			{
+				dataType="Trigger";
+				position[]={6193.8604,46.584373,1462.998};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_88";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=343;
+				type="EmptyDetector";
+				atlOffset=-1.9073486e-006;
+			};
+			class Item31
+			{
+				dataType="Trigger";
+				position[]={1707.0557,80.247444,38.728516};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_101";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=227;
+				type="EmptyDetector";
+			};
+			class Item32
+			{
+				dataType="Trigger";
+				position[]={7747.9268,26.552864,2126.207};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_105";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=231;
+				type="EmptyDetector";
+			};
+			class Item33
+			{
+				dataType="Trigger";
+				position[]={1981.5752,42.01059,-3711.5518};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_109";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=235;
+				type="EmptyDetector";
+			};
+			class Item34
+			{
+				dataType="Trigger";
+				position[]={2253.876,53.065559,-3485.9365};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_110";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=237;
+				type="EmptyDetector";
+			};
+			class Item35
+			{
+				dataType="Trigger";
+				position[]={4955.4287,43.83683,-517.49219};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_114";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=241;
+				type="EmptyDetector";
+				atlOffset=-1.9073486e-006;
+			};
+			class Item36
+			{
+				dataType="Trigger";
+				position[]={2328.3076,57.676888,-3549.9521};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_117";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=244;
+				type="EmptyDetector";
+				atlOffset=3.8146973e-006;
+			};
+			class Item37
+			{
+				dataType="Trigger";
+				position[]={2181.6689,41.706329,1471.6016};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_120";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=248;
+				type="EmptyDetector";
+				atlOffset=1.9073486e-006;
+			};
+			class Item38
+			{
+				dataType="Trigger";
+				position[]={5792.6318,36.622093,2986.4531};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_124";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=252;
+				type="EmptyDetector";
+				atlOffset=3.0517578e-005;
+			};
+			class Item39
+			{
+				dataType="Trigger";
+				position[]={4600.6807,39.985588,-1682.0488};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_128";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=256;
+				type="EmptyDetector";
+			};
+			class Item40
+			{
+				dataType="Trigger";
+				position[]={925.01563,47.846611,149.68555};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_131";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=260;
+				type="EmptyDetector";
+			};
+			class Item41
+			{
+				dataType="Trigger";
+				position[]={9608.6592,91.732521,5559.9922};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_2";
+					condition="LSgr == 1";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=268;
+				type="EmptyDetector";
+			};
+			class Item42
+			{
+				dataType="Trigger";
+				position[]={-727.41309,39.292603,710.48047};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_25";
+					condition="(LSgr == 2) || (LSgr == 3)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=274;
+				type="EmptyDetector";
+			};
+			class Item43
+			{
+				dataType="Trigger";
+				position[]={-680.52051,51.209446,1919.6699};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_26";
+					condition="(LSgr == 2) || (LSgr == 3)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=275;
+				type="EmptyDetector";
+				atlOffset=-1.9073486e-006;
+			};
+			class Item44
+			{
+				dataType="Trigger";
+				position[]={-304.94434,41.196205,869.13672};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_27";
+					condition="(LSgr == 2) || (LSgr == 3)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=276;
+				type="EmptyDetector";
+			};
+			class Item45
+			{
+				dataType="Trigger";
+				position[]={5572.374,54.216118,206.52344};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_28";
+					condition="LSgr == 1";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=277;
+				type="EmptyDetector";
+			};
+			class Item46
+			{
+				dataType="Trigger";
+				position[]={5954.2354,42.263256,-76.152344};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_4";
+					condition="LSgr == 1";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=290;
+				type="EmptyDetector";
+				atlOffset=1.9073486e-006;
+			};
+			class Item47
+			{
+				dataType="Trigger";
+				position[]={4913.2568,87.881172,2521.6758};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_33";
+					condition="(LSgr == 1) || (LSgr == 2)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=283;
+				type="EmptyDetector";
+			};
+			class Item48
+			{
+				dataType="Trigger";
+				position[]={5597.2002,49.547272,2171.0762};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_37";
+					condition="(LSgr == 1) || (LSgr == 2)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=287;
+				type="EmptyDetector";
+			};
+			class Item49
+			{
+				dataType="Trigger";
+				position[]={3847.415,49.587646,225.78906};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_91";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=347;
+				type="EmptyDetector";
+				atlOffset=4.4976654;
+			};
+			class Item50
+			{
+				dataType="Trigger";
+				position[]={-5517.9629,148.06128,-417.77344};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_93";
+					condition="(LSgr == 1) || (LSgr == 3)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=349;
+				type="EmptyDetector";
+			};
+			class Item51
+			{
+				dataType="Trigger";
+				position[]={5993.7783,51.92231,1447.8594};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_95";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=351;
+				type="EmptyDetector";
+			};
+			class Item52
+			{
+				dataType="Trigger";
+				position[]={5586.6729,63.585571,947.38867};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_97";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=353;
+				type="EmptyDetector";
+				atlOffset=2.0332031;
+			};
+			class Item53
+			{
+				dataType="Trigger";
+				position[]={6668.3525,47.983238,663.76758};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_99";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=355;
+				type="EmptyDetector";
+			};
+			class Item54
+			{
+				dataType="Trigger";
+				position[]={-10845.255,57.91481,-3649.9336};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_135";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=360;
+				type="EmptyDetector";
+			};
+			class Item55
+			{
+				dataType="Trigger";
+				position[]={-11744.655,50.832787,-3663.002};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_139";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=364;
+				type="EmptyDetector";
+			};
+			class Item56
+			{
+				dataType="Trigger";
+				position[]={-11175.741,44.978157,-3302.166};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_142";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=367;
+				type="EmptyDetector";
+			};
+			class Item57
+			{
+				dataType="Trigger";
+				position[]={-7192.6943,204.39191,1828.3105};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_146";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=381;
+				type="EmptyDetector";
+				atlOffset=3.0517578e-005;
+			};
+			class Item58
+			{
+				dataType="Trigger";
+				position[]={-8776.2598,146.66257,406.91016};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_154";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=389;
+				type="EmptyDetector";
+			};
+			class Item59
+			{
+				dataType="Trigger";
+				position[]={-8200.6729,201.62007,5158.2578};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_163";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=427;
+				type="EmptyDetector";
+			};
+			class Item60
+			{
+				dataType="Trigger";
+				position[]={-10351.2,207.59686,2209.4238};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_167";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=431;
+				type="EmptyDetector";
+			};
+			class Item61
+			{
+				dataType="Trigger";
+				position[]={-10596.433,260.09308,3931.4512};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_173";
+					condition="LSgr == 1";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=437;
+				type="EmptyDetector";
+			};
+			class Item62
+			{
+				dataType="Trigger";
+				position[]={-10806.464,293.13559,4387.1465};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_177";
+					condition="(LSgr == 1) || (LSgr == 2)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=441;
+				type="EmptyDetector";
+			};
+			class Item63
+			{
+				dataType="Trigger";
+				position[]={-10232.194,225.04265,4883.5664};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_180";
+					condition="(LSgr == 1) || (LSgr == 2)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=444;
+				type="EmptyDetector";
+			};
+			class Item64
+			{
+				dataType="Trigger";
+				position[]={-9650.9189,245.93755,5682.0234};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_183";
+					condition="(LSgr == 1) || (LSgr == 2)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=447;
+				type="EmptyDetector";
+			};
+			class Item65
+			{
+				dataType="Trigger";
+				position[]={-9312.8506,239.70018,4174.7754};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_187";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=451;
+				type="EmptyDetector";
+			};
+			class Item66
+			{
+				dataType="Trigger";
+				position[]={-3268.958,115.64724,4182.2168};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_193";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=457;
+				type="EmptyDetector";
+			};
+			class Item67
+			{
+				dataType="Trigger";
+				position[]={-4216.335,163.30786,3985.2207};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_197";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=461;
+				type="EmptyDetector";
+				atlOffset=1.5258789e-005;
+			};
+			class Item68
+			{
+				dataType="Trigger";
+				position[]={-4349.0947,161.87383,3493.4082};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_201";
+					condition="LSgr == 1";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=465;
+				type="EmptyDetector";
+			};
+			class Item69
+			{
+				dataType="Trigger";
+				position[]={-5398.1904,174.87601,2621.5508};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_205";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=469;
+				type="EmptyDetector";
+			};
+			class Item70
+			{
+				dataType="Trigger";
+				position[]={-4388.3838,169.20522,4875.8691};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_209";
+					condition="(LSgr == 1) || (LSgr == 2)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=473;
+				type="EmptyDetector";
+				atlOffset=1.5258789e-005;
+			};
+			class Item71
+			{
+				dataType="Trigger";
+				position[]={-3272.2646,47.089256,6038.2246};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_211";
+					condition="(LSgr == 1) || (LSgr == 2)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=475;
+				type="EmptyDetector";
+			};
+			class Item72
+			{
+				dataType="Trigger";
+				position[]={-5370.4404,245.50342,3165.8711};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_215";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=479;
+				type="EmptyDetector";
+			};
+			class Item73
+			{
+				dataType="Trigger";
+				position[]={-2794.4658,74.83477,3382.9863};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_219";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=483;
+				type="EmptyDetector";
+				atlOffset=7.6293945e-006;
+			};
+			class Item74
+			{
+				dataType="Trigger";
+				position[]={-6065.7842,61.687553,-2259.8428};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_221";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=485;
+				type="EmptyDetector";
+			};
+			class Item75
+			{
+				dataType="Trigger";
+				position[]={-8216.3115,27.621075,-5208.6768};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_225";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=489;
+				type="EmptyDetector";
+			};
+			class Item76
+			{
+				dataType="Trigger";
+				position[]={-7599.3662,66.161118,-4484.6611};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_229";
+					condition="LSgr == 1";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=493;
+				type="EmptyDetector";
+				atlOffset=3.8146973e-006;
+			};
+			class Item77
+			{
+				dataType="Trigger";
+				position[]={-8461.5439,138.66331,-3486.6494};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_231";
+					condition="LSgr == 1";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=495;
+				type="EmptyDetector";
+			};
+			class Item78
+			{
+				dataType="Trigger";
+				position[]={-8671.5752,171.02507,-3030.9541};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_235";
+					condition="(LSgr == 1) || (LSgr == 2)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=499;
+				type="EmptyDetector";
+				atlOffset=1.5258789e-005;
+			};
+			class Item79
+			{
+				dataType="Trigger";
+				position[]={-7574.54,189.80434,-2520.1084};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_239";
+					condition="(LSgr == 1) || (LSgr == 2)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=503;
+				type="EmptyDetector";
+			};
+			class Item80
+			{
+				dataType="Trigger";
+				position[]={-9357.2705,85.542404,-4251.5303};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_243";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=507;
+				type="EmptyDetector";
+				atlOffset=1.5258789e-005;
+			};
+			class Item81
+			{
+				dataType="Trigger";
+				position[]={-7585.0674,120.03396,-3743.7959};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_247";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=511;
+				type="EmptyDetector";
+				atlOffset=2.0332108;
+			};
+			class Item82
+			{
+				dataType="Trigger";
+				position[]={-3736.4678,117.95212,-7968.8262};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_253";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=517;
+				type="EmptyDetector";
+				atlOffset=0.00039672852;
+			};
+			class Item83
+			{
+				dataType="Trigger";
+				position[]={-5182.9482,37.699394,-3767.0186};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_257";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=521;
+				type="EmptyDetector";
+				atlOffset=3.0517578e-005;
+			};
+			class Item84
+			{
+				dataType="Trigger";
+				position[]={-5655.376,109.27895,-8915.2598};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_263";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=527;
+				type="EmptyDetector";
+				atlOffset=0.00039672852;
+			};
+			class Item85
+			{
+				dataType="Trigger";
+				position[]={-4645.5693,60.774208,-6660.9414};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_267";
+					condition="(LSgr == 1) || (LSgr == 2)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=531;
+				type="EmptyDetector";
+				atlOffset=0.00039672852;
+			};
+			class Item86
+			{
+				dataType="Trigger";
+				position[]={-5627.626,99.356621,-8370.9395};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_273";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=537;
+				type="EmptyDetector";
+				atlOffset=0.00039672852;
+			};
+			class Item87
+			{
+				dataType="Trigger";
+				position[]={-3051.6514,58.302017,-8153.8242};
+				angle=3.3401463;
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_277";
+					condition="LSgr == 2";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=541;
+				type="EmptyDetector";
+				atlOffset=0.00039672852;
+			};
+			class Item88
+			{
+				dataType="Trigger";
+				position[]={11584.019,47.977604,8593.3672};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_283";
+					condition="(LSgr == 1) || (LSgr == 3)";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=688;
+				type="EmptyDetector";
+				atlOffset=1.9073486e-006;
+			};
+			class Item89
+			{
+				dataType="Trigger";
+				position[]={11014.724,0,8585.9668};
+				class Attributes
+				{
+					name="MyCarSpawnTrigger_287";
+					condition="LSgr == 1";
+					onActivation="0=[thisTrigger] call myfuncCS;";
+					sizeA=0;
+					sizeB=0;
+				};
+				id=692;
+				type="EmptyDetector";
+			};
+		};
+		id=356;
+		atlOffset=-29.278294;
+	};
+};

@@ -1,0 +1,8 @@
+version=54;
+name="spawn_ai_randompos_AAF";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Modules_F_Heli_Misc"
+};

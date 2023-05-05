@@ -1,0 +1,227 @@
+version=54;
+center[]={4036.2012,10.248757,5034.2925};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Layer";
+		name="BRCE_point_round_triggers";
+		class Entities
+		{
+			items=15;
+			class Item0
+			{
+				dataType="Trigger";
+				position[]={-715.50122,120.85346,-2833.8398};
+				class Attributes
+				{
+					name="pointTrigger_0";
+					sizeA=500;
+					sizeB=500;
+				};
+				id=617;
+				type="EmptyDetectorAreaR250";
+			};
+			class Item1
+			{
+				dataType="Trigger";
+				position[]={-1348.5757,199.71489,-3432.6924};
+				class Attributes
+				{
+					name="pointTrigger_1";
+					sizeA=100;
+					sizeB=100;
+				};
+				id=618;
+				type="EmptyDetectorAreaR250";
+				atlOffset=74.447983;
+			};
+			class Item2
+			{
+				dataType="Trigger";
+				position[]={2260.4336,39.194565,46.656738};
+				angle=5.6653666;
+				class Attributes
+				{
+					name="pointTrigger_5";
+					sizeA=200;
+					sizeB=200;
+				};
+				id=627;
+				type="EmptyDetectorAreaR50";
+			};
+			class Item3
+			{
+				dataType="Trigger";
+				position[]={-1259.23,210.334,-1834.0586};
+				class Attributes
+				{
+					name="pointTrigger_2";
+					sizeA=500;
+					sizeB=500;
+				};
+				id=624;
+				type="EmptyDetectorAreaR250";
+				atlOffset=124.21175;
+			};
+			class Item4
+			{
+				dataType="Trigger";
+				position[]={-475.50122,123.66207,2515.6802};
+				class Attributes
+				{
+					name="pointTrigger_12";
+					sizeA=500;
+					sizeB=500;
+				};
+				id=621;
+				type="EmptyDetectorAreaR250";
+				atlOffset=129.259;
+			};
+			class Item5
+			{
+				dataType="Trigger";
+				position[]={187.46924,296.45917,-1495.0325};
+				class Attributes
+				{
+					name="pointTrigger_3";
+					sizeA=500;
+					sizeB=500;
+				};
+				id=625;
+				type="EmptyDetectorAreaR250";
+				atlOffset=96.270004;
+			};
+			class Item6
+			{
+				dataType="Trigger";
+				position[]={1397.6699,161.883,498.17041};
+				angle=5.6653666;
+				class Attributes
+				{
+					name="pointTrigger_6";
+					sizeA=200;
+					sizeB=200;
+				};
+				id=628;
+				type="EmptyDetectorAreaR50";
+				atlOffset=16.108994;
+			};
+			class Item7
+			{
+				dataType="Trigger";
+				position[]={828.16309,139.1279,1060.0034};
+				angle=5.6653666;
+				class Attributes
+				{
+					name="pointTrigger_7";
+					sizeA=200;
+					sizeB=200;
+				};
+				id=629;
+				type="EmptyDetectorAreaR50";
+				atlOffset=23.223022;
+			};
+			class Item8
+			{
+				dataType="Trigger";
+				position[]={38.959961,113.12305,1798.814};
+				angle=5.6653666;
+				class Attributes
+				{
+					name="pointTrigger_8";
+					sizeA=200;
+					sizeB=200;
+				};
+				id=630;
+				type="EmptyDetectorAreaR50";
+				atlOffset=35.985001;
+			};
+			class Item9
+			{
+				dataType="Trigger";
+				position[]={-1447.9199,93.012474,-507.10596};
+				class Attributes
+				{
+					name="pointTrigger_11";
+					sizeA=500;
+					sizeB=500;
+				};
+				id=620;
+				type="EmptyDetectorAreaR250";
+				atlOffset=54.731625;
+			};
+			class Item10
+			{
+				dataType="Trigger";
+				position[]={-342.65039,19.851612,2491.75};
+				angle=5.6653666;
+				class Attributes
+				{
+					name="pointTrigger_9";
+					sizeA=200;
+					sizeB=200;
+				};
+				id=631;
+				type="EmptyDetectorAreaR50";
+			};
+			class Item11
+			{
+				dataType="Trigger";
+				position[]={-640.70703,168.9272,1403.8521};
+				class Attributes
+				{
+					name="pointTrigger_13";
+					sizeA=500;
+					sizeB=500;
+				};
+				id=622;
+				type="EmptyDetectorAreaR250";
+				atlOffset=140.342;
+			};
+			class Item12
+			{
+				dataType="Trigger";
+				position[]={-613.12573,181.48006,1347.4849};
+				class Attributes
+				{
+					name="pointTrigger_10";
+					sizeA=500;
+					sizeB=500;
+				};
+				id=619;
+				type="EmptyDetectorAreaR250";
+				atlOffset=134.61662;
+			};
+			class Item13
+			{
+				dataType="Trigger";
+				position[]={2235.4243,0,232.57764};
+				class Attributes
+				{
+					name="pointTrigger_4";
+					sizeA=500;
+					sizeB=500;
+				};
+				id=626;
+				type="EmptyDetectorAreaR250";
+			};
+			class Item14
+			{
+				dataType="Trigger";
+				position[]={-104.90625,148.7049,-1292.2659};
+				class Attributes
+				{
+					name="pointTrigger_14";
+					sizeA=500;
+					sizeB=500;
+				};
+				id=623;
+				type="EmptyDetectorAreaR250";
+			};
+		};
+		id=645;
+		atlOffset=-15.445404;
+	};
+};

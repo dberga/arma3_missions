@@ -1,0 +1,74 @@
+version=54;
+center[]={14246.979,18.040516,15983.339};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Logic";
+		init="[] spawn {   " \n "while {true} do {   " \n "sleep 5;   " \n "_sectors = entities ""ModuleSector_F"";   " \n "{   " \n "_secowner=(_x getvariable [""owner"",""-1""]);   " \n "switch (str _secowner) do { " \n "    case ""WEST"": {  " \n "        if (isNil (""respawn_west_""+str _x)) then { " \n "            createMarker [""respawn_west_""+str _x,getPos _x];   " \n "            deleteMarker ""respawn_east_""+str _x;   " \n "            deleteMarker ""respawn_guerrila_""+str _x;   " \n "            deleteMarker ""respawn_civilian_""+str _x;   " \n "        }; " \n "    }; " \n "    case ""EAST"": {  " \n "        if (isNil (""respawn_east_""+str _x)) then { " \n "            createMarker [""respawn_east_""+str _x,getPos _x];   " \n "            deleteMarker ""respawn_west_""+str _x;   " \n "            deleteMarker ""respawn_guerrila_""+str _x;   " \n "            deleteMarker ""respawn_civilian_""+str _x;   " \n "        }; " \n "    }; " \n "    case ""GUER"": {  " \n "        if (isNil (""respawn_guerrila_""+str _x)) then { " \n "            createMarker [""respawn_guerrila_""+str _x,getPos _x];   " \n "            deleteMarker ""respawn_west_""+str _x;   " \n "            deleteMarker ""respawn_east_""+str _x;   " \n "            deleteMarker ""respawn_civilian_""+str _x;   " \n "        }; " \n "    }; " \n "    case ""CIVILIAN"": {  " \n "        if (isNil (""respawn_civilian_""+str _x)) then { " \n "            createMarker [""respawn_civilian_""+str _x,getPos _x];   " \n "            deleteMarker ""respawn_west_""+str _x;   " \n "            deleteMarker ""respawn_guerrila_""+str _x;   " \n "            deleteMarker ""respawn_east_""+str _x;   " \n "        }; " \n "    }; " \n "}; " \n "}forEach _sectors}};";
+		id=327;
+		type="ModuleChat_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleChat_F_Text";
+				expression="_this setVariable ['Text',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Sector Spawn handler";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleChat_F_Units";
+				expression="_this setVariable ['Units',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="1";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleChat_F_Channel";
+				expression="_this setVariable ['Channel',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="0";
+					};
+				};
+			};
+			nAttributes=3;
+		};
+	};
+};

@@ -1,0 +1,387 @@
+version=54;
+center[]={2269.0659,13.45,13428.044};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Layer";
+		name="CSAT";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Group";
+				side="East";
+				class Entities
+				{
+					items=1;
+					class Item0
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={0,0.0014390945,0.049804688};
+							angles[]={0,3.0443079,0};
+						};
+						side="East";
+						flags=7;
+						class Attributes
+						{
+							rank="SERGEANT";
+							init="_this = this;" \n "[_this] spawn { params [""_this""];" \n "waitUntil {sleep 5; alive _this};" \n "_tasks = simpleTasks _this;" \n "_task = _tasks call BIS_fnc_selectRandom;" \n "_this setCurrentTask _task;" \n "_grp = group _this;" \n "_vehs = nearestObjects [_this, [""Helicopter""], 400]; " \n "_veh = _vehs select 0;" \n "while {sleep 1; count fullCrew[ _veh, 'driver'] == 0} do {" \n "_veh = _vehs call BIS_fnc_selectRandom; " \n "};" \n "_wp = _grp addWaypoint [getPos _veh, 0]; " \n "_wp setWaypointType ""GETIN NEAREST"";" \n "_drivers = (units group ((fullCrew[ _veh, 'driver'] select 0) select 0));" \n "waituntil {sleep 1; count crew _veh >= count _drivers+count units _grp};" \n "opspawn synchronizeObjectsAdd [_this];" \n "}";
+							isPlayable=1;
+						};
+						id=228;
+						type="O_Soldier_TL_F";
+						class CustomAttributes
+						{
+							class Attribute0
+							{
+								property="speaker";
+								expression="_this setspeaker _value;";
+								class Value
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"STRING"
+											};
+										};
+										value="Male01PER";
+									};
+								};
+							};
+							class Attribute1
+							{
+								property="pitch";
+								expression="_this setpitch _value;";
+								class Value
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"SCALAR"
+											};
+										};
+										value=0.99000001;
+									};
+								};
+							};
+							nAttributes=2;
+						};
+					};
+				};
+				class Attributes
+				{
+				};
+				id=227;
+			};
+		};
+		id=325;
+		atlOffset=-0.22591019;
+	};
+};
+class VehicleInVehicleLinks
+{
+	class LinkIDProvider
+	{
+		nextID=27;
+	};
+	class Links
+	{
+		items=27;
+		class Item0
+		{
+			linkID=0;
+			item0=269;
+			item1=271;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=270;
+			item1=271;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item2
+		{
+			linkID=2;
+			item0=273;
+			item1=275;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item3
+		{
+			linkID=3;
+			item0=274;
+			item1=275;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item4
+		{
+			linkID=4;
+			item0=277;
+			item1=279;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item5
+		{
+			linkID=5;
+			item0=278;
+			item1=279;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item6
+		{
+			linkID=6;
+			item0=496;
+			item1=495;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item7
+		{
+			linkID=7;
+			item0=497;
+			item1=495;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item8
+		{
+			linkID=8;
+			item0=285;
+			item1=287;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item9
+		{
+			linkID=9;
+			item0=286;
+			item1=287;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item10
+		{
+			linkID=10;
+			item0=289;
+			item1=291;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item11
+		{
+			linkID=11;
+			item0=290;
+			item1=291;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item12
+		{
+			linkID=12;
+			item0=293;
+			item1=295;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item13
+		{
+			linkID=13;
+			item0=294;
+			item1=295;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item14
+		{
+			linkID=14;
+			item0=297;
+			item1=299;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item15
+		{
+			linkID=15;
+			item0=298;
+			item1=299;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item16
+		{
+			linkID=16;
+			item0=301;
+			item1=303;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item17
+		{
+			linkID=17;
+			item0=302;
+			item1=303;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item18
+		{
+			linkID=18;
+			item0=305;
+			item1=308;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item19
+		{
+			linkID=19;
+			item0=306;
+			item1=308;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item20
+		{
+			linkID=20;
+			item0=307;
+			item1=308;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item21
+		{
+			linkID=21;
+			item0=315;
+			item1=318;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item22
+		{
+			linkID=22;
+			item0=316;
+			item1=318;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item23
+		{
+			linkID=23;
+			item0=317;
+			item1=318;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item24
+		{
+			linkID=24;
+			item0=492;
+			item1=491;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item25
+		{
+			linkID=25;
+			item0=493;
+			item1=491;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item26
+		{
+			linkID=26;
+			item0=494;
+			item1=491;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+	};
+};

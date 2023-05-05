@@ -1,0 +1,8 @@
+version=54;
+name="object_script_with_spawn_and_missiontask_destroy";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Structures_F_Ind_Transmitter_Tower"
+};

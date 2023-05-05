@@ -1,0 +1,74 @@
+version=54;
+center[]={2397.448,5.571578,880.43799};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Logic";
+		init="" \n "_westunits=allUnits select {side _x == WEST};" \n "{ _pos = [blubase, 0,150,10] call BIS_fnc_findSafePos; _x setPos _pos; } forEach _westunits;" \n "";
+		id=673;
+		type="ModuleChat_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleChat_F_Text";
+				expression="_this setVariable ['Text',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Moved  all WEST players to blubase.";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleChat_F_Units";
+				expression="_this setVariable ['Units',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="1";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleChat_F_Channel";
+				expression="_this setVariable ['Channel',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="4";
+					};
+				};
+			};
+			nAttributes=3;
+		};
+	};
+};

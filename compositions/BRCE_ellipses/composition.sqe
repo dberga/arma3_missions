@@ -1,0 +1,319 @@
+version=54;
+center[]={4061.8145,40.486301,4118.9268};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Layer";
+		name="BRCE_ellipses";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Layer";
+				name="BRCE_ellipses";
+				class Entities
+				{
+					items=24;
+					class Item0
+					{
+						dataType="Marker";
+						position[]={-1401.667,0,1134.1631};
+						name="ban_marker";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0;
+						a=150;
+						b=150;
+						id=852;
+					};
+					class Item1
+					{
+						dataType="Marker";
+						position[]={-403.64478,16.247482,3188.4707};
+						name="ban_marker_1";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0;
+						a=150;
+						b=150;
+						id=853;
+					};
+					class Item2
+					{
+						dataType="Marker";
+						position[]={788.94971,48.528645,-810.09473};
+						name="ban_marker_2";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.038292002;
+						a=150;
+						b=150;
+						id=854;
+					};
+					class Item3
+					{
+						dataType="Marker";
+						position[]={733.63232,77.732788,-920.729};
+						name="ban_marker_3";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.029820438;
+						a=150;
+						b=150;
+						id=855;
+					};
+					class Item4
+					{
+						dataType="Marker";
+						position[]={859.35352,56.446888,-654.20068};
+						name="ban_marker_4";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.03405622;
+						a=150;
+						b=150;
+						id=856;
+					};
+					class Item5
+					{
+						dataType="Marker";
+						position[]={1513.103,91.096237,130.29883};
+						name="ban_marker_5";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.012877112;
+						a=150;
+						b=150;
+						id=857;
+					};
+					class Item6
+					{
+						dataType="Marker";
+						position[]={2131.6509,145.29407,613.06836};
+						name="ban_marker_6";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0;
+						a=150;
+						b=150;
+						id=858;
+						atlOffset=92.386505;
+					};
+					class Item7
+					{
+						dataType="Marker";
+						position[]={1986.3525,40.210934,1277.5503};
+						name="ban_marker_7";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0;
+						a=150;
+						b=150;
+						id=859;
+						atlOffset=64.092178;
+					};
+					class Item8
+					{
+						dataType="Marker";
+						position[]={775.43164,123.64598,1732.6611};
+						name="ban_marker_8";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.03405622;
+						a=150;
+						b=150;
+						id=860;
+					};
+					class Item9
+					{
+						dataType="Marker";
+						position[]={-183.55151,95.154846,2927.3281};
+						name="ban_marker_9";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.029820438;
+						a=150;
+						b=150;
+						id=861;
+					};
+					class Item10
+					{
+						dataType="Marker";
+						position[]={214.00586,101.57515,1652.4707};
+						name="ban_marker_10";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.017112894;
+						a=150;
+						b=150;
+						id=862;
+					};
+					class Item11
+					{
+						dataType="Marker";
+						position[]={-436.1521,94.959656,1010.439};
+						name="ban_marker_11";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.029820438;
+						a=150;
+						b=150;
+						id=863;
+					};
+					class Item12
+					{
+						dataType="Marker";
+						position[]={953.5625,134.01048,750.375};
+						name="ban_marker_12";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0;
+						a=150;
+						b=150;
+						id=864;
+					};
+					class Item13
+					{
+						dataType="Marker";
+						position[]={799.14941,85.803085,709.74023};
+						name="ban_marker_13";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0;
+						a=150;
+						b=150;
+						id=865;
+					};
+					class Item14
+					{
+						dataType="Marker";
+						position[]={214.00586,134.493,498.43896};
+						name="ban_marker_14";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.017112894;
+						a=150;
+						b=150;
+						id=866;
+					};
+					class Item15
+					{
+						dataType="Marker";
+						position[]={934.78613,81.924454,-302.18164};
+						name="ban_marker_15";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.029820438;
+						a=150;
+						b=150;
+						id=867;
+					};
+					class Item16
+					{
+						dataType="Marker";
+						position[]={-1559.5198,97.032547,-729.63281};
+						name="ban_marker_16";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.038292002;
+						a=150;
+						b=150;
+						id=868;
+					};
+					class Item17
+					{
+						dataType="Marker";
+						position[]={-1202.4719,80.470886,-870.44092};
+						name="ban_marker_17";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.029820438;
+						a=150;
+						b=150;
+						id=869;
+					};
+					class Item18
+					{
+						dataType="Marker";
+						position[]={-1584.6643,36.140301,-1815.8633};
+						name="ban_marker_18";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.03405622;
+						a=150;
+						b=150;
+						id=870;
+					};
+					class Item19
+					{
+						dataType="Marker";
+						position[]={-1051.6067,90.462219,-1921.4688};
+						name="ban_marker_19";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.012877112;
+						a=150;
+						b=150;
+						id=871;
+					};
+					class Item20
+					{
+						dataType="Marker";
+						position[]={-1695.2986,27.06892,-1926.4976};
+						name="ban_marker_20";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0;
+						a=150;
+						b=150;
+						id=872;
+						atlOffset=4.000412;
+					};
+					class Item21
+					{
+						dataType="Marker";
+						position[]={-1720.4431,44.282909,-2419.3242};
+						name="ban_marker_21";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0;
+						a=150;
+						b=150;
+						id=873;
+					};
+					class Item22
+					{
+						dataType="Marker";
+						position[]={-719.70288,28.051662,-2052.2188};
+						name="ban_marker_22";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.03405622;
+						a=150;
+						b=150;
+						id=874;
+					};
+					class Item23
+					{
+						dataType="Marker";
+						position[]={54.73877,14.018726,-1202.3442};
+						name="ban_marker_23";
+						markerType="ELLIPSE";
+						type="ellipse";
+						alpha=0.029820438;
+						a=150;
+						b=150;
+						id=875;
+					};
+				};
+				id=851;
+				atlOffset=-65.041153;
+			};
+		};
+		id=876;
+		atlOffset=-65.041153;
+	};
+};

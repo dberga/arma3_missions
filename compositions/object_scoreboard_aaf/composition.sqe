@@ -1,0 +1,35 @@
+version=54;
+center[]={4556.3252,262.27182,15427.257};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Layer";
+		name="object_script_with_spawn_and_missiontask_action_laptop";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0,0.45968628,0};
+					angles[]={0.073199101,0,6.2711945};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+					init="this allowDamage false;" \n "this setPos (getPos aafbase);" \n "this setvariable [""action"",false];" \n "this addAction [""Show Scoreboard"", {showScoretable 1}];" \n "this addAction [""Hide Scoreboard"", {showScoretable 0}];";
+					name="scoreboard_aaf";
+				};
+				id=4421;
+				type="Land_WallSign_01_chalkboard_F";
+			};
+		};
+		id=3510;
+		atlOffset=1.5581665;
+	};
+};

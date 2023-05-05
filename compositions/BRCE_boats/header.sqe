@@ -1,0 +1,11 @@
+version=54;
+name="BRCE_boats";
+author="Dork";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"A3_Boat_F_Gamma_Boat_Civil_01",
+	"A3_Boat_F_Boat_Transport_01",
+	"A3_Boat_F_Boat_Armed_01",
+	"A3_Boat_F_Exp_Boat_Transport_02"
+};

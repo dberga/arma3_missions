@@ -1,0 +1,102 @@
+version=54;
+center[]={14503.212,18.779104,16304.789};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Layer";
+		name="script_medics_blufor";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Layer";
+				name="script_medics";
+				class Entities
+				{
+					items=1;
+					class Item0
+					{
+						dataType="Logic";
+						class PositionInfo
+						{
+							angles[]={6.2698507,0,6.2765183};
+						};
+						name="script_blufor_medics";
+						init="[] spawn { " \n "while {sleep 5; true} do { " \n "objects=[];  " \n "{objects = objects+[_x call BIS_fnc_objectType];}forEach units blufor; categories=[];  " \n "types=[];  " \n "{categories=categories + [_x select 0];types=types + [_x select 1];}forEach objects;  " \n "medics = []; " \n "{if (types select _forEachIndex == ""Medic"") then {medics = medics + [_x];}}forEach units blufor;" \n "{medic = _x; {unit = _x; if (damage unit > 0) then {medic action [""HealSoldier"", unit]}}forEach units group medic}forEach medics}};";
+						id=3091;
+						type="ModuleChat_F";
+						atlOffset=-1.9073486e-006;
+						class CustomAttributes
+						{
+							class Attribute0
+							{
+								property="ModuleChat_F_Text";
+								expression="_this setVariable ['Text',_value,true];";
+								class Value
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"STRING"
+											};
+										};
+										value="All npc medics automatically heal group";
+									};
+								};
+							};
+							class Attribute1
+							{
+								property="ModuleChat_F_Units";
+								expression="_this setVariable ['Units',_value,true];";
+								class Value
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"STRING"
+											};
+										};
+										value="1";
+									};
+								};
+							};
+							class Attribute2
+							{
+								property="ModuleChat_F_Channel";
+								expression="_this setVariable ['Channel',_value,true];";
+								class Value
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"STRING"
+											};
+										};
+										value="4";
+									};
+								};
+							};
+							nAttributes=3;
+						};
+					};
+				};
+				id=3090;
+				atlOffset=-1.9073486e-006;
+			};
+		};
+		id=3092;
+		atlOffset=-1.9073486e-006;
+	};
+};

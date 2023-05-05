@@ -1,0 +1,79 @@
+version=54;
+center[]={2665.1689,60.230549,698.255};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			angles[]={0.064908795,0,6.1196656};
+		};
+		name="script_unlockvehicles";
+		init="{ " \n "_x setvehiclelock ""UNLOCKED""; " \n "}forEach vehicles;";
+		id=609;
+		type="ModuleChat_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleChat_F_Text";
+				expression="_this setVariable ['Text',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Unlocked all vehicles";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleChat_F_Units";
+				expression="_this setVariable ['Units',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="1";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleChat_F_Channel";
+				expression="_this setVariable ['Channel',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="4";
+					};
+				};
+			};
+			nAttributes=3;
+		};
+	};
+};

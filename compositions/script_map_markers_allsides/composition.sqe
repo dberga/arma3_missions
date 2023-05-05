@@ -1,0 +1,75 @@
+version=54;
+center[]={4878.1309,30.430161,16960.328};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Logic";
+		name="script_map_markers_allsides";
+		init="if(!isNil{player_markers_main_loop_handle}) then { " \n " terminate player_markers_main_loop_handle; " \n " player_markers_main_loop_handle = nil; " \n "}; " \n " " \n "player_markers_main_loop_handle = [""players"",""ais"",""allsides""] spawn { " \n "         " \n " private [""_marker"",""_markerText"",""_temp"",""_unit"",""_vehicle"",""_markerNumber"",""_show"",""_injured"",""_text"",""_num"",""_getNextMarker"",""_getMarkerColor"",""_showAllSides"",""_showPlayers"",""_showAIs"",""_l"",""_player""]; " \n " " \n " _showAllSides = false; " \n " _showPlayers = false; " \n " _showAIs = false; " \n " " \n " if(count _this == 0) then { " \n "  _showAllSides = false; " \n "  _showPlayers = true; " \n "  _showAIs =! isMultiplayer; " \n " }; " \n "                           " \n " { " \n "  _l = toLower _x; " \n "  if(_l in [""player"",""players"",""everything"",""all""]) then { " \n "   _showPlayers = true; " \n "  }; " \n "  if(_l in [""ai"",""ais"",""everything"",""all""]) then { " \n "   _showAIs = true; " \n "  }; " \n "  if(_l in [""allside"",""allsides"",""everything"",""all""]) then { " \n "   _showAllSides = true; " \n "  }; " \n " } forEach _this; " \n " " \n " aero_player_markers_pos = [0,0]; " \n " onMapSingleClick ""aero_player_markers_pos=_pos;""; " \n " " \n " _getNextMarker = { " \n "  private [""_marker""];  " \n "  _markerNumber = _markerNumber + 1; " \n "  _marker = format[""um%1"",_markerNumber];  " \n "  if(getMarkerType _marker == """") then { " \n "   createMarkerLocal [_marker, _this]; " \n "  } else { " \n "   _marker setMarkerPosLocal _this; " \n "  }; " \n "  _marker; " \n " }; " \n " " \n " _getMarkerColor = {  " \n "  [(((side _this) call bis_fnc_sideID) call bis_fnc_sideType),true] call bis_fnc_sidecolor; " \n " }; " \n " " \n " _isPlayer = {  " \n "  _this in allPlayers  " \n " }; " \n " " \n " _cleanUpMarkers = { " \n "  _markerNumber = _markerNumber + 1; " \n "  _marker = format[""um%1"",_markerNumber];  " \n "  while {(getMarkerType _marker) != """"} do { " \n "   deleteMarkerLocal _marker; " \n "   _markerNumber = _markerNumber + 1; " \n "   _marker = format[""um%1"",_markerNumber]; " \n "  };    " \n " }; " \n " " \n " _markerNumber = 0; " \n " call _cleanUpMarkers; " \n " " \n " if(""stop"" in _this) exitWith { " \n " }; " \n " " \n " while {true} do { " \n "     " \n "  waitUntil { " \n "   sleep 0.025; " \n "   true; " \n "  }; " \n "   " \n "  _markerNumber = 0;  " \n " " \n "  _player = player;   " \n "  if(!isNil{ACE_player}) then { " \n "   _player = ACE_player; " \n "  }; " \n "   " \n "  { " \n "   _show = false; " \n "   _injured = false; " \n "   _unit = _x; " \n "    " \n "   if( " \n "    ( " \n "     (_showAIs && {!(_unit call _isPlayer)} && {0=={ {_x==_unit} count crew _x>0} count allUnitsUav}) || " \n "     (_showPlayers && {_unit call _isPlayer}) " \n "    ) && { " \n "     _showAllSides || side _unit == side _player " \n "    } " \n "   ) then {  " \n "    if((crew vehicle _unit) select 0 == _unit) then { " \n "     _show = true; " \n "    };   " \n "    if(!alive _unit || damage _unit > 0.9) then { " \n "     _injured = true; " \n "    };    " \n "    if(!isNil {_unit getVariable ""hide""}) then { " \n "     _show = false; " \n "    };   " \n "    if(_unit getVariable [""BTC_need_revive"",-1] == 1) then { " \n "     _injured = true; " \n "     _show = false; " \n "    };     " \n "    if(_unit getVariable [""NORRN_unconscious"",false]) then { " \n "     _injured = true; " \n "    };       " \n "   }; " \n "         " \n "   if(_show) then { " \n "    _vehicle = vehicle _unit;          " \n "    _pos = getPosATL _vehicle;          " \n "    _color = _unit call _getMarkerColor;   " \n " " \n "    _markerText = _pos call _getNextMarker;       " \n "    _markerText setMarkerColorLocal _color;              " \n "     _markerText setMarkerTypeLocal ""c_unknown"";           " \n "    _markerText setMarkerSizeLocal [0.8,0]; " \n " " \n "    _marker = _pos call _getNextMarker;    " \n "    _marker setMarkerColorLocal _color; " \n "    _marker setMarkerDirLocal getDir _vehicle; " \n "    _marker setMarkerTypeLocal ""mil_triangle""; " \n "    _marker setMarkerTextLocal """";    " \n "    if(_vehicle == vehicle _player) then { " \n "     _marker setMarkerSizeLocal [0.8,1]; " \n "    } else { " \n "     _marker setMarkerSizeLocal [0.5,0.7]; " \n "    }; " \n "     " \n "     if(_vehicle != _unit && !(_vehicle isKindOf ""ParachuteBase"")) then {           " \n "     _text = format[""[%1]"", getText(configFile>>""CfgVehicles"">>typeOf _vehicle>>""DisplayName"")]; " \n "     if(!isNull driver _vehicle) then { " \n "      _text = format[""%1 %2"", name driver _vehicle, _text];  " \n "     };               " \n "      " \n "     if((aero_player_markers_pos distance getPosATL _vehicle) < 50) then { " \n "      aero_player_markers_pos = getPosATL _vehicle; " \n "      _num = 0; " \n "      { " \n "       if(alive _x && _x call _isPlayer && _x != driver _vehicle) then {       " \n "        _text = format[""%1%2 %3"", _text, if(_num>0)then{"",""}else{""""}, name _x]; " \n "        _num = _num + 1; " \n "       };       " \n "      } forEach crew _vehicle;  " \n "     } else {  " \n "      _num = {alive _x && _x call _isPlayer && _x != driver _vehicle} count crew _vehicle; " \n "      if (_num>0) then {      " \n "       if (isNull driver _vehicle) then { " \n "        _text = format[""%1 %2"", _text, name (crew _vehicle select 0)]; " \n "        _num = _num - 1; " \n "       }; " \n "       if (_num>0) then { " \n "        _text = format[""%1 +%2"", _text, _num]; " \n "       }; " \n "      }; " \n "     };        " \n "    } else { " \n "     _text = name _x;    " \n "    }; " \n "    _markerText setMarkerTextLocal _text; " \n "   }; " \n "    " \n "  } forEach ((allUnits - allPlayers) + allPlayers); " \n " " \n " " \n "  { " \n "   if(isUavConnected _x) then {  " \n "    _unit=(uavControl _x) select 0; " \n "    if( " \n "     (     " \n "      (_showAIs && {!(_unit call _isPlayer)}) ||  " \n "      (_showPlayers && {_unit call _isPlayer}) " \n "     ) && { " \n "      _showAllSides || side _unit == side _player " \n "     } " \n "    ) then { " \n "     _color = _x call _getMarkerColor;                           " \n "     _pos = getPosATL _x; " \n "      " \n "     _marker = _pos call _getNextMarker;    " \n "     _marker setMarkerColorLocal _color; " \n "     _marker setMarkerDirLocal getDir _x; " \n "     _marker setMarkerTypeLocal ""mil_triangle"";    " \n "     _marker setMarkerTextLocal """"; " \n "     if(_unit == _player) then { " \n "      _marker setMarkerSizeLocal [0.8,1]; " \n "     } else { " \n "      _marker setMarkerSizeLocal [0.5,0.7]; " \n "     }; " \n "               " \n "     _markerText = _pos call _getNextMarker;  " \n "     _markerText setMarkerColorLocal _color;     " \n "     _markerText setMarkerTypeLocal ""c_unknown""; " \n "     _markerText setMarkerSizeLocal [0.8,0]; " \n "     _markerText setMarkerTextLocal format[""%1 [%2]"", name _unit, getText(configFile>>""CfgVehicles"">>typeOf _x>>""DisplayName"")];  " \n "    }; " \n "   }; " \n "  } forEach allUnitsUav;     " \n " " \n "  call _cleanUpMarkers; " \n "    " \n " }; " \n " " \n " _markerNumber = 0; " \n " call _cleanUpMarkers; " \n " " \n "};";
+		id=31;
+		type="ModuleChat_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleChat_F_Text";
+				expression="_this setVariable ['Text',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Set Markers on";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleChat_F_Units";
+				expression="_this setVariable ['Units',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="1";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleChat_F_Channel";
+				expression="_this setVariable ['Channel',_value,true];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="0";
+					};
+				};
+			};
+			nAttributes=3;
+		};
+	};
+};
