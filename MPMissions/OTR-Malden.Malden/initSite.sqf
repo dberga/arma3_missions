@@ -106,7 +106,8 @@ _site setPos _pos;
 	 case east: {"Flag_FD_Red_F" createVehicle (getPos _site);};
 	 case independent: {"Flag_FD_Green_F" createVehicle (getPos _site);};
 	 case resistance: {"Flag_FD_Green_F" createVehicle (getPos _site);};
-	 default {"Flag_FD_Green_F" createVehicle (getPos _site);};
+	 case civilian: {"Flag_UNO_F" createVehicle (getPos _site);};
+	 default {"Flag_FD_Purple_F" createVehicle (getPos _site);};
 	};
 		
     if (_isciv == true) then {

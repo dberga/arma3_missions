@@ -1,6 +1,10 @@
 params["_survivor"];
 _survivor addRating 0;     
-     
+if ((assignedItems _survivor) find "ItemMap" == -1) then {
+	_survivor addItem "ItemMap";
+	_survivor assignItem "ItemMap";
+};
+		
 _survivor addEventHandler ["Fired", {     
     params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];     
     if (_unit getVariable ["shootingDisabled", false]) then {     
@@ -57,18 +61,28 @@ _survivor addEventHandler ["killed", {
           
         systemChat format["Mission Timeout has Reset. Currency lost."];     
         _unit synchronizeObjectsRemove [west_support];  
+		if ((assignedItems _unit) find "ItemMap" == -1) then {
+			_unit addItem "ItemMap";
+			_unit assignItem "ItemMap";
+		};
     };   
     remoteExec ["updateUI"];    
 }];  
-  
-_survivor addEventHandler ["Respawn", {  
-    params ["_newUnit", "_oldUnit"];  
-    [_newUnit] spawn {  
-        params ["_player"];  
-        sleep 5;  
-        [_player] remoteExec ["fnc_spawnSavedUnits", 2];  
-    };  
-}];  
+
+  if (isPlayer _survivor) then {     
+	_survivor addEventHandler ["Respawn", {  
+		params ["_newUnit", "_oldUnit"];  
+		[_newUnit] spawn {  
+			params ["_player"];  
+			sleep 5;  
+			[_player] remoteExec ["fnc_spawnSavedUnits", 2]; 
+			if ((assignedItems player) find "ItemMap" == -1) then {
+				player addItem "ItemMap";
+				player assignItem "ItemMap";
+			};
+		};  
+	}];      
+};   
      
 if (isPlayer _survivor) then {     
     _survivor addEventHandler ["Dammaged", "remoteExec ['updateUI'];"];     

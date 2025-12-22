@@ -2,7 +2,7 @@ params ["_site"];
 
 private _pos = getPos _site;
 
-private _safezoneProp = "Land_UNO_F" createVehicle _pos;
+private _safezoneProp = "Flag_UNO_F" createVehicle _pos;
 _safezoneProp setPos _pos;
 
 private _marker = createMarker [format ["safeZoneArea_%1", random 10000], _pos];

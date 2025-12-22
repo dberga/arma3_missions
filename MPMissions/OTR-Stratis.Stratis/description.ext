@@ -1605,7 +1605,7 @@ class Params
 	class MPNumberOfAI
 	{
 		title = "Number of AI";
-		texts[] = {"100 players","50 players","30 players","10 players"};
+		texts[] = {"80 players (all AI)","50 players (no survivors AI)","30 players (no civilian AI)","0 players (disabled automatic AI)"};
 		values[] = {0, 1, 2, 3};
 		default = 0; 
 		//isGlobal = 0; // (Optional) 1 to execute script / function locally for every player who joins, 0 to do it only on server

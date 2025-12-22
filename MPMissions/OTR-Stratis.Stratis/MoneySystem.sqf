@@ -1163,19 +1163,20 @@ if (hasInterface) then {
             } else {        
                 _killed_Name = name _killed;        
             };        
-            
-            if (side group _killed == civilian) then {
-                _ratinggain = _ratinggain_civ;
-                _cashgain = _cashgain_civ;
-            } else {
-                if (side group _killed == side group _killer) then {
-                    _ratinggain = _ratinggain_same;
-                    _cashgain = _cashgain_same;
-                } else {
-                    _ratinggain = _ratinggain_diff;
-                    _cashgain = _cashgain_diff;
-                };
-            };
+            if  (_killed != _killer) then {
+				if (side group _killed == civilian) then {
+					_ratinggain = _ratinggain_civ;
+					_cashgain = _cashgain_civ;
+				} else {
+					if (side group _killed == side group _killer) then {
+							_ratinggain = _ratinggain_same;
+							_cashgain = _cashgain_same;
+					} else {
+						_ratinggain = _ratinggain_diff;
+						_cashgain = _cashgain_diff;
+					};
+				};
+			};
             _killer addRating _ratinggain;
             _rating = _rating + _ratinggain;
             _cashMoney = _cashMoney + _cashgain; 

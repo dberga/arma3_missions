@@ -100,6 +100,10 @@ catch{};
         
         [format ["<t size='0.7' color='#00ff00'>%1 squad members rejoined you!</t>", _spawnedCount], -1, 0.85, 4, 1] remoteExec ["BIS_fnc_dynamicText", player];
     };
+	if ((assignedItems player) find "ItemMap" == -1) then {
+		player addItem "ItemMap";
+		player assignItem "ItemMap";
+	};
 };
 
 [] spawn {
@@ -297,6 +301,10 @@ catch{};
     } else {
         systemChat "No secure loadout found. Using default equipment.";
     };
+	if ((assignedItems player) find "ItemMap" == -1) then {
+		player addItem "ItemMap";
+		player assignItem "ItemMap";
+	};
 };
 
 moneyChangeHandler = {

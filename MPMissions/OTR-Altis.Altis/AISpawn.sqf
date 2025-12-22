@@ -423,6 +423,7 @@ switch (BRSEAICount) do {
             if (_varName != "") then {
                 _hasSurvivor = (_varName find "Survivor") != -1;
                 if (_hasSurvivor) then {
+					_x disableAI "ALL";
                     _survivorCount = _survivorCount + 1;
                     _playerType = if (isPlayer _x) then {"(Player)"} else {"(AI)"};
                     //systemChat format ["Found Survivor: %1 Name: %2 %3", _varName, name _x, _playerType];
@@ -472,6 +473,7 @@ switch (BRSEAICount) do {
                 
                 _hasCivilian = (_varName find "Civilian") != -1;
                 if (_hasCivilian) then {
+					_x disableAI "ALL";
                     _civilianEnemyCount = _civilianEnemyCount + 1;
                 };
             };
@@ -507,6 +509,7 @@ switch (BRSEAICount) do {
             if (_varName != "") then {
                 _hasSurvivor = (_varName find "Survivor") != -1;
                 if (_hasSurvivor) then {
+					_x disableAI "ALL";
                     _survivorCount = _survivorCount + 1;
                     _playerType = if (isPlayer _x) then {"(Player)"} else {"(AI)"};
                     //systemChat format ["Found Survivor: %1 Name: %2 %3", _varName, name _x, _playerType];
@@ -514,6 +517,7 @@ switch (BRSEAICount) do {
                 
                 _hasCivilian = (_varName find "Civilian") != -1;
                 if (_hasCivilian) then {
+					_x disableAI "ALL";
                     _civilianEnemyCount = _civilianEnemyCount + 1;
                 };
             };
