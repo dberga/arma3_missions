@@ -78,27 +78,42 @@ Economy system based on:
 - **[Conda Economy Mod](https://github.com/Poppadomus/Arma-3-Economy-System)** / [Steam Workshop](https://steamcommunity.com/workshop/filedetails/?id=3414450358)
 
 # Invade & Control
+[https://steamcommunity.com/sharedfiles/filedetails/?id=2640593857](https://steamcommunity.com/sharedfiles/filedetails/?id=2640593857)  
+[https://steamcommunity.com/sharedfiles/filedetails/?id=2640632798](https://steamcommunity.com/sharedfiles/filedetails/?id=2640632798)  
+[https://steamcommunity.com/sharedfiles/filedetails/?id=2641225091](https://steamcommunity.com/sharedfiles/filedetails/?id=2641225091)  
+[https://steamcommunity.com/sharedfiles/filedetails/?id=2642159802](https://steamcommunity.com/sharedfiles/filedetails/?id=2642159802)  
+[https://steamcommunity.com/sharedfiles/filedetails/?id=2642267133](https://steamcommunity.com/sharedfiles/filedetails/?id=2642267133)  
+[https://steamcommunity.com/sharedfiles/filedetails/?id=2642273186](https://steamcommunity.com/sharedfiles/filedetails/?id=2642273186)  
+[https://steamcommunity.com/sharedfiles/filedetails/?id=2642776140](https://steamcommunity.com/sharedfiles/filedetails/?id=2642776140)  
+[https://steamcommunity.com/sharedfiles/filedetails/?id=2642782618](https://steamcommunity.com/sharedfiles/filedetails/?id=2642782618)  
+[https://steamcommunity.com/sharedfiles/filedetails/?id=2642787491](https://steamcommunity.com/sharedfiles/filedetails/?id=2642787491)  
+[https://steamcommunity.com/sharedfiles/filedetails/?id=2697329826](https://steamcommunity.com/sharedfiles/filedetails/?id=2697329826)
+<img width="637" height="358" alt="image" src="https://github.com/user-attachments/assets/4ea233b4-cac5-407b-860e-263c4304379b" />
 
--Each team (NATO, CSAT, AAF) has a maximum of 32 players/ai
--All AI and sites Support and Invade distinct regions following the Sector tactic, even AI-playable units.
--Available recruits (from spawnpoint barracks or from any squad that its leader rankid is lower than yours).
--Fully scripted helicopter transports (to assigned task), helicopter attacks (to each sector) and defenses (loiter).
--Fully scripted Sector generation and side respawns after capture.
--Fully scripted main missions (kill officer from other team, destroy control tower, destroy base of each side, download intel, etc.)
--Fully scripted markers for HQ teams and units.
--Fully scripted respawn points with random vehicles, trucks, tanks, helis and planes for all sides.
--Fully scripted medics healing in each group.
--Fully scripted ticket system updated by scoreside.
+-Each team (NATO, CSAT, AAF) has a maximum of 32 players/ai  
+-All AI and sites Support and Invade distinct regions following the Sector tactic, even AI-playable units.  
+-Available recruits (from spawnpoint barracks or from any squad that its leader rankid is lower than yours).  
+-Fully scripted helicopter transports (to assigned task), helicopter attacks (to each sector) and defenses (loiter).  
+-Fully scripted Sector generation and side respawns after capture.  
+-Fully scripted main missions (kill officer from other team, destroy control tower, destroy base of each side, download intel, etc.)  
+-Fully scripted markers for HQ teams and units.  
+-Fully scripted respawn points with random vehicles, trucks, tanks, helis and planes for all sides.  
+-Fully scripted medics healing in each group.  
+-Fully scripted ticket system updated by scoreside.  
 
 # MASSIVE ARMA BATTLE ROYALE
-
+[https://steamcommunity.com/sharedfiles/filedetails/?id=2856132896](https://steamcommunity.com/sharedfiles/filedetails/?id=2856132896)  
+[https://steamcommunity.com/sharedfiles/filedetails/?id=2859619470](https://steamcommunity.com/sharedfiles/filedetails/?id=2859619470)  
+[https://steamcommunity.com/sharedfiles/filedetails/?id=2859637947](https://steamcommunity.com/sharedfiles/filedetails/?id=2859637947)  
+[https://steamcommunity.com/sharedfiles/filedetails/?id=2856141358](https://steamcommunity.com/sharedfiles/filedetails/?id=2856141358)
+<img width="637" height="358" alt="image" src="https://github.com/user-attachments/assets/90b4a7d9-43de-48f7-8390-e81700d37a56" />  
 100 players, all vs all
 
 Objectives:
 1. Get weapons and ammo from building loot (black squares).
 2. Find a Vehicle (blue spawn).
 3. Make sure to be inside the (green zone).
-4.Be the last one standing
+4. Be the last one standing
 
 # COMPOSITIONS
 
