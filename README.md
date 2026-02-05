@@ -8,7 +8,9 @@ Check my workshop mods in [Dork's Arma3 Workshop](https://steamcommunity.com/id/
 
 A comprehensive Arma 3 mod featuring dynamic roleplay mechanics with vanilla content only.
 ![alt text](https://images.steamusercontent.com/ugc/17726406686327454748/15E0E9F2AFFCA618707616C5BC6A7DDC068DEFB5/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true)
-## Mods List
+<img width="637" height="358" alt="image" src="https://github.com/user-attachments/assets/267a6455-7aa4-46c3-b930-7441ca9a1fed" />
+
+## OTR Mods List
 - [OTR - Stratis](https://steamcommunity.com/sharedfiles/filedetails/?id=3627888593)
 - [OTR - Altis](https://steamcommunity.com/sharedfiles/filedetails/?id=3627901912)
 - [OTR - Tanoa](https://steamcommunity.com/sharedfiles/filedetails/?id=3627920665)
