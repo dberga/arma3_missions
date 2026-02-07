@@ -119,4 +119,4 @@ Objectives:
 
 # COMPOSITIONS
 
-Here you can find object compositions (pilots with instructions, base with soldiers, squads with objectives...) all integrated with AI scripting
+Here you can find object compositions (pilots with instructions, base with soldiers, squads with objectives...) all integrated with AI scripting. Install mods through steam and look for pbo files, you can extract sqm and sqf script files with [PBO Manager](https://www.moddb.com/mods/pbo-manager) to make Eden compositions that require so.
